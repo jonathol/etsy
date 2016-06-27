@@ -43,7 +43,7 @@ J-Etsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu 6pm)
+### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -53,34 +53,33 @@ J-Etsy is a web application inspired by Etsy that will be build using Ruby on Ra
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days, W1 Th 12pm)
+### Phase 2: Model, API, and basic APIUtil for Category, Type, and Specific (2 days, W1 Th)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Categories, Types, and Specifics can be viewed.
 
-- [ ] create `Note` model
+- [ ] create models
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
+- [ ] CRUD API for notes controllers
+- [ ] jBuilder views
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days, W1 F 6pm)
+### Phase 3: Flux Architecture and Router (2 days, W1 S)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
-user interface.
+**Objective:** Navigate though all of the categories and its sub-categories
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- implement each components, building out the flux loop as needed.
+  - [ ] `CategoryIndex`
+  - [ ] `CategoryIndexItem`
+  - [ ] `TypeIndex`
+  - [ ] `TypeIndexItem`
+  - [ ] `SpecificIndex`
+  - [ ] `SpecificIndexItem`
 
-### Phase 4: Start Styling (0.5 days, W2 M 12pm)
+### Phase 4: Start Styling (1 days, W1 S)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
@@ -88,58 +87,39 @@ user interface.
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Notebooks (1 day, W2 Tu 12pm)
+### Phase 5: Listings and Reviews (2 day, W2 T)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Listings can be viewed after navigating through categories.
 
-- [ ] create `Notebook` model
+- [ ] create `Listing` model
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
+  - [ ] Listing and Review CRUD
+  - [ ] adding reviews require a listing
+  - [ ] viewing listings by categories
+  - [ ] viewing reviews by listings
 - Use CSS to style new views
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
 
-### Phase 6: Tags (1 days, W2 Th 12pm)
+### Phase 6: Carts (1 days, W2 F)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Create a cart that can add and delete listings. Only accessible by owner.
 
-- [ ] create `Tag` model and join table
+- [ ] create `Cart` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
+  - [ ] adding listings to cart
+  - [ ] removing listings from cart
 - [ ] Style new elements
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days, W2 Th 6pm)
+### Phase 7: Search (1 days, W2 S)
 
-**objective:** Enable complex styling of notes.
+**Objective:** Working search bar with autocomplete.
 
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- build out API, Flux loop, and components for:
+  - [ ] autocompletes correctly
+  - [ ] linking to correct listing
+- [ ] Style new elements
 
-### Phase 8: Styling Cleanup and Seeding (1 day, W2 F 6pm)
-
-**objective:** Make the site feel more cohesive and awesome.
-
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
-
-[phase-one]: docs/phases/phase1.md
-[phase-two]: docs/phases/phase2.md
-[phase-three]: docs/phases/phase3.md
-[phase-four]: docs/phases/phase4.md
-[phase-five]: docs/phases/phase5.md
+- [ ] Categories
+- [ ] Favorites
