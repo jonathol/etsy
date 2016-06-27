@@ -6,17 +6,21 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Root
+![root]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Products
+![products]
 
-## NotebookForm
-![notebook-form]
+## Cart
+![cart]
+
+## Search
+![search]
 
 [new-user]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[root]: ./wireframes/root.png
+[products]: ./wireframes/root_notes.png
+[cart]: ./wireframes/root_notebooks.png
+[search]: ./wireframes/notebook_form.png
