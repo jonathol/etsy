@@ -1,4 +1,4 @@
-# FresherNote
+# J-Etsy
 
 [Heroku link][heroku]
 
