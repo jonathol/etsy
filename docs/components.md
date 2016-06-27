@@ -11,8 +11,9 @@
   * **CartIndex**
   * **ListingIndex**
     * **ListingIndexItem**
-
-
+      * Comments/Reviews
+      * Details
+      * Shipping and Policies
 
 ## Routes
 

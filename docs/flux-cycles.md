@@ -22,7 +22,7 @@
 
 * `receiveSingleCategory`
   0. invoked from an API callback.
-  0. `Category` store updates `_category[categoryId]` and emits change.
+  0. `Category` store updates `_category[cat][categoryId]` and emits change.
 
 ### Store Listeners
 
@@ -51,7 +51,7 @@
 
 * `receiveSingleCategory`
   0. invoked from an API callback.
-  0. `Category` store updates `_category[:typeId]` and emits change.
+  0. `Category` store updates `_category[type][typeId]` and emits change.
 
 ### Store Listeners
 
@@ -79,7 +79,7 @@
 
 * `receiveSingleCategory`
   0. invoked from an API callback.
-  0. `Category` store updates `_category[:specificId]` and emits change.
+  0. `Category` store updates `_category[specific][specificId]` and emits change.
 
 ### Store Listeners
 
@@ -141,7 +141,7 @@
 
 * `receiveSingleListing`
   0. invoked from an API callback.
-  0. `Category` store updates `_category[:listingId]` and emits change.
+  0. `Category` store updates `_category[listing][listingId]` and emits change.
 
 ### Store Listeners
 
