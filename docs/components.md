@@ -1,20 +1,28 @@
 ## Component Hierarchy
 
 * **App**
-  * **ProductIndex**
+  * **CategoryIndex**
     * Search
-    * **ProductIndexList**
-      * **ProductIndexListItem**
-        * **ProductDetail*
+    * **CategoryIndexItem**
+      * Filter for TypeIndex
+      * **TypeIndex**
+        * filter for TypeIndexItem
+        * **TypeIndexItem**
   * **CartIndex**
-    * CartIndexItem
+  * **ListingIndex**
+    * **ListingIndexItem**
+
 
 
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `ProductIndex` **path:** index
-    * **component:** `ProductIndexList` **path:** `index/:categoryId`
-      * **component:** `ProductIndexListItem` **path:** `index/:categoryId/:typeId`
-        * **component:** `ProductDetail` **path:** `index/:categoryId/:typeId/:itemId`
-  * **component:** `CartIndex` **path:** cart
+  * **component:** `CategoryIndex` **path:** `category`
+    * **component:** `CategoryIndexItem` **path:** `category/:categoryId`
+    * **component:** `TypeIndex` **path:** none
+      * **component** `TypeIndexItem` **path:** `category/:categoryId/:typeId`
+      * **component:** `SpecificIndex` **path:** none
+        * **component:** `SpecificIndexItem` **path:** `category/:categoryId/:typeId/:specificId`
+  * **component:** `CartIndex` **path:** `cart`
+  * **component:** `ListingIndex` **path:** none
+    * **component:** `ListingDetail` **path:** `listing/:id`
