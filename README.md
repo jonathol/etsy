@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: j-etsy.herokuapp.com
+[heroku]: https://j-etsy.herokuapp.com/
 
 ## Minimum Viable Product
 
