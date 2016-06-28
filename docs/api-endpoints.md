@@ -20,25 +20,14 @@
 
 ## JSON API
 
-### Category
-
-- `GET /api/category`
-- `GET /api/category/:categoryId`
-
-### Type
-
-- `GET /api/categoy/:categoryId/:typeId`
-
-### Specific
-
-- `GET /api/categoy/:categoryId/:typeId/:specificId`
-
 ### Cart
 
 - `GET /api/cart`
+- `GET /api/cart/:id`
 - `POST /api/cart/new`
-- `DELETE /api/cart/:id/`
+- `DELETE /api/cart/:id`
 
 ### Listing
 
+- `GET /api/listing`
 - `GET /api/listing/:id`
