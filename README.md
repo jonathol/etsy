@@ -1,4 +1,4 @@
-# J-Etsy
+# Foodsy
 
 [Heroku link][heroku]
 
@@ -6,9 +6,9 @@
 
 ## Minimum Viable Product
 
-J-Etsy is a web application inspired by Etsy that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+Foodsy is a web application inspired by Etsy that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Product Listings
@@ -45,7 +45,7 @@ J-Etsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 ### Phase 1: (2 days, W1 Th)
 
-- [ ] Host on Heroku
+- [x] Host on Heroku
 - [ ] Rails User JSON Api
 - [ ] Front-End Authentication
 - [ ] Guest Demo Login
