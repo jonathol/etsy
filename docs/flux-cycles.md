@@ -1,90 +1,5 @@
 # Flux Cycles
 
-## Category Cycles
-
-### Category API Request Actions
-
-* `fetchAllCategory`
-  0. invoked from `CategoryIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/category` is called.
-  0. `receiveAllCategory` is set as the callback.
-
-* `fetchSingleCategory`
-  0. invoked from `CategoryIndexItem` `didMount`/`willReceiveProps`
-  0. `GET /api/category/:categoryId` is called.
-  0. `receiveSingleCategory` is set as the callback.
-
-### Category API Response Actions
-
-* `receiveAllCategory`
-  0. invoked from an API callback.
-  0. `Category` store updates `_category` and emits change.
-
-* `receiveSingleCategory`
-  0. invoked from an API callback.
-  0. `Category` store updates `_category[cat][categoryId]` and emits change.
-
-### Store Listeners
-
-* `CategoryIndex` component listens to `Category` store.
-* `CategoryIndexItem` component listens to `Category` store.
-
-## Type Cycles
-
-### Type API Request Actions
-
-* `fetchTypes`
-  0. invoked from `CategoryIndexItem` `didMount`/`willReceiveProps`
-  0. `GET /api/category/:categoryId` is called.
-  0. `receiveTypes` is set as the callback.
-
-* `fetchSingleType`
-  0. invoked from `typeIndexItem` `didMount`/`willReceiveProps`
-  0. `GET /api/category/:categoryId/:typeId` is called.
-  0. `receiveSingleType` is set as the callback.
-
-### Type API Response Actions
-
-* `receiveTypes`
-  0. invoked from an API callback.
-  0. `Category` store updates `_category` and emits change.
-
-* `receiveSingleCategory`
-  0. invoked from an API callback.
-  0. `Category` store updates `_category[type][typeId]` and emits change.
-
-### Store Listeners
-
-* `typeIndex` component listens to `Category` store.
-
-## Specific Cycles
-
-### Specific API Request Actions
-
-* `fetchSpecific`
-  0. invoked from `typeIndexItem` `didMount`/`willReceiveProps`
-  0. `GET /api/category/:categoryId/:typeId` is called.
-  0. `receiveSpecific` is set as the callback.
-
-* `fetchSingleSpecific`
-  0. invoked from `specificIndexItem` `didMount`/`willReceiveProps`
-  0. `GET /api/category/:categoryId/:typeId/:specificId` is called.
-  0. `receiveSingleSpecific` is set as the callback.
-
-### Specific API Response Actions
-
-* `receiveSpecific`
-  0. invoked from an API callback.
-  0. `Category` store updates `_category` and emits change.
-
-* `receiveSingleCategory`
-  0. invoked from an API callback.
-  0. `Category` store updates `_category[specific][specificId]` and emits change.
-
-### Store Listeners
-
-* `SpecificIndex` component listens to `Category` store.
-
 ## Cart Cycles
 
 ### Cart API Request Actions
@@ -93,6 +8,11 @@
   0. invoked from `CartIndex` `didMount`/`willReceiveProps`
   0. `GET /api/cart` is called.
   0. `receiveCart` is set as the callback.
+
+* `fetchCartItem`
+  0. invoked from `CartDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/cart/:id` is called.
+  0. `receiveCartItem` is set as the callback.
 
 * `addToCart`
   0. invoked from add to cart button `onclick`
@@ -127,32 +47,45 @@
 ### Store Listeners
 
 * `CartIndex` component listens to `Cart` store.
+* `CartIndexItem` component listens to `Cart` store.
+* `CartDetail` component listens to `Cart` store.
 
 ## Listing Cycles
 
 ### Listing API Request Actions
 
+* `fetchAllListing`
+  0. invoked from `ListingIndex` `didMount` / `willReceiveProps`
+  0. `GET /api/listing` is called.
+  0. `receiveAllListing` is set as the callback.
+
 * `fetchSingleListing`
   0. invoked from `ListingDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/listing/:listingId` is called.
+  0. `GET /api/listing/:id` is called.
   0. `receiveSingleListing` is set as the callback.
 
 ### Listing API Response Actions
 
+* `receiveAllListing`
+  0. invoked from an API callback
+  0. `Listing` store updates `_listing` and emits change.
+
 * `receiveSingleListing`
   0. invoked from an API callback.
-  0. `Category` store updates `_category[listing][listingId]` and emits change.
+  0. `Listing` store updates `_listing[id]` and emits change.
 
 ### Store Listeners
 
-* `ListingDetail` component listens to `Category` store.
+* `ListingIndex` component listens to `Listing` store.
+* `ListingIndexItem` component listens to `Listing` store.
+* `ListingDetail` component listens to `Listing` store.
 
 
 ## SearchSuggestion Cycles
 
 * `fetchSearchSuggestions`
   0. invoked from `ProductSearchBar` `onChange` when there is text
-  0. `GET /api/notes` is called with `text` param.
+  0. `GET /api/listing` is called with `text` param.
   0. `receiveSearchSuggestions` is set as the callback.
 
 * `receiveSearchSuggestions`
@@ -160,7 +93,7 @@
   0. `SearchSuggestion` store updates `_suggestions` and emits change.
 
 * `removeSearchSuggestions`
-  0. invoked from `ProductSearchBar` `onChange` when empty
+  0. invoked from `ListingSearchBar` `onChange` when empty
   0. `SearchSuggestion` store resets `_suggestions` and emits change.
 
 ### Store Listeners

@@ -1,29 +1,28 @@
 ## Component Hierarchy
 
 * **App**
-  * **CategoryIndex**
-    * Search
-    * **CategoryIndexItem**
-      * Filter for TypeIndex
-      * **TypeIndex**
-        * filter for TypeIndexItem
-        * **TypeIndexItem**
+  * Nav Bar
+  * Login
+  * Sign Up
+  * Search
   * **CartIndex**
+    * **CartIndexItem**
+      * CartDetail
+      * Edit Item
+      * Delete Item
+    * Payment Options
   * **ListingIndex**
     * **ListingIndexItem**
       * Comments/Reviews
-      * Details
+      * ListingDetails
       * Shipping and Policies
+      * Add Item to Cart
+      * Overview/Options
 
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `CategoryIndex` **path:** `category`
-    * **component:** `CategoryIndexItem` **path:** `category/:categoryId`
-    * **component:** `TypeIndex` **path:** none
-      * **component** `TypeIndexItem` **path:** `category/:categoryId/:typeId`
-      * **component:** `SpecificIndex` **path:** none
-        * **component:** `SpecificIndexItem` **path:** `category/:categoryId/:typeId/:specificId`
   * **component:** `CartIndex` **path:** `cart`
-  * **component:** `ListingIndex` **path:** none
-    * **component:** `ListingDetail` **path:** `listing/:id`
+    * **component:** `CartIndexItem` **path:** `cart/:id`
+  * **component:** `ListingIndex` **path:** `listing`
+    * **component:** `ListingIndexItem` **path:** `listing/:id`

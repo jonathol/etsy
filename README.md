@@ -43,82 +43,51 @@ J-Etsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu)
+### Phase 1: (2 days, W1 Th)
 
-**Objective:** Functioning rails project with Authentication
+- [ ] Host on Heroku
+- [ ] Rails User JSON Api
+- [ ] Front-End Authentication
+- [ ] Guest Demo Login
+- [ ] Style Front-End Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+### Phase 2: (2 days, W2 M)
 
-### Phase 2: Model, API, and basic APIUtil for Category, Type, and Specific (2 days, W1 Th)
+- [ ] Listing CRUD JSON API
+- [ ] Seed Listing Database
+- [ ] Listing Index Component
+- [ ] Listing Index Item Component
+- [ ] Listing Detail Component
+- [ ] Style Listing Components
 
-**Objective:** Categories, Types, and Specifics can be viewed.
+### Phase 3: (1 day, W2 T)
 
-- [ ] create models
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes controllers
-- [ ] jBuilder views
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [ ] Cart Component
+- [ ] Style Cart Component
+- [ ] Navbar Component
+- [ ] Style Navbar
+- [ ] Search Component
+- [ ] Style Search
 
-### Phase 3: Flux Architecture and Router (2 days, W1 S)
+### Phase 4: (1 day, W2 W)
 
-**Objective:** Navigate though all of the categories and its sub-categories
+- [ ] Review Component
+- [ ] Review Index Component
+- [ ] Style Reviews
+- [ ] Comment Component
+- [ ] Comments Index Component
+- [ ] Style Comments
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- implement each components, building out the flux loop as needed.
-  - [ ] `CategoryIndex`
-  - [ ] `CategoryIndexItem`
-  - [ ] `TypeIndex`
-  - [ ] `TypeIndexItem`
-  - [ ] `SpecificIndex`
-  - [ ] `SpecificIndexItem`
+### Phase 5: (1 day, W2 Th)
 
-### Phase 4: Start Styling (1 days, W1 S)
-
-**Objective:** Existing pages (including signup/signin) will look good.
-
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
-
-### Phase 5: Listings and Reviews (2 day, W2 T)
-
-**Objective:** Listings can be viewed after navigating through categories.
-
-- [ ] create `Listing` model
-- build out API, Flux loop, and components for:
-  - [ ] Listing and Review CRUD
-  - [ ] adding reviews require a listing
-  - [ ] viewing listings by categories
-  - [ ] viewing reviews by listings
-- Use CSS to style new views
+- [ ] Add Full Product Seed Data
+- [ ] Landing Page
+- [ ] Style Landing Page
 
 
-### Phase 6: Carts (1 days, W2 F)
+### Phase 6: (1 day, W2 F)
 
-**Objective:** Create a cart that can add and delete listings. Only accessible by owner.
-
-- [ ] create `Cart` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] adding listings to cart
-  - [ ] removing listings from cart
-- [ ] Style new elements
-
-### Phase 7: Search (1 days, W2 S)
-
-**Objective:** Working search bar with autocomplete.
-
-- build out API, Flux loop, and components for:
-  - [ ] autocompletes correctly
-  - [ ] linking to correct listing
-- [ ] Style new elements
-
+- [ ] Production Readme
 
 ### Bonus Features (TBD)
 - [ ] Categories
