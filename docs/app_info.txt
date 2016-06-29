@@ -5,9 +5,11 @@ Color
   Lemon: #DCB239
 
 NPM stuff
-  npm install --save webpack react react-dom react-router flux babel-core babel-loader babel-preset-react babel-preset-es2015
+  npm install --save webpack react react-dom react-modal react-router flux babel-core babel-loader babel-preset-react babel-preset-es2015
 
 Font Weight
   700
   400
   300
+
+run heroku run rake db:migrate
