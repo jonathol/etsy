@@ -5,13 +5,13 @@
   * Login
   * Sign Up
   * Search
-  * **CartIndex**
+  * CartIndex
     * **CartIndexItem**
       * CartDetail
       * Edit Item
       * Delete Item
     * Payment Options
-  * **ListingIndex**
+  * ListingIndex
     * **ListingIndexItem**
       * Comments/Reviews
       * ListingDetails
@@ -22,7 +22,7 @@
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `CartIndex` **path:** `cart`
+  * **component:** `CartIndex` **path:** none
     * **component:** `CartIndexItem` **path:** `cart/:id`
-  * **component:** `ListingIndex` **path:** `listing`
+  * **component:** `ListingIndex` **path:** none
     * **component:** `ListingIndexItem` **path:** `listing/:id`
