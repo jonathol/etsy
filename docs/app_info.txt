@@ -1,0 +1,7 @@
+Color
+  Powder: BFD8D2
+  Peach: FEDCD2
+  Warm: DF744A
+
+NPM stuff
+  npm install --save webpack react react-dom react-router flux babel-core babel-loader babel-preset-react babel-preset-es2015

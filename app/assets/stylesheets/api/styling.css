@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-signup {
+  display: flex;
+}
+
+.login-signup li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
