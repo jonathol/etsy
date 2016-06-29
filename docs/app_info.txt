@@ -12,6 +12,4 @@ Font Weight
   400
   300
 
-run heroku run rake db:migrate
-
-t
+heroku run --app j-etsy rake db:migrate
