@@ -13,3 +13,5 @@ Font Weight
   300
 
 run heroku run rake db:migrate
+
+t
