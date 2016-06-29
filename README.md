@@ -45,7 +45,7 @@ Foodsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 ### Phase 1: (2 days, W1 Th)
 
-- [x] Host on Heroku
+- [ ] Host on Heroku
 - [x] Rails User JSON Api
 - [x] Front-End Authentication
 - [ ] Guest Demo Login
