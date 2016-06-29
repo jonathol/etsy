@@ -41,13 +41,11 @@ const SignupForm = React.createClass({
 			password: this.state.password
 		};
 
-    if (this.props.location.pathname === "/signup") {
-      SessionActions.signUp(formData);
-    }
+    SessionActions.signUp(formData);
 	},
 
   fieldErrors(field) {
-    const errors = ErrorStore.formErrors(this.formType());
+    const errors = ErrorStore.formErrors("signup");
 
     if (!errors[field]) { return; }
 
@@ -58,50 +56,36 @@ const SignupForm = React.createClass({
     return <ul>{ messages }</ul>;
   },
 
-  formType() {
-    return this.props.location.pathname.slice(1);
-  },
-
   update(property) {
     return (e) => this.setState({[property]: e.target.value});
   },
 
 	render() {
-
-    let navLink;
-    if (this.formType() === "login") {
-      navLink = <Link to="/signup">sign up instead</Link>;
-    } else {
-      navLink = <Link to="/login">log in instead</Link>;
-    }
-
 		return (
-			<div className="login-form-container">
-				<form onSubmit={this.handleSubmit} className="login-form-box">
-	        { this.fieldErrors("base") }
-					<div className="login-form">	
-						<label> Username:
-		          { this.fieldErrors("username") }
-							<input type="text"
-		            value={this.state.username}
-		            onChange={this.update("username")}
-								className="login-input" />
-						</label>
+			<form onSubmit={this.handleSubmit} className="login-form-box">
+        { this.fieldErrors("base") }
+				<div className="login-form">
+					<label> Username:
+	          { this.fieldErrors("username") }
+						<input type="text"
+	            value={this.state.username}
+	            onChange={this.update("username")}
+							className="login-input" />
+					</label>
 
-		        <br />
-						<label> Password:
-		          { this.fieldErrors("password") }
-		          <input type="password"
-		            value={this.state.password}
-		            onChange={this.update("password")}
-								className="login-input" />
-						</label>
+	        <br />
+					<label> Password:
+	          { this.fieldErrors("password") }
+	          <input type="password"
+	            value={this.state.password}
+	            onChange={this.update("password")}
+							className="login-input" />
+					</label>
 
-		        <br />
-						<input type="submit" value="Register" />
-					</div>
-				</form>
-			</div>
+	        <br />
+					<input type="submit" value="Register" />
+				</div>
+			</form>			
 		);
 	}
 });

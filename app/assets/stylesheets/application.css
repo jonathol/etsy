@@ -120,3 +120,44 @@
  .signin:hover {
    background: rgba(220,178,57,0.25);
  }
+
+ .modalTab {
+   background: #BFD8D2;
+   display: flex;
+   padding-left: 40px;
+   padding-right: 10px;
+   width: 528px;
+   height: 55px;
+   justify-content: flex-start;
+   align-items: flex-end;
+ }
+
+ .tab {
+   color: #DCB239;
+   background: #BFD8D2;
+   padding: 10px;
+   border-top: 1px solid #DCB239;
+   border-left: 1px solid #DCB239;
+   border-right: 1px solid #DCB239;
+   display: flex;
+ }
+ .tab-selected {
+   color: #DF744A;
+   background: white;
+   padding: 10px;
+   border-top: 1px solid #DCB239;
+   border-left: 1px solid #DCB239;
+   border-right: 1px solid #DCB239;
+   display: flex;
+ }
+
+ .modalForm {
+   border-bottom: 1px solid #ccc;
+   border-left: 1px solid #ccc;
+   border-right: 1px solid #ccc;
+   border-radius: 5px solid #ccc;
+ }
+
+ .login-form-box {
+   color: #DF744A;
+ }

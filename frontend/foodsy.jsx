@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const Modal = require('react-modal');
 
 const ReactRouter = require('react-router');
 const Router = ReactRouter.Router;
@@ -13,6 +14,8 @@ const SignupForm = require('./components/signup_form');
 
 const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
+
+
 
 const appRouter = (
   <Router history={ hashHistory }>
@@ -35,5 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const root = document.getElementById('content');
+  Modal.setAppElement(root);
   ReactDOM.render(appRouter, root);
 });
