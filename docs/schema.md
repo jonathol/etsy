@@ -7,23 +7,29 @@ id          | integer   | not null, primary key
 date created| date      | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 listing_id  | integer   | not null, foreign key (references listings), indexed
-
+comments    | text      |
 
 ## carts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-listing_id  | integer   | not null, foreign key (references listings), indexed
 user_id     | integer   | not null, foreign key (references users), indexed
 
-
+## purchases
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+quantity    | integer   | not null
+cart_id     | integer   | not null, foreign key (references carts), indexed
+listing_id  | integer   | not null, foreign key (references listings), indexed
 
 ## listings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-details     | string    |
+details     | text      |
+img_url     | string    | not null
 
 
 ## users
@@ -33,3 +39,6 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+firstname       | string    |
+lastname        | string    |
+img_url         | string    |

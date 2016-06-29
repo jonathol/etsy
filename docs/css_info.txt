@@ -1,0 +1,4 @@
+Color
+  Powder: BFD8D2
+  Peach: FEDCD2
+  Warm: DF744A
