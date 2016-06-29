@@ -13,3 +13,110 @@
  *= require_tree .
  *= require_self
  */
+
+ /*reset*/
+ html, body, header, nav, h1, a,
+ ul, li, strong, main, button, i,
+ section, img, div, h2, p, form,
+ fieldset, label, input, textarea,
+ span, article, footer, time, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-family: 'Josefin Sans', sans-serif;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   box-sizing: inherit;
+   background: transparent;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+ img {
+   display: block;
+   width: 100%;
+   height: auto;
+ }
+
+ input[type="password"],
+ input[type="email"],
+ input[type="text"],
+ input[type="submit"],
+ textarea,
+ button {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+ }
+
+ button,
+ input[type="submit"] {
+   cursor: pointer;
+ }
+
+ /* Clearfix */
+
+ .group:after {
+   content: "";
+   display: block;
+   clear: both;
+ }
+
+ /*Styling*/
+
+ header {
+   display: flex;
+   justify-content: space-between;
+   background-color: #BFD8D2;
+   height: 49px;
+   padding: 15.5px 20px;
+   box-shadow: 0px 1px 5px #888888;
+ }
+
+ .header-link {
+   color: #DF744A;
+ }
+
+ .header-link > h1 {
+   color: #DF744A;
+   font-size: 43px;
+   font-weight: 400;
+ }
+
+ nav {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #DCB239;
+ }
+
+ .login-signup {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .login-signup li {
+   margin-left: 20px;
+   font-weight: 300;
+ }
+
+ .nav-underline:hover {
+   text-decoration: underline;
+   cursor: pointer;
+ }
+
+ .signin {
+   border: 1px solid #DCB239;
+   border-radius: 5px;
+   padding: 7.5px;
+ }
+
+ .signin:hover {
+   background: rgba(220,178,57,0.25);
+ }

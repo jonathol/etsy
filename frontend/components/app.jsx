@@ -16,7 +16,7 @@ const App = React.createClass({
     SessionActions.logOut();
   },
   _handleClick(){
-    this.context.router.push("/signup");
+    this.context.router.push("/login");
   },
   greeting() {
     if (SessionStore.isUserLoggedIn()) {
@@ -34,15 +34,17 @@ const App = React.createClass({
     	);
     } else if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
       return (
-        <ul className="login-signup">
-          <li>Sell on Foodsy</li>
-          <li><Link to="/signup" activeClassName="current">Register</Link></li>
-          <li>
-            <button type="button" onClick={this._handleClick}>
-              Sign In
-            </button>
-          </li>
-        </ul>
+        <nav>
+          <ul className="login-signup">
+            <li className="nav-underline">Sell on Foodsy</li>
+            <li><Link to="/signup" className="nav-underline" activeClassName="current">Register</Link></li>
+            <li>
+              <button className = "signin" type="button" onClick={this._handleClick}>
+                Sign In
+              </button>
+            </li>
+          </ul>
+        </nav>
       );
     }
   },

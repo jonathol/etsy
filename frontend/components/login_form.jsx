@@ -80,13 +80,8 @@ const LoginForm = React.createClass({
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-	        Welcome to BenchBnB!
-					<br/>
-					Please { this.formType() } or { navLink }
-
 	        { this.fieldErrors("base") }
-					<div className="login-form">
-		        <br />
+					<div className="login-form">		        
 						<label> Username:
 		          { this.fieldErrors("username") }
 							<input type="text"
