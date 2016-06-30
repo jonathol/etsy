@@ -2,6 +2,7 @@ const React = require('react');
 const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
+const ErrorActions = require('../actions/error_actions');
 const Modal = require('react-modal');
 
 const LoginForm = require('./login_form');
@@ -25,12 +26,14 @@ const App = React.createClass({
     return { modalIsOpen: false , isSignIn: false};
   },
 
-  openModal1: function() {
+  openModalRegister: function() {
     this.setState({modalIsOpen: true, isSignIn: false});
+    ErrorActions.clearErrors();
   },
 
-  openModal2: function() {
+  openModalSignin: function() {
     this.setState({modalIsOpen: true, isSignIn: true});
+    ErrorActions.clearErrors();
   },
 
   afterOpenModal: function() {
@@ -75,13 +78,13 @@ const App = React.createClass({
           <ul className="login-signup">
             <li className="nav-underline">Sell on Foodsy</li>
             <li>
-              <Link to="/" className="nav-underline" activeClassName="current" onClick={this.openModal1}>
+              <Link to="/" className="nav-underline" activeClassName="current" onClick={this.openModalRegister}>
                 Register
               </Link>
 
               </li>
             <li>
-              <button className = "signin" type="button" onClick={this.openModal2}>
+              <button className = "signin" type="button" onClick={this.openModalSignin}>
                 Sign In
               </button>
             </li>
@@ -114,12 +117,12 @@ const App = React.createClass({
 
   registerToSignIn () {
     this.closeModal();
-    this.openModal2();
+    this.openModalSignin();
   },
 
   signIntoRegister () {
     this.closeModal();
-    this.openModal1();
+    this.openModalRegister();
   },
 
 

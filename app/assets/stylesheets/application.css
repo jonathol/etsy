@@ -91,7 +91,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   color: #DCB239;
+   color: #DF744A;
  }
 
  .login-signup {
@@ -129,11 +129,13 @@
    height: 55px;
    justify-content: flex-start;
    align-items: flex-end;
+   width: 100%;
+   box-sizing: border-box;
  }
 
 
  .tab {
-   color: #DCB239;
+   color: #DF744A;
    background: #BFD8D2;
    padding: 10px;
    border-top: 1px solid #DCB239;

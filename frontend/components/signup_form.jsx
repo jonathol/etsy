@@ -19,6 +19,7 @@ const SignupForm = React.createClass({
   },
 
   componentDidMount() {
+		// ErrorStore.clearErrors();
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
   },
@@ -30,6 +31,7 @@ const SignupForm = React.createClass({
 
   redirectIfLoggedIn() {
     if (SessionStore.isUserLoggedIn()) {
+			this.props.closeModal();
       this.context.router.push("/");
     }
   },
@@ -43,7 +45,6 @@ const SignupForm = React.createClass({
 		};
 
     SessionActions.signUp(formData);
-    this.props.closeModal();
 
 	},
 
