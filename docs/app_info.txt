@@ -14,3 +14,5 @@ Things to do before pushing
 
   npm install --save webpack react react-dom react-modal react-router flux babel-core babel-loader babel-preset-react babel-preset-es2015
   heroku run --app j-etsy rake db:migrate
+
+  rake db:create db:migrate

@@ -111,13 +111,13 @@
  }
 
  .signin {
-   border: 1px solid #DCB239;
+   border: 1px solid #DF744A;
    border-radius: 5px;
    padding: 7.5px;
  }
 
  .signin:hover {
-   background: rgba(220,178,57,0.25);
+   background: #FEDCD2;
  }
 
  .modalTab {
@@ -125,7 +125,7 @@
    display: flex;
    padding-left: 40px;
    padding-right: 10px;
-   width: 528px;
+   width: 300px;
    height: 55px;
    justify-content: flex-start;
    align-items: flex-end;
@@ -136,13 +136,18 @@
 
  .tab {
    color: #DF744A;
-   background: #BFD8D2;
+   background: #FEDCD2;
    padding: 10px;
-   border-top: 1px solid #DCB239;
-   border-left: 1px solid #DCB239;
-   border-right: 1px solid #DCB239;
+   border-top: 1px solid #ccc;
+   border-left: 1px solid #ccc;
+   border-right: 1px solid #ccc;
    display: flex;
  }
+
+ .tab:hover {
+   text-decoration: underline;
+ }
+
  .tab-selected {
    color: #DF744A;
    background: white;
@@ -164,13 +169,13 @@
 
  .form-box {
    color: #DF744A;
-   width: 472px;
+   width: 280px;
    padding:  15px 53px;
  }
 
 
  .login-input {
-  width: 218px;
+  width: 216px;
   margin: 8px 0;
   padding: 6px;
   border: 1px solid #ccc;
@@ -181,9 +186,14 @@
    margin-bottom: 8px;
  }
 
- .error {
+ .errorRegister {
    color: red;
    margin-top: 8px;
+   margin-bottom: 8px;
+ }
+
+ .errorSignIn {
+   color: red;
    margin-bottom: 8px;
  }
 

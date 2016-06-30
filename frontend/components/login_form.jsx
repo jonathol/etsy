@@ -52,7 +52,7 @@ const LoginForm = React.createClass({
     if (!errors[field]) { return; }
 
     const messages = errors[field].map( (errorMsg, i) => {
-      return <li className="error" key={ i }>{ errorMsg }</li>;
+      return <li className="errorSignIn" key={ i }>{ errorMsg }</li>;
     });
 
     return <ul>{ messages }</ul>;
@@ -68,7 +68,6 @@ const LoginForm = React.createClass({
         { this.fieldErrors("base") }
 				<div className="login-form">
 					<label className="login-label"> Username:
-	          { this.fieldErrors("username") }
 						<br/>
 						<input type="text"
 	            value={this.state.username}
@@ -78,8 +77,7 @@ const LoginForm = React.createClass({
 
 	        <br />
 					<label className="login-label"> Password:
-	          { this.fieldErrors("password") }
-						<br />
+						<br/>
 	          <input type="password"
 	            value={this.state.password}
 	            onChange={this.update("password")}
