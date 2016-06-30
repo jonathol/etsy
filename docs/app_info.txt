@@ -2,14 +2,15 @@ Color
   Powder: #BFD8D2
   Peach: #FEDCD2
   Warm: #DF744A
-  Lemon: #DCB239
 
-NPM stuff
-  npm install --save webpack react react-dom react-modal react-router flux babel-core babel-loader babel-preset-react babel-preset-es2015
+
 
 Font Weight
   700
   400
   300
 
-heroku run --app j-etsy rake db:migrate
+Things to do before pushing
+
+  npm install --save webpack react react-dom react-modal react-router flux babel-core babel-loader babel-preset-react babel-preset-es2015
+  heroku run --app j-etsy rake db:migrate
