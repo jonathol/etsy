@@ -13,7 +13,8 @@ const SignupForm = React.createClass({
   getInitialState() {
     return {
       username: "",
-      password: ""
+      password: "",
+			hasError: false
     };
   },
 
@@ -42,15 +43,19 @@ const SignupForm = React.createClass({
 		};
 
     SessionActions.signUp(formData);
+    this.props.closeModal();
+
 	},
 
   fieldErrors(field) {
     const errors = ErrorStore.formErrors("signup");
 
-    if (!errors[field]) { return; }
+    if (!errors[field]) {
+			return;
+		}
 
     const messages = errors[field].map( (errorMsg, i) => {
-      return <li key={ i }>{ errorMsg }</li>;
+      return <li className="error" key={ i }>{ errorMsg }</li>;
     });
 
     return <ul>{ messages }</ul>;
@@ -62,11 +67,12 @@ const SignupForm = React.createClass({
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit} className="login-form-box">
+			<form onSubmit={this.handleSubmit} className="form-box">
         { this.fieldErrors("base") }
 				<div className="login-form">
-					<label> Username:
+					<label className="login-label"> Username:
 	          { this.fieldErrors("username") }
+						<br/>
 						<input type="text"
 	            value={this.state.username}
 	            onChange={this.update("username")}
@@ -74,8 +80,9 @@ const SignupForm = React.createClass({
 					</label>
 
 	        <br />
-					<label> Password:
+					<label className="login-label"> Password:
 	          { this.fieldErrors("password") }
+						<br/>
 	          <input type="password"
 	            value={this.state.password}
 	            onChange={this.update("password")}
@@ -83,9 +90,9 @@ const SignupForm = React.createClass({
 					</label>
 
 	        <br />
-					<input type="submit" value="Register" />
+					<input className="login-submit" type="submit" value="Register"/>
 				</div>
-			</form>			
+			</form>
 		);
 	}
 });

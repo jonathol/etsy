@@ -42,7 +42,7 @@ const LoginForm = React.createClass({
 			password: this.state.password
 		};
     SessionActions.logIn(formData);
-		this.context.router.push("/");
+		this.props.closeModal();
 	},
 
   fieldErrors(field) {
@@ -51,7 +51,7 @@ const LoginForm = React.createClass({
     if (!errors[field]) { return; }
 
     const messages = errors[field].map( (errorMsg, i) => {
-      return <li key={ i }>{ errorMsg }</li>;
+      return <li className="error" key={ i }>{ errorMsg }</li>;
     });
 
     return <ul>{ messages }</ul>;
@@ -63,11 +63,12 @@ const LoginForm = React.createClass({
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit} className="login-form-box">
+			<form onSubmit={this.handleSubmit} className="form-box">
         { this.fieldErrors("base") }
 				<div className="login-form">
-					<label> Username:
+					<label className="login-label"> Username:
 	          { this.fieldErrors("username") }
+						<br/>
 						<input type="text"
 	            value={this.state.username}
 	            onChange={this.update("username")}
@@ -75,8 +76,9 @@ const LoginForm = React.createClass({
 					</label>
 
 	        <br />
-					<label> Password:
+					<label className="login-label"> Password:
 	          { this.fieldErrors("password") }
+						<br />
 	          <input type="password"
 	            value={this.state.password}
 	            onChange={this.update("password")}
@@ -84,7 +86,7 @@ const LoginForm = React.createClass({
 					</label>
 
 	        <br />
-					<input type="submit" value="Sign In" />
+					<input className="login-submit" type="submit" value="Sign In"/>
 				</div>
 			</form>
 		);

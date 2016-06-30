@@ -22,11 +22,15 @@ const customStyles = {
 
 const App = React.createClass({
   getInitialState: function() {
-    return { modalIsOpen: false };
+    return { modalIsOpen: false , isSignIn: false};
   },
 
-  openModal: function() {
-    this.setState({modalIsOpen: true});
+  openModal1: function() {
+    this.setState({modalIsOpen: true, isSignIn: false});
+  },
+
+  openModal2: function() {
+    this.setState({modalIsOpen: true, isSignIn: true});
   },
 
   afterOpenModal: function() {
@@ -65,14 +69,19 @@ const App = React.createClass({
           />
     		</hgroup>
     	);
-    } else if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
+    } else {
       return (
         <nav>
           <ul className="login-signup">
             <li className="nav-underline">Sell on Foodsy</li>
-            <li><Link to="/signup" className="nav-underline" activeClassName="current">Register</Link></li>
             <li>
-              <button className = "signin" type="button" onClick={this.openModal}>
+              <Link to="/" className="nav-underline" activeClassName="current" onClick={this.openModal1}>
+                Register
+              </Link>
+
+              </li>
+            <li>
+              <button className = "signin" type="button" onClick={this.openModal2}>
                 Sign In
               </button>
             </li>
@@ -81,6 +90,38 @@ const App = React.createClass({
       );
     }
   },
+
+  formType () {
+    if (this.state.isSignIn) {
+      return <LoginForm closeModal={this.closeModal}/>;
+    }
+    return <SignupForm closeModal={this.closeModal}/>;
+  },
+
+  classTypeRegister () {
+    if (this.state.isSignIn) {
+      return "tab";
+    }
+    return "tab tab-selected first-tab";
+  },
+
+  classTypeSignin () {
+    if (this.state.isSignIn) {
+      return "tab tab-selected second-tab";
+    }
+    return "tab ";
+  },
+
+  registerToSignIn () {
+    this.closeModal();
+    this.openModal2();
+  },
+
+  signIntoRegister () {
+    this.closeModal();
+    this.openModal1();
+  },
+
 
   render() {
     return (
@@ -96,12 +137,19 @@ const App = React.createClass({
             style={customStyles} >
 
             <ul ref="subtitle" className="modalTab">
-              <li><button className="tab-selected" type="button">Register</button></li>
-              <li><button className="tab" type="button">Sign In</button></li>
+              <li className="modalTabList">
+                <button className={this.classTypeRegister()} type="button" onClick={this.signIntoRegister}>
+                  Register
+                </button>
+              </li>
+              <li className="modalTabList">
+                <button className={this.classTypeSignin()} type="button" onClick={this.registerToSignIn}>
+                  Sign In
+                </button>
+              </li>
             </ul>
             <div className="modalForm">
-              <LoginForm />
-              <SignupForm />
+              {this.formType()}
             </div>
           </Modal>
         </header>

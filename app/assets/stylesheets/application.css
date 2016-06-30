@@ -47,7 +47,6 @@
  input[type="password"],
  input[type="email"],
  input[type="text"],
- input[type="submit"],
  textarea,
  button {
    -webkit-appearance: none;
@@ -132,6 +131,7 @@
    align-items: flex-end;
  }
 
+
  .tab {
    color: #DCB239;
    background: #BFD8D2;
@@ -144,11 +144,13 @@
  .tab-selected {
    color: #DF744A;
    background: white;
-   padding: 10px;
-   border-top: 1px solid #DCB239;
-   border-left: 1px solid #DCB239;
-   border-right: 1px solid #DCB239;
-   display: flex;
+ }
+ .first-tab {
+   border-right: 0;
+ }
+
+ .second-tab {
+   border-left: 0;
  }
 
  .modalForm {
@@ -158,6 +160,40 @@
    border-radius: 5px solid #ccc;
  }
 
- .login-form-box {
+ .form-box {
    color: #DF744A;
+   width: 472px;
+   padding:  15px 53px;
+ }
+
+
+ .login-input {
+  width: 218px;
+  margin: 8px 0;
+  padding: 6px;
+  border: 1px solid #ccc;
+ }
+
+ .login-label {
+   margin-top: 8px;
+   margin-bottom: 8px;
+ }
+
+ .error {
+   color: red;
+   margin-top: 8px;
+   margin-bottom: 8px;
+ }
+
+ .login-submit {
+   padding: 10px 15px;
+   border-radius: 5px;
+   width: 200px;
+   color: #DF744A;
+   background: rgba(254,220,210,1);
+   text-align: center;
+ }
+
+ .login-submit:hover {
+   background: rgba(254,220,210,0.7);
  }
