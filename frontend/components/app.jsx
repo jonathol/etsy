@@ -62,8 +62,7 @@ const App = React.createClass({
   },
 
   _logInGuest() {
-    
-    SessionActions.logIn();
+    SessionActions.logInGuest();
   },
 
 
@@ -91,15 +90,14 @@ const App = React.createClass({
               <div className="dropdown">
                 <img className="nav-image4" src={SessionStore.currentUser().img_url} />
                 <ul className="dropdown-content">
-                  <li>
-                    <button type="button" onClick={ this._handleClick }>
+                  <li onClick={ this._handleClick }>
+                    <button type="button">
                       Profile
                     </button>
                   </li>
-                  <li>
+                  <li onClick={ this._handleLogOut }>
                     <input
                       type="submit" value="Logout"
-                      onClick={ this._handleLogOut }
                     />
                   </li>
                 </ul>

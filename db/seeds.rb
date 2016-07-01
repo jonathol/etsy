@@ -1,3 +1,5 @@
+User.delete_all
+
 User.create!(
   username: "Guest",
   password: "123456",
