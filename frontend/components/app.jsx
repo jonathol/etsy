@@ -60,7 +60,14 @@ const App = React.createClass({
   _handleClick() {
     this.context.router.push("/people");
   },
-  greeting() {
+
+  _logInGuest() {
+    
+    SessionActions.logIn();
+  },
+
+
+  nav() {
     if (SessionStore.isUserLoggedIn()) {
     	return (
     		<nav>
@@ -82,7 +89,7 @@ const App = React.createClass({
             </li>
             <li>
               <div className="dropdown">
-                <img className="nav-image4" src={SessionStore.currentUser().img_url} />                
+                <img className="nav-image4" src={SessionStore.currentUser().img_url} />
                 <ul className="dropdown-content">
                   <li>
                     <button type="button" onClick={ this._handleClick }>
@@ -107,9 +114,14 @@ const App = React.createClass({
           <ul className="login-signup">
             <li className="nav-underline">Sell on Foodsy</li>
             <li>
-              <Link to="/" className="nav-underline" activeClassName="current" onClick={this.openModalRegister}>
+              <button type="button" onClick={this.openModalRegister}>
                 Register
-              </Link>
+              </button>
+            </li>
+            <li>
+              <button type="button" onClick={this._logInGuest}>
+                Guest
+              </button>
             </li>
             <li>
               <button className = "signin" type="button" onClick={this.openModalSignin}>
@@ -159,7 +171,7 @@ const App = React.createClass({
       <div>
         <header>
           <Link to="/" className="header-link"><h1>Foodsy</h1></Link>
-          { this.greeting() }
+          { this.nav() }
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}

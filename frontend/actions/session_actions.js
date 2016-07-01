@@ -29,6 +29,14 @@ const SessionActions = {
     );
   },
 
+  logInGuest(){
+    SessionApiUtil.logIn(
+      {username: "Guest", password:"123456"},
+      SessionActions.receiveCurrentUser,
+      ErrorActions.setErrors
+    );
+  },
+
   logOut() {
     SessionApiUtil.logOut(SessionActions.removeCurrentUser);
   },
