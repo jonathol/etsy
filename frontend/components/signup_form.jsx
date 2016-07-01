@@ -14,12 +14,12 @@ const SignupForm = React.createClass({
     return {
       username: "",
       password: "",
-			hasError: false
+			firstname: "",
+			lastname: ""
     };
   },
 
   componentDidMount() {
-		// ErrorStore.clearErrors();
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
   },
@@ -41,7 +41,9 @@ const SignupForm = React.createClass({
 
 		const formData = {
 			username: this.state.username,
-			password: this.state.password
+			password: this.state.password,
+			firstname: this.state.firstname,
+			lastname: this.state.lastname
 		};
 
     SessionActions.signUp(formData);
@@ -71,6 +73,25 @@ const SignupForm = React.createClass({
 			<form onSubmit={this.handleSubmit} className="form-box">
 
 				<div className="login-form">
+					<h3>First and last names are public, but optional.</h3>
+					<label className="login-label"> First Name:
+						<br/>
+						<input type="text"
+	            value={this.state.firstname}
+	            onChange={this.update("firstname")}
+							className="login-input" />
+					</label>
+
+					<br />
+					<label className="login-label"> Last Name:
+						<br/>
+						<input type="text"
+	            value={this.state.lastname}
+	            onChange={this.update("lastname")}
+							className="login-input" />
+					</label>
+
+					<br/>
 					<label className="login-label"> Username:
 						<br/>
 	          { this.fieldErrors("username") }

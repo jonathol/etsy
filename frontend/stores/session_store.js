@@ -17,6 +17,11 @@ const _logout = function() {
   _currentUserHasBeenFetched = true;
 };
 
+const _edit = function(currentUser) {
+  _currentUser = currentUser;
+  _currentUserHasBeenFetched = true;
+};
+
 SessionStore.__onDispatch = payload => {
   switch(payload.actionType) {
     case SessionConstants.LOGIN:
@@ -25,6 +30,10 @@ SessionStore.__onDispatch = payload => {
       break;
     case SessionConstants.LOGOUT:
     	_logout();
+      SessionStore.__emitChange();
+      break;
+    case SessionConstants.EDIT:
+    	_edit();
       SessionStore.__emitChange();
       break;
   }

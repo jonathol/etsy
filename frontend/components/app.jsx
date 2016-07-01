@@ -8,6 +8,8 @@ const Modal = require('react-modal');
 const LoginForm = require('./login_form');
 const SignupForm = require('./signup_form');
 
+window.SessionStore = SessionStore;
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -55,22 +57,49 @@ const App = React.createClass({
   _handleLogOut(){
     SessionActions.logOut();
   },
-  _handleClick(){
-    this.context.router.push("/login");
+  _handleClick() {
+    this.context.router.push("/people");
   },
   greeting() {
     if (SessionStore.isUserLoggedIn()) {
     	return (
-    		<hgroup className="header-group">
-    			<h2 className="header-name">
-            Hi, {SessionStore.currentUser().username}!
-          </h2>
-    			<input
-            className="header-button"
-            type="submit" value="logout"
-            onClick={ this._handleLogOut }
-          />
-    		</hgroup>
+    		<nav>
+    			<ul className="login-signup">
+            <li>
+              <Link to="/" activeClassName="current" >
+                <img className="nav-image1" src="http://res.cloudinary.com/jonathol/image/upload/v1467312108/Home01-128_pklsw6.png"/>
+              </Link>
+            </li>
+            <li>
+              <Link to="/" activeClassName="current" >
+                <img className="nav-image2" src="http://res.cloudinary.com/jonathol/image/upload/v1467316881/icon-ios7-heart-128_hbcd4b.png"/>
+              </Link>
+            </li>
+            <li>
+              <Link to="/" activeClassName="current" >
+                <img className="nav-image3" src="http://res.cloudinary.com/jonathol/image/upload/v1467317268/shop-5_n2tsoz.png"/>
+              </Link>
+            </li>
+            <li>
+              <div className="dropdown">
+                <img className="nav-image4" src={SessionStore.currentUser().img_url} />                
+                <ul className="dropdown-content">
+                  <li>
+                    <button type="button" onClick={ this._handleClick }>
+                      Profile
+                    </button>
+                  </li>
+                  <li>
+                    <input
+                      type="submit" value="Logout"
+                      onClick={ this._handleLogOut }
+                    />
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </nav>
     	);
     } else {
       return (
@@ -81,8 +110,7 @@ const App = React.createClass({
               <Link to="/" className="nav-underline" activeClassName="current" onClick={this.openModalRegister}>
                 Register
               </Link>
-
-              </li>
+            </li>
             <li>
               <button className = "signin" type="button" onClick={this.openModalSignin}>
                 Sign In
@@ -132,7 +160,6 @@ const App = React.createClass({
         <header>
           <Link to="/" className="header-link"><h1>Foodsy</h1></Link>
           { this.greeting() }
-          {this.props.children}
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
@@ -156,6 +183,7 @@ const App = React.createClass({
             </div>
           </Modal>
         </header>
+        {this.props.children}
       </div>
     );
   }

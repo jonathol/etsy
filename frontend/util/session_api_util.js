@@ -38,6 +38,16 @@ const SessionApiUtil = {
 		});
 	},
 
+	editUser(user, success) {
+		$.ajax({
+			url: '/api/user',
+			type: 'PATCH',
+			dataType: 'json',
+			data: { user },
+			success
+		});
+	},
+
 	fetchCurrentUser(success, complete) {
 		$.ajax({
 			url: '/api/session',

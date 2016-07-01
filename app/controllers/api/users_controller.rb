@@ -10,9 +10,19 @@ class Api::UsersController < ApplicationController
 		end
 	end
 
+  def update
+    @user = current_user
+
+    if @track.update(user_params)
+      render "api/users/show"
+    else
+      render json: @user.errors, status: 422
+    end
+  end
+
 	private
 
 	def user_params
-		params.require(:user).permit(:username, :password)
+		params.require(:user).permit(:username, :password, :firstname, :lastname, :img_url)
 	end
 end

@@ -14,6 +14,13 @@ const SessionActions = {
     );
   },
 
+  editUser(formData){
+    SessionApiUtil.editUser(
+      formData,
+      SessionActions.editCurrentUser
+    );
+  },
+
   logIn(formData){
     SessionApiUtil.logIn(
       formData,
@@ -43,6 +50,13 @@ const SessionActions = {
       actionType: SessionConstants.LOGOUT
     });
     hashHistory.push("/");
+  },
+
+  editCurrentUser(currentUser) {
+    AppDispatcher.dispatch({
+      actionType: SessionConstants.EDIT,
+      currentUser: currentUser
+    });
   }
 
 };

@@ -14,12 +14,12 @@
  *= require_self
  */
 
- /*reset*/
- html, body, header, nav, h1, a,
- ul, li, strong, main, button, i,
- section, img, div, h2, p, form,
- fieldset, label, input, textarea,
- span, article, footer, time, small {
+  /*reset*/
+  html, body, header, nav, h1, a,
+  ul, li, strong, main, button, i,
+  section, img, div, h2, p, form,
+  fieldset, label, input, textarea,
+  span, article, footer, time, small {
    margin: 0;
    padding: 0;
    border: 0;
@@ -32,95 +32,126 @@
    vertical-align: inherit;
    box-sizing: inherit;
    background: transparent;
- }
+  }
 
- ul {
+  ul {
    list-style: none;
- }
+  }
 
- img {
+  img {
    display: block;
    width: 100%;
    height: auto;
- }
+  }
 
- input[type="password"],
- input[type="email"],
- input[type="text"],
- textarea,
- button {
+  input[type="password"],
+  input[type="email"],
+  input[type="text"],
+  textarea,
+  button {
    -webkit-appearance: none;
    -moz-appearance: none;
- }
+  }
 
- button,
- input[type="submit"] {
+  button,
+  input[type="submit"] {
    cursor: pointer;
- }
+  }
 
- /* Clearfix */
+  /* Clearfix */
 
- .group:after {
+  .group:after {
    content: "";
    display: block;
    clear: both;
- }
+  }
 
- /*Styling*/
+  /*Styling*/
 
- header {
+  /*Header*/
+  header {
    display: flex;
    justify-content: space-between;
+   align-items: center;
    background-color: #BFD8D2;
    height: 49px;
-   padding: 15.5px 20px;
+   padding: 15.5px 100px;
    box-shadow: 0px 1px 5px #888888;
- }
+  }
 
- .header-link {
+  .header-link {
    color: #DF744A;
- }
+  }
 
- .header-link > h1 {
+  .header-link > h1 {
    color: #DF744A;
    font-size: 41px;
    font-weight: 400;
- }
+  }
 
- nav {
+  /*Nav*/
+
+  nav {
    display: flex;
    align-items: center;
    justify-content: center;
    color: #DF744A;
- }
+  }
 
- .login-signup {
+  .login-signup {
    display: flex;
    align-items: center;
    justify-content: center;
- }
+  }
 
- .login-signup li {
+  .login-signup li {
    margin-left: 20px;
    font-weight: 300;
- }
+  }
 
- .nav-underline:hover {
+  .nav-underline:hover {
    text-decoration: underline;
    cursor: pointer;
- }
+  }
 
- .signin {
+  .signin {
    border: 1px solid #DF744A;
    border-radius: 5px;
    padding: 7.5px;
- }
+  }
 
- .signin:hover {
+  .signin:hover {
    background: #FEDCD2;
- }
+  }
 
- .modalTab {
+  h3 {
+   font-size: 16px;
+   font-weight: 700;
+  }
+
+  .nav-image1 {
+    width: 32px;
+    height: auto;
+  }
+
+  .nav-image2 {
+    width: 34px;
+    height: auto;
+  }
+
+  .nav-image3 {
+    width: 24px;
+    height: auto;
+  }
+
+  .nav-image4 {
+    width: 31px;
+    height: auto;
+  }
+
+  /*Modal*/
+
+  .modalTab {
    background: #BFD8D2;
    display: flex;
    padding-left: 40px;
@@ -131,10 +162,10 @@
    align-items: flex-end;
    width: 100%;
    box-sizing: border-box;
- }
+  }
 
 
- .tab {
+  .tab {
    color: #DF744A;
    background: #FEDCD2;
    padding: 10px;
@@ -142,70 +173,103 @@
    border-left: 1px solid #ccc;
    border-right: 1px solid #ccc;
    display: flex;
- }
+  }
 
- .tab:hover {
+  .tab:hover {
    text-decoration: underline;
- }
+  }
 
- .tab-selected {
+  .tab-selected {
    color: #DF744A;
    background: white;
- }
- .first-tab {
+  }
+  .first-tab {
    border-right: 0;
- }
+  }
 
- .second-tab {
+  .second-tab {
    border-left: 0;
- }
+  }
 
- .modalForm {
+  .modalForm {
    border-bottom: 1px solid #ccc;
    border-left: 1px solid #ccc;
    border-right: 1px solid #ccc;
    border-radius: 5px solid #ccc;
- }
+  }
 
- .form-box {
+  .form-box {
    color: #DF744A;
    width: 280px;
    padding:  15px 53px;
- }
+  }
 
 
- .login-input {
+  .login-input {
   width: 216px;
   margin: 8px 0;
   padding: 6px;
   border: 1px solid #ccc;
- }
+  }
 
- .login-label {
+  .login-label {
    margin-top: 8px;
    margin-bottom: 8px;
- }
+  }
 
- .errorRegister {
+  .errorRegister {
    color: red;
    margin-top: 8px;
    margin-bottom: 8px;
- }
+  }
 
- .errorSignIn {
+  .errorSignIn {
    color: red;
    margin-bottom: 8px;
- }
+  }
 
- .login-submit {
+  .login-submit {
    padding: 10px 15px;
    border-radius: 5px;
    width: 200px;
    color: #DF744A;
    background: rgba(254,220,210,1);
    text-align: center;
- }
+  }
 
- .login-submit:hover {
+  .login-submit:hover {
    background: rgba(254,220,210,0.7);
- }
+  }
+
+  /*Dropdown*/
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FEDCD2;
+    min-width: 50px;
+    box-shadow: 0px 1px 5px #888888;
+  }
+
+  .dropdown-content li {
+      color: #DF744A;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      margin: 0px;
+      background-color: #FEDCD2;
+  }
+
+  .dropdown-content li:hover {
+    background-color: rgba(254,220,210,0.1);
+    cursor: pointer;
+  }
+
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }

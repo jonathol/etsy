@@ -9,8 +9,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
 const App = require('./components/app');
-const LoginForm = require('./components/login_form');
-const SignupForm = require('./components/signup_form');
+const People = require('./components/people');
 
 const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
@@ -19,14 +18,15 @@ const SessionActions = require('./actions/session_actions');
 
 const appRouter = (
   <Router history={ hashHistory }>
-    <Route path="/" component={ App }>      
+    <Route path="/" component={ App }>
+      <Route path="/people" component={ People }/>
     </Route>
   </Router>
 );
 
 function _ensureLoggedIn(nextState, replace) {
     if (!SessionStore.isUserLoggedIn()) {
-      replace('/login');
+      replace('/');
     }
 }
 
