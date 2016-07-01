@@ -73,17 +73,17 @@ const App = React.createClass({
     			<ul className="login-signup">
             <li>
               <Link to="/" activeClassName="current" >
-                <img className="nav-image1" src="http://res.cloudinary.com/jonathol/image/upload/v1467312108/Home01-128_pklsw6.png"/>
+                <img className="nav-image1" src="https://res.cloudinary.com/jonathol/image/upload/v1467312108/Home01-128_pklsw6.png"/>
               </Link>
             </li>
             <li>
               <Link to="/" activeClassName="current" >
-                <img className="nav-image2" src="http://res.cloudinary.com/jonathol/image/upload/v1467316881/icon-ios7-heart-128_hbcd4b.png"/>
+                <img className="nav-image2" src="https://res.cloudinary.com/jonathol/image/upload/v1467316881/icon-ios7-heart-128_hbcd4b.png"/>
               </Link>
             </li>
             <li>
               <Link to="/" activeClassName="current" >
-                <img className="nav-image3" src="http://res.cloudinary.com/jonathol/image/upload/v1467317268/shop-5_n2tsoz.png"/>
+                <img className="nav-image3" src="https://res.cloudinary.com/jonathol/image/upload/v1467317268/shop-5_n2tsoz.png"/>
               </Link>
             </li>
             <li>
