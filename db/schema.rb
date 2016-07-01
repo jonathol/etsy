@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630205341) do
+ActiveRecord::Schema.define(version: 20160701022643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                                                                                                                                                                      null: false
-    t.string   "password_digest",                                                                                                                                                               null: false
-    t.string   "session_token",                                                                                                                                                                 null: false
-    t.datetime "created_at",                                                                                                                                                                    null: false
-    t.datetime "updated_at",                                                                                                                                                                    null: false
+    t.string   "username",                                                                                                                                                          null: false
+    t.string   "password_digest",                                                                                                                                                   null: false
+    t.string   "session_token",                                                                                                                                                     null: false
+    t.datetime "created_at",                                                                                                                                                        null: false
+    t.datetime "updated_at",                                                                                                                                                        null: false
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "img_url",         default: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_30/v1467319541/account_friend_human_man_member_person_profile_user_users-128_qzjgxd.png"
+    t.string   "img_url",         default: "https://res.cloudinary.com/jonathol/image/upload/v1467319541/account_friend_human_man_member_person_profile_user_users-128_qzjgxd.png"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
