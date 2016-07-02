@@ -14,11 +14,14 @@ const People = require('./components/people');
 const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
 
-
+const ListingIndex = require('./components/listing_index');
+const ListingShow = require('./components/listing_show');
 
 const appRouter = (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
+      <IndexRoute component={ ListingIndex } />
+      <Route path="/listing/:listingId" component={ ListingShow } />
       <Route path="/people" component={ People }/>
     </Route>
   </Router>

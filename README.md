@@ -9,7 +9,7 @@
 Foodsy is a web application inspired by Etsy that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [x] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Product Listings
   - [ ] Smooth, bug-free navigation
@@ -45,14 +45,14 @@ Foodsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 ### Phase 1: (2 days, W1 Th)
 
-- [ ] Host on Heroku
+- [x] Host on Heroku
 - [x] Rails User JSON Api
 - [x] Front-End Authentication
-- [ ] Guest Demo Login
-- [ ] Style Front-End Authentication
-- [ ] Look at react-modal Package
-- [ ] Basic Navbar Component
-- [ ] Style Navbar
+- [x] Guest Demo Login
+- [x] Style Front-End Authentication
+- [x] Look at react-modal Package
+- [x] Basic Navbar Component
+- [x] Style Navbar
 
 ### Phase 2: (2 days, W2 M)
 

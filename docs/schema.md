@@ -28,8 +28,10 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-details     | text      |
+nutrition   | text      | not null
+ingredients | text      | not null
 img_url     | string    | not null
+user_id     | integer   | not null, foreign key (references users), indexed
 
 
 ## users

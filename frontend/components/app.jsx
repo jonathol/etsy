@@ -57,7 +57,7 @@ const App = React.createClass({
   _handleLogOut(){
     SessionActions.logOut();
   },
-  _handleClick() {
+  _handleClick() {    
     this.context.router.push("/people");
   },
 
@@ -112,12 +112,12 @@ const App = React.createClass({
           <ul className="login-signup">
             <li className="nav-underline">Sell on Foodsy</li>
             <li>
-              <button type="button" onClick={this.openModalRegister}>
+              <button className="nav-underline" type="button" onClick={this.openModalRegister}>
                 Register
               </button>
             </li>
             <li>
-              <button type="button" onClick={this._logInGuest}>
+              <button className="nav-underline" type="button" onClick={this._logInGuest}>
                 Guest
               </button>
             </li>
@@ -167,32 +167,34 @@ const App = React.createClass({
   render() {
     return (
       <div>
-        <header>
-          <Link to="/" className="header-link"><h1>Foodsy</h1></Link>
-          { this.nav() }
-          <Modal
-            isOpen={this.state.modalIsOpen}
-            onAfterOpen={this.afterOpenModal}
-            onRequestClose={this.closeModal}
-            style={customStyles} >
+        <div className="header-container">
+          <header>
+            <Link to="/" className="header-link"><h1>Foodsy</h1></Link>
+            { this.nav() }
+            <Modal
+              isOpen={this.state.modalIsOpen}
+              onAfterOpen={this.afterOpenModal}
+              onRequestClose={this.closeModal}
+              style={customStyles} >
 
-            <ul ref="subtitle" className="modalTab">
-              <li className="modalTabList">
-                <button className={this.classTypeRegister()} type="button" onClick={this.signIntoRegister}>
-                  Register
-                </button>
-              </li>
-              <li className="modalTabList">
-                <button className={this.classTypeSignin()} type="button" onClick={this.registerToSignIn}>
-                  Sign In
-                </button>
-              </li>
-            </ul>
-            <div className="modalForm">
-              {this.formType()}
-            </div>
-          </Modal>
-        </header>
+              <ul ref="subtitle" className="modalTab">
+                <li className="modalTabList">
+                  <button className={this.classTypeRegister()} type="button" onClick={this.signIntoRegister}>
+                    Register
+                  </button>
+                </li>
+                <li className="modalTabList">
+                  <button className={this.classTypeSignin()} type="button" onClick={this.registerToSignIn}>
+                    Sign In
+                  </button>
+                </li>
+              </ul>
+              <div className="modalForm">
+                {this.formType()}
+              </div>
+            </Modal>
+          </header>
+        </div>
         {this.props.children}
       </div>
     );
