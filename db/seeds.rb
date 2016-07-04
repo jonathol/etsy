@@ -96,5 +96,4 @@ Listing.create!(
   ingredients: "bacon, scallion, jalapeno, cheddar, parmesan, milk, butter, elbow macaroni",
   description: "Cheesy meal for bbqs",
   price: 1.51
-
 )
