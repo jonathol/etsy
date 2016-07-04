@@ -1,1 +1,8 @@
-json.extract! listing, :id, :name, :nutrition, :img_url, :user_id, :ingredients, :description
+json.extract! listing,
+  :id,
+  :name,  
+  :img_url,
+  :user_id,
+  :ingredients,
+  :description,
+  :price

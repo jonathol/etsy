@@ -67,7 +67,7 @@ const LoginForm = React.createClass({
 			<form onSubmit={this.handleSubmit} className="form-box">
         { this.fieldErrors("base") }
 				<div className="login-form">
-					<label className="login-label"> Username:
+					<label className="login-label"> Username: 
 						<br/>
 						<input type="text"
 	            value={this.state.username}

@@ -15,11 +15,11 @@ class Api::ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit(
       :name,
-      :nutrition,
       :ingredients,
       :img_url,
       :user_id,
-      :description
+      :description,
+      :price
     )
   end
 

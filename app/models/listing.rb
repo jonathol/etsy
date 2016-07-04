@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  validates :name, :nutrition, :ingredients, :img_url, :user_id, presence: true
+  validates :name, :ingredients, :img_url, :user_id, presence: true
 
-  belongs_to :user  
+  belongs_to :user
 end

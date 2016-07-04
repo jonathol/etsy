@@ -365,7 +365,7 @@
 
   /*Listing Detail*/
   .listing-detail-container {
-    background-color: #FEDCD2;
+    background-color: #BFD8D2;
     margin: 0 auto;
     width: 80%;
     margin-top: 30px;
@@ -390,9 +390,11 @@
 
   .listing-detail-overview {
     width: 50%;
+    height: 50%;
     margin: 10px;
     border: 5px solid #DF744A;
     border-radius: 10px;
+    background-color: ghostwhite;
   }
 
   .listing-detail-overview-name {
@@ -400,4 +402,127 @@
     margin: 10px;
     color: #DF744A;
     font-size: 26px;
+  }
+
+  .listing-detail-overview-title {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+    color: #DF744A;
+    font-size: 22px;
+  }
+
+  .listing-detail-overview-subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+    color: #DF744A;
+    font-size: 18px;
+  }
+
+  .listing-detail-overview-info {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+    color: #DF744A;
+    font-size: 16px;
+  }
+
+
+
+  /*Lisitng Form*/
+  .listing-form {
+    margin-top: 20px;
+    width: 100%
+  }
+
+  .listing-form-label {
+    margin: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #DF744A;
+  }
+
+  .listing-form-input {
+    margin: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 5px;
+    border: 1px solid #DF744A;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px #888888;
+  }
+
+  .listing-form-input:focus {
+    background-color: rgba(254,220,210,1);
+  }
+
+
+
+  .listing-button-container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .listing-form-button {
+    font-family: 'Josefin Sans', sans-serif;
+    border: 1px solid #DF744A;
+    border-radius: 10px;
+    padding: 5px;
+    color: #DF744A;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0px 1px 5px #888888;
+    background-color: rgba(254,220,210,1);
+  }
+
+  .listing-form-button:hover {
+    background-color: rgba(254,220,210,0.7)
+  }
+
+  /*Details*/
+  .listing-detail-bottom {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #DF744A;
+    margin-top: 5px;
+  }
+
+  .details-nav{
+    display: flex;
+    margin-left: 5%;
+  }
+
+  .details-tab {
+    background-color: #FEDCD2;
+    padding: 5px;
+  }
+
+  .selected {
+    background-color: ghostwhite;
+  }
+
+  .details-tab:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .left {
+    border-top-left-radius: 5px;
+  }
+
+  .middle{
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+
+  .right {
+    border-top-right-radius: 5px;
+  }
+
+  .details-body {
+    margin: 10px;
+    margin-top: 0;
+    background: ghostwhite;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
   }
