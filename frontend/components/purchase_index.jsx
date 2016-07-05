@@ -1,8 +1,7 @@
 const React = require('react');
 
 const PurchaseIndex = React.createClass({
-  hasPurchases () {
-    debugger
+  hasPurchases () {  
     if (this.props.purchases) {
       this.props.purchases.map(purchase => {
         return(

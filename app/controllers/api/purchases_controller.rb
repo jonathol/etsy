@@ -46,4 +46,5 @@ class Api::PurchasesController < ApplicationController
 
   def purchase_params
     params.require(:purchase).permit(:listing_id, :cart_id, :quantity)
+  end
 end
