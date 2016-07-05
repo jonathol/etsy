@@ -6,18 +6,12 @@ const hashHistory = require('react-router').hashHistory;
 
 const SessionActions = {
 
-  signUp(formData){
+  signUp(formData, createCart){
     SessionApiUtil.signUp(
       formData,
       SessionActions.receiveCurrentUser,
-      ErrorActions.setErrors
-    );
-  },
-
-  editUser(formData){
-    SessionApiUtil.editUser(
-      formData,
-      SessionActions.editCurrentUser
+      ErrorActions.setErrors,
+      createCart
     );
   },
 
@@ -59,13 +53,6 @@ const SessionActions = {
     });
     hashHistory.push("/");
   },
-
-  editCurrentUser(currentUser) {
-    AppDispatcher.dispatch({
-      actionType: SessionConstants.EDIT,
-      currentUser: currentUser
-    });
-  }
 
 };
 

@@ -11,7 +11,7 @@ Foodsy is a web application inspired by Etsy that will be build using Ruby on Ra
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Product Listings
+- [x] Product Listings
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
@@ -56,14 +56,14 @@ Foodsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 ### Phase 2: (2 days, W2 M)
 
-- [ ] Listing CRUD JSON API
-- [ ] Watch Cloudinary Lightning Talk
-- [ ] Listing Index Component
-- [ ] Listing Index Item Component
-- [ ] Style Listing Index and Index Items
-- [ ] Some Listing Seed Data
-- [ ] Listing Component
-- [ ] Style Listing Component with Details
+- [x] Listing CRUD JSON API
+- [x] Watch Cloudinary Lightning Talk
+- [x] Listing Index Component
+- [x] Listing Index Item Component
+- [x] Style Listing Index and Index Items
+- [x] Some Listing Seed Data
+- [x] Listing Component
+- [x] Style Listing Component with Details
 
 ### Phase 3: (1 day, W2 T)
 

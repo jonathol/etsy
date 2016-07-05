@@ -10,12 +10,14 @@
 #  updated_at      :datetime         not null
 #  firstname       :string
 #  lastname        :string
+#  img_url         :string           default("https://res.cloudinary.com/jonathol/image/upload/v1467319541/account_friend_human_man_member_person_profile_user_users-128_qzjgxd.png")
 #
 
 class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :listings
+  has_one :cart
 
 	validates :username, :password_digest, :session_token, presence: true
 	validates :username, uniqueness: true

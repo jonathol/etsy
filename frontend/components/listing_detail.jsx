@@ -22,9 +22,9 @@ const ListingDetail = React.createClass ({
     if (this.state.currentTab === 'detail') {
       return this.props.listing.description;
     } else if (this.state.currentTab === 'review') {
-      return <div>Reviews</div>;
+      return "Reviews";
     } else {
-      return <div>Shipping and Policies</div>;
+      return "Shipping and Policies";
     }
   },
   handleLeft(){
@@ -65,11 +65,8 @@ const ListingDetail = React.createClass ({
             </h4>
             <div>
               <h4 className="listing-detail-overview-title">
-                Overview
-              </h4>
-              <h5 className="listing-detail-overview-subtitle">
                 Ingredients
-              </h5>
+              </h4>
               <p className="listing-detail-overview-info">
                 {this.props.listing.ingredients}
               </p>

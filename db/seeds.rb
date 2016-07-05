@@ -1,5 +1,7 @@
 User.delete_all
 Listing.delete_all
+Cart.delete_all
+Purchase.delete_all
 
 User.create!(
   firstname: "",
@@ -25,10 +27,39 @@ User.create!(
   img_url: "https://res.cloudinary.com/jonathol/image/upload/v1467319541/account_friend_human_man_member_person_profile_user_users-128_qzjgxd.png"
 )
 
+Cart.create!(
+  user_id: 1
+)
+
+Cart.create!(
+  user_id: 2
+)
+
+Cart.create!(
+  user_id: 3
+)
+
+Purchase.create!(
+  quantity: 5,
+  listing_id: 1,
+  cart_id: 1
+)
+
+Purchase.create!(
+  quantity: 4,
+  listing_id: 2,
+  cart_id: 1
+)
+
+Purchase.create!(
+  quantity: 3,
+  listing_id: 3,
+  cart_id: 2
+)
 
 Listing.create!(
   name: "Guac n Cheese",
-  img_url: "https://res.cloudinary.com/jonathol/image/upload/v1467397038/RpO2L3s_vq5mwr.jpg",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467397038/RpO2L3s_vq5mwr.jpg",
   user_id: 2,
   ingredients: "elbow macaroni, garlic, avocado, lime juice, fresh cilantro, Salt, pepper, butter, flour, milk,Pepper Jack cheese",
   description: "One of my favorite go-to comfort foods.",
@@ -37,7 +68,7 @@ Listing.create!(
 
 Listing.create!(
   name: "Fried Salmon and Mango Salad",
-  img_url: "https://res.cloudinary.com/jonathol/image/upload/v1467397461/wQk6tcw_umpcba.jpg",
+  img_url: "https://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467397461/wQk6tcw_umpcba.jpg",
   user_id: 2,
   ingredients: "salmon, carrots, jicama, cucumber, under ripe mango, bell peppers, red onion, thai basil, fish sauce, sesame oil, vegetable oil, salt, white pepper, chili oil, garlic, ginger, sugar",
   description: "My mama's fried salmon and mango salad!",
@@ -46,7 +77,7 @@ Listing.create!(
 
 Listing.create!(
   name: "Congee and Sides",
-  img_url: "https://res.cloudinary.com/jonathol/image/upload/v1467405720/Syu3mGO_lvvfuy.jpg",
+  img_url: "https://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467405720/Syu3mGO_lvvfuy.jpg",
   user_id: 2,
   ingredients: "rice, water, eggs, fermented tofu, swordfish floss,fried onions, salted mustard greens, kimchi, chilli bamboo, sesame seeds, bonito flakes, seaweed powder, salt",
   description: "Made congee in the rice cooker, with a variety of sides. Scrambled eggs, fermented tofu, swordfish floss, fried onions, salted mustard greens, kimchi,chilli bamboo, and home-made furikake on the rice (sesame seeds, bonito flakes, seaweed powder, salt).",
@@ -55,7 +86,7 @@ Listing.create!(
 
 Listing.create!(
   name: "Bulgogi & Kalbi Pad Kee Mao",
-  img_url: "https://res.cloudinary.com/jonathol/image/upload/v1467405770/E0Bw2Cn_nw9ya7.jpg",
+  img_url: "https://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467405770/E0Bw2Cn_nw9ya7.jpg",
   user_id: 2,
   ingredients: "Chinese broccoli, fresh made flat noodles, marinated bulgogi and kalbi, birds eye chilies, Thai basil, garlic, onion, egg, oyster sauce, golden mountain sauce, light soy, and palm sugar, pepper.",
   description: "Korean-Thai inspired bulgogi & kalbi pad kee mao",
@@ -64,7 +95,7 @@ Listing.create!(
 
 Listing.create!(
   name: "Chicken Korma",
-  img_url: "https://res.cloudinary.com/jonathol/image/upload/v1467405880/5e30792c05ce4b42956dcca7027cd805_npyphp.jpg",
+  img_url: "https://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467405880/5e30792c05ce4b42956dcca7027cd805_npyphp.jpg",
   user_id: 2,
   ingredients: "brown onions, ginger, garlic in ghee, bloom spices, chicken, water, parsely, chickpeas, spinach",
   description: "Chicken korma/chickpeas/spinach",
@@ -91,7 +122,7 @@ Listing.create!(
 
 Listing.create!(
   name: "Bacon, scallion, jalapeno Mac and Cheese",
-  img_url: "https://res.cloudinary.com/jonathol/image/upload/v1467673282/4bpgNAT_kf5whj.jpg",
+  img_url: "https://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467673282/4bpgNAT_kf5whj.jpg",
   user_id: 2,
   ingredients: "bacon, scallion, jalapeno, cheddar, parmesan, milk, butter, elbow macaroni",
   description: "Cheesy meal for bbqs",

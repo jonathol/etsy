@@ -3,6 +3,8 @@ const Link = require('react-router').Link;
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const CartActions = require('../actions/cart_actions');
+const CartStore = require('../stores/cart_store');
 
 const SignupForm = React.createClass({
 
@@ -22,11 +24,13 @@ const SignupForm = React.createClass({
   componentDidMount() {
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
+		this.cartListener = CartStore.addListener(this.redirectIfLoggedIn);
   },
 
   componentWillUnmount() {
     this.errorListener.remove();
     this.sessionListener.remove();
+		this.cartListener.remove();
   },
 
   redirectIfLoggedIn() {
@@ -44,9 +48,10 @@ const SignupForm = React.createClass({
 			password: this.state.password,
 			firstname: this.state.firstname,
 			lastname: this.state.lastname
-		};
+		};		
 
-    SessionActions.signUp(formData);
+    SessionActions.signUp(formData, CartActions.createCart);
+
 
 	},
 

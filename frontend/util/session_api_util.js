@@ -24,27 +24,20 @@ const SessionApiUtil = {
 		});
 	},
 
-	signUp(user, success, error) {
+	signUp(user, callback, error, createCart) {
 		$.ajax({
 			url: '/api/user',
 			type: 'POST',
 			dataType: 'json',
 			data: { user },
-			success,
+			success: function(data){
+				callback(data);
+				createCart(data.id);
+			},
 			error(xhr) {
 				const errors = xhr.responseJSON;
 				error("signup", errors);
 			}
-		});
-	},
-
-	editUser(user, success) {
-		$.ajax({
-			url: '/api/user',
-			type: 'PATCH',
-			dataType: 'json',
-			data: { user },
-			success
 		});
 	},
 

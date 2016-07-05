@@ -17,12 +17,15 @@ const SessionActions = require('./actions/session_actions');
 const ListingIndex = require('./components/listing_index');
 const ListingShow = require('./components/listing_show');
 
+const CartIndex = require('./components/cart_index');
+
 const appRouter = (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
       <IndexRoute component={ ListingIndex } />
       <Route path="/listing/:listingId" component={ ListingShow } />
       <Route path="/people" component={ People }/>
+      <Route path="/cart" component={ CartIndex } />
     </Route>
   </Router>
 );

@@ -57,7 +57,7 @@ const App = React.createClass({
   _handleLogOut(){
     SessionActions.logOut();
   },
-  _handleClick() {    
+  _handleClick() {
     this.context.router.push("/people");
   },
 
@@ -84,6 +84,11 @@ const App = React.createClass({
             <li>
               <Link to="/" activeClassName="current" >
                 <img className="nav-image3" src="https://res.cloudinary.com/jonathol/image/upload/v1467317268/shop-5_n2tsoz.png"/>
+              </Link>
+            </li>
+            <li>
+              <Link to="/cart" activeClassName="current" >
+                <img src="https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32/v1467751801/28468-200_aqate1.png"/>
               </Link>
             </li>
             <li>
