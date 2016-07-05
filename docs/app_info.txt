@@ -20,3 +20,5 @@ Things to do
   heroku buildpacks:add --index 1 heroku/nodejs --app j-etsy
 
   rake db:create db:migrate
+
+  asdf
