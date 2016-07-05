@@ -19,7 +19,7 @@ const CartIndex = React.createClass({
   },
   render(){
     return (
-      <PurchaseIndex purchases={this.state.cart.purchases} />
+      <PurchaseIndex purchases={this.state.cart} />
     );
   }
 });
