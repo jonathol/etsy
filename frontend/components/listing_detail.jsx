@@ -71,7 +71,7 @@ const ListingDetail = React.createClass ({
                 {this.props.listing.ingredients}
               </p>
             </div>
-            <ListingForm />
+            <ListingForm listing={this.props.listing}/>
           </div>
         </div>
         <div className="listing-detail-bottom">

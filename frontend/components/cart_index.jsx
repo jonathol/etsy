@@ -19,7 +19,10 @@ const CartIndex = React.createClass({
   },
   render(){
     return (
-      <PurchaseIndex purchases={this.state.cart} />
+      <div className="cart-container">
+        <h2 className="cart-container-title">Your Cart</h2>
+        <PurchaseIndex purchases={this.state.cart.purchases} listings={this.state.cart.listings}/>
+      </div>
     );
   }
 });

@@ -4,7 +4,7 @@ class Api::PurchasesController < ApplicationController
 
     if(@purchase.save)
       @cart = @purchase.cart
-      render "api/cart/show"
+      render "api/carts/show"
     else
       @errors = purchase.errors.full_messages
       render "api/shared/error", status: 422
@@ -19,7 +19,7 @@ class Api::PurchasesController < ApplicationController
 
     if(@purchase.update(purchase_params))
       @cart = @purchase.cart
-      render "api/cart/show", status: 200
+      render "api/carts/show", status: 200
     else
       @errors = purchase.errors.full_messages
 			render "api/shared/error", status: 422
@@ -27,7 +27,7 @@ class Api::PurchasesController < ApplicationController
 
   end
 
-  def delete
+  def destroy
     @purchase = Purchase.find_by(
       cart_id: current_user.id,
       listing_id: purchase_params[:listing_id]

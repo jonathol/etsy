@@ -446,6 +446,7 @@
     border: 1px solid #DF744A;
     border-radius: 5px;
     box-shadow: 0px 1px 5px #888888;
+    width: 40px;
   }
 
   .listing-form-input:focus {
@@ -525,4 +526,115 @@
     padding: 10px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
+  }
+
+  /*Cart*/
+  .cart-container {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  .cart-container-title {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #DF744A;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+
+  }
+
+  .cart-item-container {
+    background-color: #BFD8D2;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px #888888;
+    padding-bottom: 10px;
+  }
+
+
+  /*Creator*/
+  .creator-container {
+    display: flex;
+    align-items: center;
+  }
+  .creator-img {
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  .creator-title {
+    padding: 10px;
+    padding-left: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #DF744A;
+    font-size: 18px;
+    margin: 0px;
+  }
+
+  /*Cart Listing*/
+  .cart-listing-container {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: ghostwhite;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .cart-listing-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cart-listing-detail-container {
+    padding-left: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #DF744A;
+
+  }
+
+  .cart-listing-left {
+    display: flex;
+    width: 70%;
+    align-items: center;
+  }
+
+  .cart-listing-left p {
+    margin: 10px 0;
+  }
+
+  .cart-listing-detail-button {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #DF744A;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 20px;
+    border: 1px solid #DF744A;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px #888888;
+    background-color: rgba(254,220,210,1);
+    text-align: center;
+
+  }
+
+  .cart-listing-detail-button:hover {
+    background-color: rgba(254,220,210,0.7);
+  }
+
+  .cart-pay-title {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #DF744A;
+    padding-left: 10px
+  }
+
+  .cart-pay-container {
+    border-left: 1px solid #ccc;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
   }

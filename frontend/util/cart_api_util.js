@@ -15,7 +15,7 @@ const CartApiUtil = {
     $.ajax({
       url: '/api/cart',
       type: 'GET',
-      success: function(cart) {
+      success: function(cart) {      
           callback(cart);
       }
     });
