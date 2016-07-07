@@ -7,8 +7,12 @@ const PurchaseActions = {
     PurchaseApiUtil.createPurchase(data, PurchaseActions.receivePurchase);
   },
 
-  deletePurchase(data) {
-    PurchaseApiUtil.deletePurchase(data, PurchaseActions.removePurchase);
+  deletePurchase(id) {
+    PurchaseApiUtil.deletePurchase(id, PurchaseActions.removePurchase);
+  },
+
+  editPurchase(id, data) {
+    PurchaseApiUtil.editPurchase(id, data, PurchaseActions.receivePurchase);
   },
 
   receivePurchase(purchase) {

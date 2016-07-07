@@ -3,8 +3,7 @@ class Api::PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
 
     if(@purchase.save)
-      @cart = @purchase.cart
-      render "api/carts/show"
+      render "api/purchases/show"
     else
       @errors = purchase.errors.full_messages
       render "api/shared/error", status: 422
@@ -13,13 +12,13 @@ class Api::PurchasesController < ApplicationController
 
   def update
     @purchase = Purchase.find_by(
-      cart_id: current_user.id,
+      cart_id: purchase_params[:cart_id],
       listing_id: purchase_params[:listing_id]
     )
 
     if(@purchase.update(purchase_params))
-      @cart = @purchase.cart
-      render "api/carts/show", status: 200
+
+      render "api/purchases/show", status: 200
     else
       @errors = purchase.errors.full_messages
 			render "api/shared/error", status: 422
@@ -28,10 +27,7 @@ class Api::PurchasesController < ApplicationController
   end
 
   def destroy
-    @purchase = Purchase.find_by(
-      cart_id: current_user.id,
-      listing_id: purchase_params[:listing_id]
-    )
+    @purchase = Purchase.find(params[:id])
 
     if(@purchase.destroy)
       render "api/purchases/show", status: 200

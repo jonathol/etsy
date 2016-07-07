@@ -12,7 +12,7 @@ Font Weight
 
 Things to do
 
-  npm install --save webpack react react-dom react-modal react-router flux babel-core babel-loader babel-preset-react babel-preset-es2015
+  npm install --save webpack react react-dom react-modal react-router react-autosuggest flux babel-core babel-loader babel-preset-react babel-preset-es2015
 
   heroku run --app j-etsy rake db:migrate
   heroku run --app j-etsy rake db:seed

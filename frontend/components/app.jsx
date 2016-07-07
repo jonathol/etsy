@@ -8,7 +8,9 @@ const Modal = require('react-modal');
 const LoginForm = require('./login_form');
 const SignupForm = require('./signup_form');
 
-window.SessionStore = SessionStore;
+const Search = require('./search');
+
+
 
 const customStyles = {
   content : {
@@ -51,7 +53,11 @@ const App = React.createClass({
 	},
 
   componentDidMount() {
-    SessionStore.addListener(this.forceUpdate.bind(this));
+    this.sessionListener= SessionStore.addListener(this.forceUpdate.bind(this));
+  },
+
+  componentWillUnmount() {
+    this.sessionListener.remove();
   },
 
   _handleLogOut(){
@@ -88,7 +94,7 @@ const App = React.createClass({
             </li>
             <li>
               <Link to="/cart" activeClassName="current" >
-                <img src="https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32/v1467751801/28468-200_aqate1.png"/>
+                <img className="nav-image-cart" src="https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32/v1467751801/28468-200_aqate1.png"/>
               </Link>
             </li>
             <li>
@@ -175,6 +181,7 @@ const App = React.createClass({
         <div className="header-container">
           <header>
             <Link to="/" className="header-link"><h1>Foodsy</h1></Link>
+            <Search />
             { this.nav() }
             <Modal
               isOpen={this.state.modalIsOpen}

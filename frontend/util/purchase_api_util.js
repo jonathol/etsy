@@ -1,18 +1,26 @@
 const PurchaseApiUtil = {
   createPurchase: function(data, success) {
     $.ajax({
-      url: 'api/purchase',
+      url: 'api/purchases',
       type: 'POST',
       data: { purchase: data },
       success
     });
   },
 
-  deletePurchase: function(data, success) {
+  editPurchase: function(id, data, success) {
     $.ajax({
-      url: 'api/purchase',
-      type: 'DELETE',
+      url: `api/purchases/${id}`,
+      type: 'PATCH',
       data: { purchase: data },
+      success
+    });
+  },
+
+  deletePurchase: function(id, success) {
+    $.ajax({
+      url: `api/purchases/${id}`,
+      type: 'DELETE',
       success
     });
   }

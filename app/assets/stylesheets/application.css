@@ -160,6 +160,11 @@
     height: 31px;
   }
 
+  .nav-image-cart {
+    width: 32px;
+    height: 32px;
+  }
+
   /*Modal*/
 
   .modalTab {
@@ -488,12 +493,12 @@
 
   .details-nav{
     display: flex;
-    margin-left: 5%;
+    margin-left: 10px;
   }
 
   .details-tab {
     background-color: #FEDCD2;
-    padding: 5px;
+    padding: 10px;
   }
 
   .selected {
@@ -522,7 +527,9 @@
     margin: 10px;
     margin-top: 0;
     background: ghostwhite;
-    border-radius: 10px;
+    border-bottom-left-radius:  10px;
+    border-bottom-right-radius:  10px;
+    border-top-right-radius:  10px;
     padding: 10px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
@@ -533,6 +540,9 @@
     margin: 0 auto;
     margin-top: 20px;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .cart-container-title {
@@ -545,6 +555,7 @@
   }
 
   .cart-item-container {
+    width: 500px;
     background-color: #BFD8D2;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -552,6 +563,17 @@
     padding-bottom: 10px;
   }
 
+  .cart-back{
+    color: #DF744A;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(254,220,210,1);
+    box-shadow: 0px 1px 5px #888888;
+
+    text-align: center;
+  }
 
   /*Creator*/
   .creator-container {
@@ -607,6 +629,20 @@
     margin: 10px 0;
   }
 
+  .cart-listing-label {
+    margin: 10px 0;
+  }
+
+  .cart-listing-input {
+    margin-left: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 5px;
+    border: 1px solid #DF744A;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px #888888;
+    width: 40px;
+  }
+
   .cart-listing-detail-button {
     font-family: 'Josefin Sans', sans-serif;
     color: #DF744A;
@@ -638,3 +674,74 @@
     display: flex;
     flex-direction: column;
   }
+
+  /*Search*/
+  react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input {
+  width: 240px;
+  height: 20px;
+  padding: 10px 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: ghostwhite;
+  color: #DF744A;
+  box-shadow: 0px 1px 5px #888888;
+  margin: 0 20px;
+}
+
+.react-autosuggest__input:focus {
+  outline: none;
+}
+
+.react-autosuggest__container--open .react-autosuggest__input {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  position: absolute;
+  top: 51px;
+  width: 280px;
+  margin: 0 20px;
+  padding: 0;
+  list-style-type: none;
+  border: 1px solid #ccc;
+  background-color: ghostwhite;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 2;
+  box-shadow: 0px 1px 5px #888888;
+  color: #DF744A;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--focused {
+  background-color: #FEDCD2;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+}
+
+.suggestion-name {
+  margin: 10px;
+}
+
+.suggestion-img {
+  width: 50px;
+  height: 50px;
+}

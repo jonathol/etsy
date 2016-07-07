@@ -1,7 +1,7 @@
 User.delete_all
 Listing.delete_all
 Cart.delete_all
-Purchase.delete_all
+
 
 User.create!(
   firstname: "",
@@ -37,24 +37,6 @@ Cart.create!(
 
 Cart.create!(
   user_id: 3
-)
-
-Purchase.create!(
-  quantity: 5,
-  listing_id: 1,
-  cart_id: 1
-)
-
-Purchase.create!(
-  quantity: 4,
-  listing_id: 2,
-  cart_id: 1
-)
-
-Purchase.create!(
-  quantity: 3,
-  listing_id: 3,
-  cart_id: 2
 )
 
 Listing.create!(
