@@ -11,7 +11,7 @@ class Search extends React.Component {
     this.state = {
       value: '',
       suggestions: this.getSuggestions(''),
-      listings: []      
+      listings: []
     };
 
     this.onChange = this.onChange.bind(this);
@@ -72,7 +72,7 @@ class Search extends React.Component {
   }
 
   handleClick(suggestion) {
-    hashHistory.push(`/listing/${suggestion.id}`);
+    hashHistory.push(`/listing/${suggestion.id}`);  
   }
 
   renderSuggestion(suggestion) {
@@ -91,7 +91,6 @@ class Search extends React.Component {
       value,
       onChange: this.onChange
     };
-
     return (
       <Autosuggest suggestions={suggestions}
                    onSuggestionsUpdateRequested={this.onSuggestionsUpdateRequested}

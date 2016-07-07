@@ -18,6 +18,7 @@ class Listing < ActiveRecord::Base
 
   belongs_to :user
   has_many :purchases
+  has_many :reviews
   has_many :carts,
     through: :purchases,
     source: :cart

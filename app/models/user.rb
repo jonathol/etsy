@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :listings
+  has_many :reviews
   has_one :cart
 
 	validates :username, :password_digest, :session_token, presence: true

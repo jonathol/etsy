@@ -13,6 +13,7 @@ const ListingDetail = React.createClass ({
   componentDidMount(){
     this.resetTabs();
   },
+
   resetTabs(){
     leftTab = "details-tab left selected";
     middleTab = 'details-tab middle';

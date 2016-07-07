@@ -4,10 +4,10 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-date created| date      | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 listing_id  | integer   | not null, foreign key (references listings), indexed
 comments    | text      |
+score       | integer   | not null
 
 ## carts
 column name | data type | details

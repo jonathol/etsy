@@ -1,7 +1,7 @@
 const React = require('react');
 const PurchaseStore = require('../stores/purchase_store');
 const PurchaseActions = require('../actions/purchase_actions');
-const hashHistory = require('react-router').hashHistory;
+const Link = require('react-router').Link;
 
 const PurchaseIndexItem = React.createClass ({
   getInitialState(){
@@ -21,7 +21,6 @@ const PurchaseIndexItem = React.createClass ({
   },
   handleBuy(){
     PurchaseActions.deletePurchase(this.state.purchase.id);
-    hashHistory.push("/");
   },
   updateQuantity(e){
     e.preventDefault();
@@ -76,10 +75,13 @@ const PurchaseIndexItem = React.createClass ({
                     onClick={ this.handleDelete }>
               Delete
             </button>
-            <button className="cart-listing-detail-button"
-                    onClick={ this.handleBuy }>
+            <Link to="/review"
+                  className="cart-listing-detail-button"
+                  activeClassName="current"
+                  onClick={ this.handleBuy }
+            >
               Buy
-            </button>
+            </Link>
           </div>
         </div>
       </li>);

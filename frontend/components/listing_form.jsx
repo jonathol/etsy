@@ -83,12 +83,13 @@ const ListingForm = React.createClass ({
   update(property) {
     return (e) => this.setState({[property]: e.target.value});
   },
-  handleAdd(){
+  handleAdd(e){
+    e.preventDefault;
     let data = {
       cart_id: SessionStore.currentUser().id,
       listing_id: this.props.listing.id,
       quantity: this.state.quantity
-    };    
+    };
     if (SessionStore.isUserLoggedIn() === true) {
       PurchaseActions.createPurchase(data);
       hashHistory.push("/cart");
@@ -96,9 +97,10 @@ const ListingForm = React.createClass ({
       this.openModalSignin();
     }
   },
-  _handleSubmit(){
+  _handleSubmit(e){
+    e.preventDefault;
     if (SessionStore.isUserLoggedIn() === true) {
-      hashHistory.push("/");
+      hashHistory.push("/review");
     } else {
       this.openModalSignin();
     }

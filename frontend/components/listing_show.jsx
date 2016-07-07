@@ -20,6 +20,12 @@ const ListingShow = React.createClass ({
     this.listingListener.remove();
   },
 
+  componentWillReceiveProps(newProps){
+    const listingId = newProps.params.listingId;
+    const listing = ListingStore.find(listingId) || {} ;
+    this.setState({ listing});
+  },
+
   _listingChanged() {
     const listingId = this.props.params.listingId;
     const listing = ListingStore.find(listingId);
@@ -28,7 +34,7 @@ const ListingShow = React.createClass ({
   render(){
     return(
       <div className="single-listing-show">
-        <ListingDetail listing={this.state.listing} />        
+        <ListingDetail listing={this.state.listing} />
         <Link className="back" to="/" >Back to Listings</Link>
       </div>
     );

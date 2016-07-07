@@ -19,13 +19,16 @@ const ListingShow = require('./components/listing_show');
 
 const CartIndex = require('./components/cart_index');
 
+const ReviewForm = require('./components/review_form');
+
 const appRouter = (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
       <IndexRoute component={ ListingIndex } />
-      <Route path="/listing/:listingId" component={ ListingShow } />
-      <Route path="/people" component={ People }/>
+      <Route path="/listing/:listingId" component={ ListingShow }/>
+      <Route path="/people" component={ People } />
       <Route path="/cart" component={ CartIndex } />
+      <Route path="/review" componet={ ReviewForm } />
     </Route>
   </Router>
 );
