@@ -10,23 +10,23 @@ Foodsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README
+- [x] A production README, replacing this README
 - [x] Product Listings
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Shopping Cart
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Comments / Reviews
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Search
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Shopping Cart
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Comments / Reviews
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Search
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
 
 ## Design Docs
 * [View Wireframes][views]
@@ -67,26 +67,26 @@ Foodsy is a web application inspired by Etsy that will be build using Ruby on Ra
 
 ### Phase 3: (1 day, W2 T)
 
-- [ ] Cart Component
-- [ ] Style Cart Component
-- [ ] Search Component
-- [ ] Style Search
-- [ ] Add Cart and Search to Navbar and Style
+- [x] Cart Component
+- [x] Style Cart Component
+- [x] Search Component
+- [x] Style Search
+- [x] Add Cart and Search to Navbar and Style
 
 ### Phase 4: (1 day, W2 W)
 
-- [ ] Review Component
-- [ ] Review Index Component
-- [ ] Style Reviews
-- [ ] Comment Component
-- [ ] Comments Index Component
-- [ ] Style Comments
+- [x] Review Component
+- [x] Review Index Component
+- [x] Style Reviews
+- [x] Comment Component
+- [x] Comments Index Component
+- [x] Style Comments
 
 ### Phase 5: (1 day, W2 Th)
 
-- [ ] Add Full Product Seed Data
-- [ ] Landing Page
-- [ ] Style Landing Page
+- [x] Add Full Product Seed Data
+- [x] Landing Page
+- [x] Style Landing Page
 
 
 ### Phase 6: (1 day, W2 F)
