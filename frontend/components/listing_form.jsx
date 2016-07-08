@@ -7,7 +7,6 @@ const Modal = require('react-modal');
 const LoginForm = require('./login_form');
 const SignupForm = require('./signup_form');
 
-
 const customStyles = {
   content : {
     top                   : '50%',
@@ -26,7 +25,8 @@ const ListingForm = React.createClass ({
     return {
 			quantity: 1,
       modalIsOpen: false,
-      isSignIn: false
+      isSignIn: false,
+      checkOut: false
     };
   },
 
@@ -99,8 +99,8 @@ const ListingForm = React.createClass ({
   },
   _handleSubmit(e){
     e.preventDefault;
-    if (SessionStore.isUserLoggedIn() === true) {
-      hashHistory.push("/review");
+    if (SessionStore.isUserLoggedIn() === true) {  
+      this.props.switchComponent();
     } else {
       this.openModalSignin();
     }

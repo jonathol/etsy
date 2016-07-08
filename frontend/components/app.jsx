@@ -26,6 +26,7 @@ const customStyles = {
 };
 
 const App = React.createClass({
+
   getInitialState: function() {
     return { modalIsOpen: false , isSignIn: false};
   },

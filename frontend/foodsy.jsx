@@ -27,8 +27,7 @@ const appRouter = (
       <IndexRoute component={ ListingIndex } />
       <Route path="/listing/:listingId" component={ ListingShow }/>
       <Route path="/people" component={ People } />
-      <Route path="/cart" component={ CartIndex } />
-      <Route path="/review" componet={ ReviewForm } />
+      <Route path="/cart" component={ CartIndex } />    
     </Route>
   </Router>
 );

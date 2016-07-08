@@ -19,7 +19,8 @@ const PurchaseIndexItem = React.createClass ({
   handleDelete (){
     PurchaseActions.deletePurchase(this.state.purchase.id);
   },
-  handleBuy(){
+  handleBuy(){   
+    this.props.switchComponent(this.state.purchase.listing_id);
     PurchaseActions.deletePurchase(this.state.purchase.id);
   },
   updateQuantity(e){
@@ -75,13 +76,11 @@ const PurchaseIndexItem = React.createClass ({
                     onClick={ this.handleDelete }>
               Delete
             </button>
-            <Link to="/review"
-                  className="cart-listing-detail-button"
-                  activeClassName="current"
-                  onClick={ this.handleBuy }
+            <button className="cart-listing-detail-button"
+                    onClick={ this.handleBuy }
             >
               Buy
-            </Link>
+            </button>
           </div>
         </div>
       </li>);

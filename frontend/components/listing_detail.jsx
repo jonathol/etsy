@@ -1,6 +1,7 @@
 const React = require('react');
 const ListingForm = require('./listing_form');
 const hashHistory = require('react-router').hashHistory;
+const ReviewIndex = require('./review_index');
 
 let leftTab = "details-tab left selected";
 let middleTab = 'details-tab middle';
@@ -23,7 +24,7 @@ const ListingDetail = React.createClass ({
     if (this.state.currentTab === 'detail') {
       return this.props.listing.description;
     } else if (this.state.currentTab === 'review') {
-      return "Reviews";
+      return <ReviewIndex id={this.props.listing.id }/>;
     } else {
       return "Shipping and Policies";
     }
@@ -72,7 +73,7 @@ const ListingDetail = React.createClass ({
                 {this.props.listing.ingredients}
               </p>
             </div>
-            <ListingForm listing={this.props.listing}/>
+            <ListingForm switchComponent={this.props.switchComponent} listing={this.props.listing}/>
           </div>
         </div>
         <div className="listing-detail-bottom">
@@ -87,9 +88,9 @@ const ListingDetail = React.createClass ({
               Shipping and Policies
             </li>
           </ul>
-          <p className="details-body">
+          <div className="details-body">
             {this.currentDetail()}
-          </p>
+          </div>
         </div>
       </div>
     );

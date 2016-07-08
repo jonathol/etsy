@@ -3,8 +3,8 @@ const ReviewConstants = require('../constants/review_constants');
 const ReviewApiUtil = require('../util/review_api_util');
 
 const ReviewActions = {
-  fetchAllReviews(){
-    ReviewApiUtil.fetchAllReviews(this.receiveAllReviews);
+  fetchAllReviews(){    
+    ReviewApiUtil.fetchAllReviews(ReviewActions.receiveAllReviews);
   },
   receiveAllReviews(reviews){
     AppDispatcher.dispatch({

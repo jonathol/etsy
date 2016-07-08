@@ -8,7 +8,7 @@ const PurchaseIndex = React.createClass({
       let listItems = this.props.purchases.map((purchase) => {
         PurchaseStore.resetPurchase(purchase);
         return(
-          <PurchaseIndexItem key={purchase.id} purchase={purchase}/>
+          <PurchaseIndexItem switchComponent={this.props.switchComponent} key={purchase.id} purchase={purchase}/>
         );
       });
       return listItems;

@@ -8,7 +8,7 @@ ReviewStore.all = function (){
   return Object.assign({}, _reviews);
 };
 
-function resetAllReviews(reviews){
+function resetAllReviews(reviews){  
   _reviews = reviews;
   ReviewStore.__emitChange();
 }

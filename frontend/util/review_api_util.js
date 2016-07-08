@@ -3,8 +3,8 @@ const ReviewApiUtil = {
     $.ajax({
       url: '/api/reviews',
       type: 'GET',
-      success: function(benches) {
-        callback(benches);
+      success: function(reviews) {  
+        callback(reviews);
       }
     });
   },
@@ -12,7 +12,7 @@ const ReviewApiUtil = {
     $.ajax({
       url: '/api/reviews',
       type: 'POST',
-      data: {data},
+      data: {review: data},
       success: function(review) {
         callback(review);
       }

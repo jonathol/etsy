@@ -478,6 +478,7 @@
     margin: 10px;
     box-shadow: 0px 1px 5px #888888;
     background-color: rgba(254,220,210,1);
+    font-size: 20px;
   }
 
   .listing-form-button:hover {
@@ -676,7 +677,7 @@
   }
 
   /*Search*/
-  react-autosuggest__container {
+.react-autosuggest__container {
   position: relative;
 }
 
@@ -745,4 +746,88 @@
 .suggestion-img {
   width: 50px;
   height: 50px;
+}
+
+
+/*Review Form*/
+.review-form-container{
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.review-form-label {
+  text-align: center;
+  font-size: 30px;
+  color: #DF744A;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.review-form-box{
+  display: flex;
+  background-color: #BFD8D2;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px #888888;
+}
+
+.review-form {
+  display: flex;
+}
+
+.score-box {
+  display: flex;
+}
+
+/*Stars*/
+fieldset, label {
+  margin: 0;
+  padding: 0;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  display: flex;
+  border: none;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > div:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: 'Josefin Sans', sans-serif;
+  content: "\2605";
+
+}
+
+.rating > div {
+  margin: 0px;
+  color: #ddd;
+}
+
+.full {
+  width: 30px;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ div, /* show gold star when clicked */
+.rating:not(:checked) > div:hover, /* hover current star */
+.rating:not(:checked) > div:hover ~ div {
+  color: #FFD700;
+} /* hover previous stars in list */
+
+.rating > input:checked + div:hover, /* hover current star when changing rating */
+.rating > input:checked ~ div:hover,
+.rating > div:hover ~ input:checked ~ div, /* lighten current selection */
+.rating > input:checked ~ div:hover ~ div {
+  color: #FFED85;
 }
