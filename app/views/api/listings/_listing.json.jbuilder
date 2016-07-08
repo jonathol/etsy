@@ -8,3 +8,5 @@ json.extract! listing,
   :price
 
 json.user listing.user
+
+json.averageScore listing.averageScore

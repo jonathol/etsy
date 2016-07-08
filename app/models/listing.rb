@@ -22,4 +22,13 @@ class Listing < ActiveRecord::Base
   has_many :carts,
     through: :purchases,
     source: :cart
+
+  def averageScore
+    sum = 0
+    self.reviews.each do |review|
+      sum += review.score
+    end
+
+    sum / (self.reviews.length) if self.reviews.length > 0
+  end
 end

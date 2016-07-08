@@ -15,6 +15,7 @@ const ReviewForm = React.createClass({
   },
 
 	handleSubmit(e) {
+    e.preventDefault();
 		const formData = {
       user_id: SessionStore.currentUser().id,
       listing_id: this.props.listing,
@@ -30,6 +31,16 @@ const ReviewForm = React.createClass({
     return (e) => this.setState({[property]: e.target.value});
   },
 
+  handleCart(e) {
+    e.preventDefault();
+    hashHistory.push("/cart");
+  },
+
+  handleListing(e) {
+    e.preventDefault();
+    hashHistory.push("/");
+  },
+
 	render() {
 		return (
       <div className="review-form-container">
@@ -37,86 +48,89 @@ const ReviewForm = React.createClass({
         <form onSubmit={this.handleSubmit} className="review-form-box">
           <div className="review-form">
             <div className="score-box">
-              <label className="review-label">
-                Your Rating:
-                <fieldset className="rating">
-                  <input
-                    type="radio"
-                    id="star5"
-                    name="rating"
-                    value="5"
-                    onClick={this.update("score")}
-                  />
-                  <div
-                    className = "full"
-                    htmlFor="star5"
-                    title="Awesome - 5 stars"
-                  ></div>
-                  <input
-                    type="radio"
-                    id="star4"
-                    name="rating"
-                    value="4"
-                    onClick={this.update("score")}
-                  />
-                  <div
-                    className = "full"
-                    htmlFor="star4"
-                    title="Pretty good - 4 stars"
-                  ></div>
-                  <input
-                    type="radio"
-                    id="star3"
-                    name="rating"
-                    value="3"
-                    onClick={this.update("score")}
-                  />
-                  <div
-                    className = "full"
-                    htmlFor="star3"
-                    title="Meh - 3 stars"
-                  ></div>
-                  <input
-                    type="radio"
-                    id="star2"
-                    name="rating"
-                    value="2"
-                    onClick={this.update("score")}
-                  />
-                  <div
-                    className = "full"
-                    htmlFor="star2"
-                    title="Kinda bad - 2 stars"
-                  ></div>
-                  <input
-                    type="radio"
-                    id="star1"
-                    name="rating"
-                    value="1"
-                    onClick={this.update("score")}
-                  />
-                  <div
-                    className = "full"
-                    htmlFor="star1"
-                    title="Sucks big time - 1 star"
-                  ></div>
-                </fieldset>
-              </label>
+              <h3 className="review-label"> Your Rating: </h3>
+              <fieldset className="rating">
+                <input
+                  type="radio"
+                  id="star5"
+                  name="rating"
+                  value="5"
+                  onClick={this.update("score")}
+                />
+              <label
+                  className = "full"
+                  htmlFor="star5"
+                  title="Awesome - 5 stars"
+                ></label>
+                <input
+                  type="radio"
+                  id="star4"
+                  name="rating"
+                  value="4"
+                  onClick={this.update("score")}
+                />
+              <label
+                  className = "full"
+                  htmlFor="star4"
+                  title="Pretty good - 4 stars"
+                ></label>
+                <input
+                  type="radio"
+                  id="star3"
+                  name="rating"
+                  value="3"
+                  onClick={this.update("score")}
+                />
+              <label
+                  className = "full"
+                  htmlFor="star3"
+                  title="Meh - 3 stars"
+                ></label>
+                <input
+                  type="radio"
+                  id="star2"
+                  name="rating"
+                  value="2"
+                  onClick={this.update("score")}
+                />
+              <label
+                  className = "full"
+                  htmlFor="star2"
+                  title="Not good - 2 stars"
+                ></label>
+                <input
+                  type="radio"
+                  id="star1"
+                  name="rating"
+                  value="1"
+                  onClick={this.update("score")}
+                />
+              <label
+                  className = "full"
+                  htmlFor="star1"
+                  title="Terrible - 1 star"
+                ></label>
+              </fieldset>
             </div>
             <div className="comment-box">
-              <label className="login-label"> Comments: </label>
+              <h3 className="review-label"> Comments: </h3>
               <textarea
-                cols='30'
-                rows='10'
                 value={this.state.comment}
-                onChange={this.update("body")}>
+                onChange={this.update("comment")}
+                placeholder='Leave a comment!'
+                className="comment-textarea"
+              >
               </textarea>
             </div>
-            <input
-              className="review-submit"
-              type="submit"
-              value="Submit Review"
-            />
+            <div className="review-button-container" >
+              <input
+                className="review-button"
+                type="submit"
+                value="Submit Review"
+              />
+              <button onClick={this.handleCart} className="review-button">Return to Cart</button>
+              <button onClick={this.handleListing} className="review-button">Return to Listings</button>
+            </div>
           </div>
         </form>
       </div>

@@ -24,7 +24,7 @@ const ListingDetail = React.createClass ({
     if (this.state.currentTab === 'detail') {
       return this.props.listing.description;
     } else if (this.state.currentTab === 'review') {
-      return <ReviewIndex id={this.props.listing.id }/>;
+      return <ReviewIndex listing={this.props.listing}/>;
     } else {
       return "Shipping and Policies";
     }

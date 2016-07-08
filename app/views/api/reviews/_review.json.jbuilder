@@ -4,3 +4,7 @@ json.extract! review,
   :score,
   :user_id,
   :listing_id
+
+json.user review.user,
+  :username,
+  :img_url

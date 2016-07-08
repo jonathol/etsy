@@ -72,8 +72,8 @@ class Search extends React.Component {
   }
 
   handleClick(suggestion) {
-    hashHistory.push(`/listing/${suggestion.id}`);  
-  }
+    hashHistory.push(`/listing/${suggestion.id}`);
+  }  
 
   renderSuggestion(suggestion) {
     return (

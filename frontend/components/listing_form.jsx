@@ -98,8 +98,8 @@ const ListingForm = React.createClass ({
     }
   },
   _handleSubmit(e){
-    e.preventDefault;
-    if (SessionStore.isUserLoggedIn() === true) {  
+    e.preventDefault();
+    if (SessionStore.isUserLoggedIn() === true) {
       this.props.switchComponent();
     } else {
       this.openModalSignin();
