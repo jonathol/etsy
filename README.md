@@ -78,12 +78,15 @@ The cart can't be accessed unless the user is logged in.
 The `Search` component populates its state by adding a listener to the `ListingStore` and calling `ListingStore.all()`. Typing in the search bar will bring up a list of all products that matches the input. Clicking on a product will render the appropriate `LisingShow` component.
 
 Search bar:
+
 ![image of search bar](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468019533/searchbar_frevee.png)
 
 Typing in the search bar:
+
 ![image of autocomplete](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468019495/autocomplete_behuoo.png)
 
 Clicking on a product in the suggestion list:
+
 ![image of redirect](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468019497/redirect_gaxgau.png)
 
 ### Reviews
