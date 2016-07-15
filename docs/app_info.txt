@@ -22,4 +22,6 @@ Things to do
 
   rake db:create db:migrate db:seed
 
-  asdf
+  rails s -b 0.0.0.0
+
+webpack ./frontend/foodsy.jsx ./app/assets/javascripts/bundle.js

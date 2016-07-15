@@ -24,5 +24,8 @@ module.exports = {
   devtool: 'source-maps',
   resolve: {
     extensions: ["", ".js", ".jsx" ]
+  },
+  watchOptions: {
+    poll: true
   }
 };
