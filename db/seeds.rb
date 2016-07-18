@@ -41,7 +41,7 @@ Cart.create!(
 
 Listing.create!(
   name: "Guac n Cheese",
-  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467397038/RpO2L3s_vq5mwr.jpg",
+  img_url: "https://res.cloudinary.com/jonathol/image/upload/c_scale,w_700/v1467397038/RpO2L3s_vq5mwr.jpg",
   user_id: 2,
   ingredients: "elbow macaroni, garlic, avocado, lime juice, fresh cilantro, Salt, pepper, butter, flour, milk,Pepper Jack cheese",
   description: "One of my favorite go-to comfort foods.",
