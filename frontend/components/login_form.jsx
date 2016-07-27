@@ -32,7 +32,7 @@ const LoginForm = React.createClass({
   redirectIfLoggedIn() {
     if (SessionStore.isUserLoggedIn()) {
 			this.props.closeModal();
-      this.context.router.push("/");
+      this.context.router.push("/cart");
     }
   },
 
@@ -62,12 +62,16 @@ const LoginForm = React.createClass({
     return (e) => this.setState({[property]: e.target.value});
   },
 
+	_logInGuest() {
+		SessionActions.logInGuest();
+	},
+
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit} className="form-box">
         { this.fieldErrors("base") }
 				<div className="login-form">
-					<label className="login-label"> Username: 
+					<label className="login-label"> Username:
 						<br/>
 						<input type="text"
 	            value={this.state.username}
@@ -85,6 +89,9 @@ const LoginForm = React.createClass({
 					</label>
 
 	        <br />
+					<button className="login-submit" type="button" onClick={this._logInGuest}>
+						Guest
+					</button>
 					<input className="login-submit" type="submit" value="Sign In"/>
 				</div>
 			</form>

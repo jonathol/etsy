@@ -24,7 +24,7 @@ const ListingIndex = React.createClass({
 
     return(
       <div>
-        <h2 className="listing-title">Latest Collection</h2>
+        <h2 className="listing-title">Dishes You'll Love</h2>
         <div className="listing-index-container">
           {
             reverseKeys.map( key => {

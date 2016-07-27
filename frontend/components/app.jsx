@@ -21,7 +21,8 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     padding               : 0,
-    border                : 0
+    border                : 0,
+    height                : 480
   }
 };
 
@@ -68,11 +69,6 @@ const App = React.createClass({
     this.context.router.push("/people");
   },
 
-  _logInGuest() {
-    SessionActions.logInGuest();
-  },
-
-
   nav() {
     if (SessionStore.isUserLoggedIn()) {
     	return (
@@ -80,22 +76,12 @@ const App = React.createClass({
     			<ul className="login-signup">
             <li>
               <Link to="/" activeClassName="current" >
-                <img className="nav-image1" src="https://res.cloudinary.com/jonathol/image/upload/v1467312108/Home01-128_pklsw6.png"/>
-              </Link>
-            </li>
-            <li>
-              <Link to="/" activeClassName="current" >
-                <img className="nav-image2" src="https://res.cloudinary.com/jonathol/image/upload/v1467316881/icon-ios7-heart-128_hbcd4b.png"/>
-              </Link>
-            </li>
-            <li>
-              <Link to="/" activeClassName="current" >
-                <img className="nav-image3" src="https://res.cloudinary.com/jonathol/image/upload/v1467317268/shop-5_n2tsoz.png"/>
+                <img className="nav-image1" src="https://res.cloudinary.com/jonathol/image/upload/e_colorize,co_rgb:DF744A/v1467312108/Home01-128_pklsw6.png"/>
               </Link>
             </li>
             <li>
               <Link to="/cart" activeClassName="current" >
-                <img className="nav-image-cart" src="https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32/v1467751801/28468-200_aqate1.png"/>
+                <img className="nav-image-cart" src="https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32,e_colorize,co_rgb:DF744A/v1467751801/28468-200_aqate1.png"/>
               </Link>
             </li>
             <li>
@@ -118,17 +104,6 @@ const App = React.createClass({
       return (
         <nav>
           <ul className="login-signup">
-            <li className="nav-underline">Sell on Foodsy</li>
-            <li>
-              <button className="nav-underline" type="button" onClick={this.openModalRegister}>
-                Register
-              </button>
-            </li>
-            <li>
-              <button className="nav-underline" type="button" onClick={this._logInGuest}>
-                Guest
-              </button>
-            </li>
             <li>
               <button className = "signin" type="button" onClick={this.openModalSignin}>
                 Sign In

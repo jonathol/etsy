@@ -68,6 +68,10 @@
 
   /*Styling*/
 
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
   /*Header*/
   .header-container {
     width: 100%;
@@ -96,7 +100,7 @@
    color: #DF744A;
    font-size: 41px;
    font-weight: 400;
-   font-family: 'Josefin Sans', sans-serif;
+   font-family: 'Quicksand', sans-serif;
   }
 
   /*Nav*/
@@ -168,99 +172,105 @@
   /*Modal*/
 
   .modalTab {
-   background: #BFD8D2;
-   display: flex;
-   padding-left: 40px;
-   padding-right: 10px;
-   width: 300px;
-   height: 55px;
-   justify-content: flex-start;
-   align-items: flex-end;
-   width: 100%;
-   box-sizing: border-box;
+     background: #BFD8D2;
+     display: flex;
+     padding-left: 40px;
+     padding-right: 10px;
+     width: 300px;
+     height: 55px;
+     justify-content: flex-start;
+     align-items: flex-end;
+     width: 100%;
+     box-sizing: border-box;
   }
 
 
   .tab {
-   color: #DF744A;
-   background: #FEDCD2;
-   padding: 10px;
-   border-top: 1px solid #ccc;
-   border-left: 1px solid #ccc;
-   border-right: 1px solid #ccc;
-   display: flex;
-   font-family: 'Josefin Sans', sans-serif;
+     color: #DF744A;
+     background: #FEDCD2;
+     padding: 10px;
+     border-top: 1px solid #ccc;
+     border-left: 1px solid #ccc;
+     border-right: 1px solid #ccc;
+     display: flex;
+     font-family: 'Josefin Sans', sans-serif;
   }
 
   .tab:hover {
-   text-decoration: underline;
+    text-decoration: underline;
   }
 
   .tab-selected {
-   color: #DF744A;
-   background: white;
-   font-family: 'Josefin Sans', sans-serif;
+     color: #DF744A;
+     background: white;
+     font-family: 'Josefin Sans', sans-serif;
   }
   .first-tab {
-   border-right: 0;
+    border-right: 0;
   }
 
   .second-tab {
-   border-left: 0;
+    border-left: 0;
   }
 
   .modalForm {
-   border-bottom: 1px solid #ccc;
-   border-left: 1px solid #ccc;
-   border-right: 1px solid #ccc;
-   border-radius: 10px solid #ccc;
+     border-bottom: 1px solid #ccc;
+     border-left: 1px solid #ccc;
+     border-right: 1px solid #ccc;
+     border-radius: 10px solid #ccc;
+     height: 424px;
+     display: flex;
+     align-items: center;
+     overflow: hidden;
   }
 
   .form-box {
-   color: #DF744A;
-   width: 280px;
-   padding:  15px 53px;
-   font-family: 'Josefin Sans', sans-serif;
+     color: #DF744A;
+     width: 280px;
+     padding:  15px 53px;
+     font-family: 'Josefin Sans', sans-serif;
   }
 
 
   .login-input {
-  width: 216px;
-  margin: 8px 0;
-  padding: 6px;
-  border: 1px solid #ccc;
+    width: 216px;
+    margin: 8px 0;
+    padding: 6px;
+    border: 1px solid #ccc;
   }
 
   .login-label {
-   margin-top: 8px;
-   margin-bottom: 8px;
+     margin-top: 8px;
+     margin-bottom: 8px;
   }
 
   .errorRegister {
-   color: red;
-   margin-top: 8px;
-   margin-bottom: 8px;
-   font-family: 'Josefin Sans', sans-serif;
+     color: red;
+     margin-top: 8px;
+     margin-bottom: 8px;
+     font-family: 'Josefin Sans', sans-serif;
   }
 
   .errorSignIn {
-   color: red;
-   margin-bottom: 8px;
-   font-family: 'Josefin Sans', sans-serif;
+     color: red;
+     margin-bottom: 8px;
+     font-family: 'Josefin Sans', sans-serif;
   }
 
   .login-submit {
-   padding: 10px 15px;
-   border-radius: 10px;
-   width: 200px;
-   color: #DF744A;
-   background: rgba(254,220,210,1);
-   text-align: center;
-   font-family: 'Josefin Sans', sans-serif;
+     padding: 10px 15px;
+     border-radius: 10px;
+     width: 200px;
+     color: #DF744A;
+     background: rgba(254,220,210,1);
+     text-align: center;
+     font-family: 'Josefin Sans', sans-serif;
+     margin-bottom: 10px;
+     border: 1px solid  #DF744A;
   }
 
   .login-submit:hover {
-   background: rgba(254,220,210,0.7);
+     background: rgba(254,220,210,0.7);
   }
 
   /*Dropdown*/
@@ -288,9 +298,9 @@
   }
 
   .dropdown-content li:hover {
-    background-color: rgba(254,220,210,0.7);
+    background-color: #DF744A;
     cursor: pointer;
-    text-decoration: underline;
+    color: rgba(254,220,210,1);
   }
 
   .dropdown:hover .dropdown-content {
@@ -372,7 +382,7 @@
   .listing-detail-container {
     background-color: #BFD8D2;
     margin: 0 auto;
-    width: 80%;
+    width: 800px;
     margin-top: 30px;
     border-radius: 10px;
     display: flex;
@@ -388,18 +398,21 @@
 
   .listing-detail-image {
     width: 50%;
-    height: 50%;
+    height: auto;
     margin: 10px;
     border-radius: 10px;
   }
 
   .listing-detail-overview {
     width: 50%;
-    height: 50%;
+    height: auto;
     margin: 10px;
     border: 5px solid #DF744A;
     border-radius: 10px;
     background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .listing-detail-overview-name {
@@ -508,7 +521,8 @@
 
   .details-tab:hover {
     cursor: pointer;
-    text-decoration: underline;
+    background-color: #DF744A;
+    color: #FEDCD2;
   }
 
   .left {
@@ -728,7 +742,7 @@
 }
 
 .react-autosuggest__input {
-  width: 240px;
+  width: 400px;
   height: 20px;
   padding: 10px 20px;
   font-family: 'Josefin Sans', sans-serif;
@@ -754,7 +768,7 @@
 .react-autosuggest__suggestions-container {
   position: absolute;
   top: 40px;
-  width: 280px;
+  width: 440px;
   margin: 0 20px;
 
   padding: 0;

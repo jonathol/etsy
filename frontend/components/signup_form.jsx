@@ -48,10 +48,10 @@ const SignupForm = React.createClass({
 			password: this.state.password,
 			firstname: this.state.firstname,
 			lastname: this.state.lastname
-		};		
+		};
 
     SessionActions.signUp(formData, CartActions.createCart);
-
+		
 
 	},
 

@@ -49,11 +49,22 @@ const ListingForm = React.createClass ({
     this.setState({modalIsOpen: false});
   },
 
+  closeWithPurchase: function() {
+    let data = {
+      cart_id: SessionStore.currentUser().id,
+      listing_id: this.props.listing.id,
+      quantity: this.state.quantity
+    };
+    PurchaseActions.createPurchase(data);    
+    this.setState({modalIsOpen: false});
+    hashHistory.push("/cart");
+  },
+
   formType () {
     if (this.state.isSignIn) {
-      return <LoginForm closeModal={this.closeModal}/>;
+      return <LoginForm closeModal={this.closeWithPurchase}/>;
     }
-    return <SignupForm closeModal={this.closeModal}/>;
+    return <SignupForm closeModal={this.closeWithPurchase}/>;
   },
 
   classTypeRegister () {

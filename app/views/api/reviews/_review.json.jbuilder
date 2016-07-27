@@ -5,6 +5,8 @@ json.extract! review,
   :user_id,
   :listing_id
 
-json.user review.user,
-  :username,
-  :img_url
+
+# json.extract! review.user,
+#     :id,
+#     :username,
+#     :img_url

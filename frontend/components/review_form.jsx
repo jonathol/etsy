@@ -10,7 +10,7 @@ const ReviewForm = React.createClass({
   getInitialState() {
     return {
       comment: "",
-      score: "1"
+      score: "3"
     };
   },
 
@@ -29,16 +29,6 @@ const ReviewForm = React.createClass({
 
   update(property) {
     return (e) => this.setState({[property]: e.target.value});
-  },
-
-  handleCart(e) {
-    e.preventDefault();
-    hashHistory.push("/cart");
-  },
-
-  handleListing(e) {
-    e.preventDefault();
-    hashHistory.push("/");
   },
 
 	render() {
@@ -128,8 +118,6 @@ const ReviewForm = React.createClass({
                 type="submit"
                 value="Submit Review"
               />
-              <button onClick={this.handleCart} className="review-button">Return to Cart</button>
-              <button onClick={this.handleListing} className="review-button">Return to Listings</button>
             </div>
           </div>
         </form>

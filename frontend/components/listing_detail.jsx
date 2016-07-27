@@ -9,16 +9,13 @@ let rightTab = 'details-tab right';
 
 const ListingDetail = React.createClass ({
   getInitialState(){
-    return {currentTab: 'detail'};
-  },
-  componentDidMount(){
     this.resetTabs();
+    return {currentTab: 'detail'};
   },
 
   resetTabs(){
     leftTab = "details-tab left selected";
-    middleTab = 'details-tab middle';
-    rightTab = 'details-tab right';
+    middleTab = 'details-tab right';
   },
   currentDetail(){
     if (this.state.currentTab === 'detail') {
@@ -31,25 +28,17 @@ const ListingDetail = React.createClass ({
   },
   handleLeft(){
     leftTab = "details-tab left selected";
-    middleTab = 'details-tab middle';
-    rightTab = 'details-tab right';
+    middleTab = 'details-tab right';    
     this.setState({currentTab: 'detail'});
     hashHistory.push(`/listing/${this.props.listing.id}`);
   },
   handleMiddle(){
     leftTab = "details-tab left";
-    middleTab = 'details-tab middle selected';
-    rightTab = 'details-tab right';
+    middleTab = 'details-tab right selected';
     this.setState({currentTab: 'review'});
     hashHistory.push(`/listing/${this.props.listing.id}`);
   },
-  handleRight(){
-    leftTab = "details-tab left";
-    middleTab = 'details-tab middle';
-    rightTab = 'details-tab right selected';
-    this.setState({currentTab: 'shipping'});
-    hashHistory.push(`/listing/${this.props.listing.id}`);
-  },
+
   render(){
     return(
       <div className="listing-detail-container">
@@ -83,9 +72,6 @@ const ListingDetail = React.createClass ({
             </li>
             <li className={middleTab} onClick={this.handleMiddle}>
               Reviews
-            </li>
-            <li className={rightTab} onClick={this.handleRight}>
-              Shipping and Policies
             </li>
           </ul>
           <div className="details-body">

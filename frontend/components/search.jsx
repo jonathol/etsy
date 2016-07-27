@@ -49,6 +49,7 @@ class Search extends React.Component {
   }
 
   onSuggestionsUpdateRequested({ value }) {
+  debugger;
     this.setState({
       suggestions: this.getSuggestions(value)
     });
@@ -73,11 +74,17 @@ class Search extends React.Component {
 
   handleClick(suggestion) {
     hashHistory.push(`/listing/${suggestion.id}`);
-  }  
+  }
+
+  onSuggestionSelected(event, { suggestion, suggestionValue, sectionIndex, method }) {
+    if(method === "click" || method === "enter") {
+      hashHistory.push(`/listing/${suggestion.id}`);
+    }  
+  }
 
   renderSuggestion(suggestion) {
     return (
-      <div onClick={this.handleClick.bind(this,suggestion)} className="suggestion">
+      <div  className="suggestion">
         <img className="suggestion-img" src={suggestion.img_url} />
         <div className="suggestion-name" >{suggestion.name}</div>
       </div>
@@ -96,7 +103,8 @@ class Search extends React.Component {
                    onSuggestionsUpdateRequested={this.onSuggestionsUpdateRequested}
                    getSuggestionValue={this.getSuggestionValue}
                    renderSuggestion={this.renderSuggestion.bind(this)}
-                   inputProps={inputProps} />
+                   inputProps={inputProps}
+                   onSuggestionSelected={this.onSuggestionSelected}/>
     );
   }
 }

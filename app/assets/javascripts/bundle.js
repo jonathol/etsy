@@ -67,7 +67,7 @@
 	
 	var CartIndex = __webpack_require__(344);
 	
-	var ReviewForm = __webpack_require__(343);
+	var ReviewForm = __webpack_require__(341);
 	
 	var appRouter = React.createElement(
 	  Router,
@@ -28665,7 +28665,8 @@
 	    marginRight: '-50%',
 	    transform: 'translate(-50%, -50%)',
 	    padding: 0,
-	    border: 0
+	    border: 0,
+	    height: 480
 	  }
 	};
 	
@@ -28711,9 +28712,6 @@
 	  _handleClick: function _handleClick() {
 	    this.context.router.push("/people");
 	  },
-	  _logInGuest: function _logInGuest() {
-	    SessionActions.logInGuest();
-	  },
 	  nav: function nav() {
 	    if (SessionStore.isUserLoggedIn()) {
 	      return React.createElement(
@@ -28728,25 +28726,7 @@
 	            React.createElement(
 	              Link,
 	              { to: '/', activeClassName: 'current' },
-	              React.createElement('img', { className: 'nav-image1', src: 'https://res.cloudinary.com/jonathol/image/upload/v1467312108/Home01-128_pklsw6.png' })
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { to: '/', activeClassName: 'current' },
-	              React.createElement('img', { className: 'nav-image2', src: 'https://res.cloudinary.com/jonathol/image/upload/v1467316881/icon-ios7-heart-128_hbcd4b.png' })
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { to: '/', activeClassName: 'current' },
-	              React.createElement('img', { className: 'nav-image3', src: 'https://res.cloudinary.com/jonathol/image/upload/v1467317268/shop-5_n2tsoz.png' })
+	              React.createElement('img', { className: 'nav-image1', src: 'https://res.cloudinary.com/jonathol/image/upload/e_colorize,co_rgb:DF744A/v1467312108/Home01-128_pklsw6.png' })
 	            )
 	          ),
 	          React.createElement(
@@ -28755,7 +28735,7 @@
 	            React.createElement(
 	              Link,
 	              { to: '/cart', activeClassName: 'current' },
-	              React.createElement('img', { className: 'nav-image-cart', src: 'https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32/v1467751801/28468-200_aqate1.png' })
+	              React.createElement('img', { className: 'nav-image-cart', src: 'https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32,e_colorize,co_rgb:DF744A/v1467751801/28468-200_aqate1.png' })
 	            )
 	          ),
 	          React.createElement(
@@ -28787,29 +28767,6 @@
 	        React.createElement(
 	          'ul',
 	          { className: 'login-signup' },
-	          React.createElement(
-	            'li',
-	            { className: 'nav-underline' },
-	            'Sell on Foodsy'
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              'button',
-	              { className: 'nav-underline', type: 'button', onClick: this.openModalRegister },
-	              'Register'
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              'button',
-	              { className: 'nav-underline', type: 'button', onClick: this._logInGuest },
-	              'Guest'
-	            )
-	          ),
 	          React.createElement(
 	            'li',
 	            null,
@@ -35926,7 +35883,7 @@
 		redirectIfLoggedIn: function redirectIfLoggedIn() {
 			if (SessionStore.isUserLoggedIn()) {
 				this.props.closeModal();
-				this.context.router.push("/");
+				this.context.router.push("/cart");
 			}
 		},
 		handleSubmit: function handleSubmit(e) {
@@ -35966,6 +35923,9 @@
 				return _this.setState(_defineProperty({}, property, e.target.value));
 			};
 		},
+		_logInGuest: function _logInGuest() {
+			SessionActions.logInGuest();
+		},
 		render: function render() {
 			return React.createElement(
 				'form',
@@ -35996,6 +35956,11 @@
 							className: 'login-input' })
 					),
 					React.createElement('br', null),
+					React.createElement(
+						'button',
+						{ className: 'login-submit', type: 'button', onClick: this._logInGuest },
+						'Guest'
+					),
 					React.createElement('input', { className: 'login-submit', type: 'submit', value: 'Sign In' })
 				)
 			);
@@ -36398,6 +36363,7 @@
 	    value: function onSuggestionsUpdateRequested(_ref2) {
 	      var value = _ref2.value;
 	
+	      debugger;
 	      this.setState({
 	        suggestions: this.getSuggestions(value)
 	      });
@@ -36428,11 +36394,23 @@
 	      hashHistory.push('/listing/' + suggestion.id);
 	    }
 	  }, {
+	    key: 'onSuggestionSelected',
+	    value: function onSuggestionSelected(event, _ref3) {
+	      var suggestion = _ref3.suggestion;
+	      var suggestionValue = _ref3.suggestionValue;
+	      var sectionIndex = _ref3.sectionIndex;
+	      var method = _ref3.method;
+	
+	      if (method === "click" || method === "enter") {
+	        hashHistory.push('/listing/' + suggestion.id);
+	      }
+	    }
+	  }, {
 	    key: 'renderSuggestion',
 	    value: function renderSuggestion(suggestion) {
 	      return React.createElement(
 	        'div',
-	        { onClick: this.handleClick.bind(this, suggestion), className: 'suggestion' },
+	        { className: 'suggestion' },
 	        React.createElement('img', { className: 'suggestion-img', src: suggestion.img_url }),
 	        React.createElement(
 	          'div',
@@ -36457,7 +36435,8 @@
 	        onSuggestionsUpdateRequested: this.onSuggestionsUpdateRequested,
 	        getSuggestionValue: this.getSuggestionValue,
 	        renderSuggestion: this.renderSuggestion.bind(this),
-	        inputProps: inputProps });
+	        inputProps: inputProps,
+	        onSuggestionSelected: this.onSuggestionSelected });
 	    }
 	  }]);
 	
@@ -39746,7 +39725,7 @@
 	      React.createElement(
 	        'h2',
 	        { className: 'listing-title' },
-	        'Latest Collection'
+	        'Dishes You\'ll Love'
 	      ),
 	      React.createElement(
 	        'div',
@@ -39807,7 +39786,7 @@
 	var ListingStore = __webpack_require__(324);
 	var ListingActions = __webpack_require__(326);
 	var ListingDetail = __webpack_require__(332);
-	var ReviewForm = __webpack_require__(343);
+	var ReviewForm = __webpack_require__(341);
 	
 	var ListingShow = React.createClass({
 	  displayName: 'ListingShow',
@@ -39881,15 +39860,12 @@
 	var ListingDetail = React.createClass({
 	  displayName: 'ListingDetail',
 	  getInitialState: function getInitialState() {
-	    return { currentTab: 'detail' };
-	  },
-	  componentDidMount: function componentDidMount() {
 	    this.resetTabs();
+	    return { currentTab: 'detail' };
 	  },
 	  resetTabs: function resetTabs() {
 	    leftTab = "details-tab left selected";
-	    middleTab = 'details-tab middle';
-	    rightTab = 'details-tab right';
+	    middleTab = 'details-tab right';
 	  },
 	  currentDetail: function currentDetail() {
 	    if (this.state.currentTab === 'detail') {
@@ -39902,23 +39878,14 @@
 	  },
 	  handleLeft: function handleLeft() {
 	    leftTab = "details-tab left selected";
-	    middleTab = 'details-tab middle';
-	    rightTab = 'details-tab right';
+	    middleTab = 'details-tab right';
 	    this.setState({ currentTab: 'detail' });
 	    hashHistory.push('/listing/' + this.props.listing.id);
 	  },
 	  handleMiddle: function handleMiddle() {
 	    leftTab = "details-tab left";
-	    middleTab = 'details-tab middle selected';
-	    rightTab = 'details-tab right';
+	    middleTab = 'details-tab right selected';
 	    this.setState({ currentTab: 'review' });
-	    hashHistory.push('/listing/' + this.props.listing.id);
-	  },
-	  handleRight: function handleRight() {
-	    leftTab = "details-tab left";
-	    middleTab = 'details-tab middle';
-	    rightTab = 'details-tab right selected';
-	    this.setState({ currentTab: 'shipping' });
 	    hashHistory.push('/listing/' + this.props.listing.id);
 	  },
 	  render: function render() {
@@ -39978,11 +39945,6 @@
 	            'li',
 	            { className: middleTab, onClick: this.handleMiddle },
 	            'Reviews'
-	          ),
-	          React.createElement(
-	            'li',
-	            { className: rightTab, onClick: this.handleRight },
-	            'Shipping and Policies'
 	          )
 	        ),
 	        React.createElement(
@@ -40058,11 +40020,22 @@
 	    this.setState({ modalIsOpen: false });
 	  },
 	
+	  closeWithPurchase: function closeWithPurchase() {
+	    var data = {
+	      cart_id: SessionStore.currentUser().id,
+	      listing_id: this.props.listing.id,
+	      quantity: this.state.quantity
+	    };
+	    PurchaseActions.createPurchase(data);
+	    this.setState({ modalIsOpen: false });
+	    hashHistory.push("/cart");
+	  },
+	
 	  formType: function formType() {
 	    if (this.state.isSignIn) {
-	      return React.createElement(LoginForm, { closeModal: this.closeModal });
+	      return React.createElement(LoginForm, { closeModal: this.closeWithPurchase });
 	    }
-	    return React.createElement(SignupForm, { closeModal: this.closeModal });
+	    return React.createElement(SignupForm, { closeModal: this.closeWithPurchase });
 	  },
 	  classTypeRegister: function classTypeRegister() {
 	    if (this.state.isSignIn) {
@@ -40286,46 +40259,21 @@
 	
 	var React = __webpack_require__(1);
 	var ReviewStore = __webpack_require__(338);
-	var ReviewActions = __webpack_require__(340);
-	var ReviewIndexItem = __webpack_require__(342);
+	var ReviewIndexItem = __webpack_require__(340);
 	
 	var ReviewIndex = React.createClass({
 	  displayName: 'ReviewIndex',
-	  getInitialState: function getInitialState() {
-	    ReviewActions.fetchAllReviews();
-	    return { reviews: ReviewStore.all() };
-	  },
-	  componentDidMount: function componentDidMount() {
-	    this.reviewListener = ReviewStore.addListener(this.filterReviews);
-	  },
-	  componentWillUnmount: function componentWillUnmount() {
-	    this.reviewListener.remove();
-	  },
-	  filterReviews: function filterReviews() {
+	  render: function render() {
 	    var _this = this;
 	
-	    var unfilteredReview = ReviewStore.all();
-	    var uReviewKeys = Object.keys(unfilteredReview);
-	    var reviews = {};
-	    uReviewKeys.map(function (key) {
-	      if (unfilteredReview[key].listing_id === _this.props.listing.id) {
-	        reviews[key] = unfilteredReview[key];
+	    if (this.props.listing.reviews.length > 0) {
+	      var reviewKeys = Object.keys(this.props.listing.reviews);
+	      reviewKeys.reverse();
+	
+	      var stars = [];
+	      for (var i = 0; i < this.props.listing.averageScore; i++) {
+	        stars.push(React.createElement('label', { key: i, className: 'review-star average' }));
 	      }
-	    });
-	    this.setState({ reviews: reviews });
-	  },
-	  render: function render() {
-	    var _this2 = this;
-	
-	    var reviewKeys = Object.keys(this.state.reviews);
-	    reviewKeys.reverse();
-	
-	    var stars = [];
-	    for (var i = 0; i < this.props.listing.averageScore; i++) {
-	      stars.push(React.createElement('label', { key: i, className: 'review-star average' }));
-	    }
-	
-	    if (reviewKeys.length > 0) {
 	      return React.createElement(
 	        'ul',
 	        null,
@@ -40340,7 +40288,7 @@
 	          )
 	        ),
 	        reviewKeys.map(function (key) {
-	          return React.createElement(ReviewIndexItem, { key: _this2.state.reviews[key].id, review: _this2.state.reviews[key] });
+	          return React.createElement(ReviewIndexItem, { key: _this.props.listing.reviews[key].id, review: _this.props.listing.reviews[key] });
 	        })
 	      );
 	    } else {
@@ -40417,69 +40365,6 @@
 
 	'use strict';
 	
-	var AppDispatcher = __webpack_require__(256);
-	var ReviewConstants = __webpack_require__(339);
-	var ReviewApiUtil = __webpack_require__(341);
-	
-	var ReviewActions = {
-	  fetchAllReviews: function fetchAllReviews() {
-	    ReviewApiUtil.fetchAllReviews(ReviewActions.receiveAllReviews);
-	  },
-	  receiveAllReviews: function receiveAllReviews(reviews) {
-	    AppDispatcher.dispatch({
-	      actionType: ReviewConstants.REVIEWS_RECEIVED,
-	      reviews: reviews
-	    });
-	  },
-	  createReview: function createReview(data) {
-	    ReviewApiUtil.createReview(data, ReviewActions.receiveReview);
-	  },
-	  receiveReview: function receiveReview(review) {
-	    AppDispatcher.dispatch({
-	      actionType: ReviewConstants.REVIEW_RECEIVED,
-	      review: review
-	    });
-	  }
-	};
-	
-	module.exports = ReviewActions;
-
-/***/ },
-/* 341 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	var ReviewApiUtil = {
-	  fetchAllReviews: function fetchAllReviews(callback) {
-	    $.ajax({
-	      url: '/api/reviews',
-	      type: 'GET',
-	      success: function success(reviews) {
-	        callback(reviews);
-	      }
-	    });
-	  },
-	  createReview: function createReview(data, callback) {
-	    $.ajax({
-	      url: '/api/reviews',
-	      type: 'POST',
-	      data: { review: data },
-	      success: function success(review) {
-	        callback(review);
-	      }
-	    });
-	  }
-	};
-	
-	module.exports = ReviewApiUtil;
-
-/***/ },
-/* 342 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
 	var React = __webpack_require__(1);
 	
 	var ReviewIndexItem = React.createClass({
@@ -40523,7 +40408,7 @@
 	module.exports = ReviewIndexItem;
 
 /***/ },
-/* 343 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40535,7 +40420,7 @@
 	
 	var SessionStore = __webpack_require__(255);
 	
-	var ReviewActions = __webpack_require__(340);
+	var ReviewActions = __webpack_require__(342);
 	var ReviewStore = __webpack_require__(338);
 	
 	var ReviewForm = React.createClass({
@@ -40543,7 +40428,7 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      comment: "",
-	      score: "1"
+	      score: "3"
 	    };
 	  },
 	  handleSubmit: function handleSubmit(e) {
@@ -40564,14 +40449,6 @@
 	    return function (e) {
 	      return _this.setState(_defineProperty({}, property, e.target.value));
 	    };
-	  },
-	  handleCart: function handleCart(e) {
-	    e.preventDefault();
-	    hashHistory.push("/cart");
-	  },
-	  handleListing: function handleListing(e) {
-	    e.preventDefault();
-	    hashHistory.push("/");
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -40683,17 +40560,7 @@
 	              className: 'review-button',
 	              type: 'submit',
 	              value: 'Submit Review'
-	            }),
-	            React.createElement(
-	              'button',
-	              { onClick: this.handleCart, className: 'review-button' },
-	              'Return to Cart'
-	            ),
-	            React.createElement(
-	              'button',
-	              { onClick: this.handleListing, className: 'review-button' },
-	              'Return to Listings'
-	            )
+	            })
 	          )
 	        )
 	      )
@@ -40702,6 +40569,69 @@
 	});
 	
 	module.exports = ReviewForm;
+
+/***/ },
+/* 342 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var AppDispatcher = __webpack_require__(256);
+	var ReviewConstants = __webpack_require__(339);
+	var ReviewApiUtil = __webpack_require__(343);
+	
+	var ReviewActions = {
+	  fetchAllReviews: function fetchAllReviews() {
+	    ReviewApiUtil.fetchAllReviews(ReviewActions.receiveAllReviews);
+	  },
+	  receiveAllReviews: function receiveAllReviews(reviews) {
+	    AppDispatcher.dispatch({
+	      actionType: ReviewConstants.REVIEWS_RECEIVED,
+	      reviews: reviews
+	    });
+	  },
+	  createReview: function createReview(data) {
+	    ReviewApiUtil.createReview(data, ReviewActions.receiveReview);
+	  },
+	  receiveReview: function receiveReview(review) {
+	    AppDispatcher.dispatch({
+	      actionType: ReviewConstants.REVIEW_RECEIVED,
+	      review: review
+	    });
+	  }
+	};
+	
+	module.exports = ReviewActions;
+
+/***/ },
+/* 343 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var ReviewApiUtil = {
+	  fetchAllReviews: function fetchAllReviews(callback) {
+	    $.ajax({
+	      url: '/api/reviews',
+	      type: 'GET',
+	      success: function success(reviews) {
+	        callback(reviews);
+	      }
+	    });
+	  },
+	  createReview: function createReview(data, callback) {
+	    $.ajax({
+	      url: '/api/reviews',
+	      type: 'POST',
+	      data: { review: data },
+	      success: function success(review) {
+	        callback(review);
+	      }
+	    });
+	  }
+	};
+	
+	module.exports = ReviewApiUtil;
 
 /***/ },
 /* 344 */
@@ -40714,7 +40644,7 @@
 	var CartActions = __webpack_require__(285);
 	var PurchaseIndex = __webpack_require__(345);
 	var Link = __webpack_require__(192).Link;
-	var ReviewForm = __webpack_require__(343);
+	var ReviewForm = __webpack_require__(341);
 	
 	var CartIndex = React.createClass({
 	  displayName: 'CartIndex',
