@@ -14,6 +14,7 @@ const ReviewIndex = React.createClass({
     }
       return  <ul>
                 <li><h4>Average: {stars}</h4></li>
+                <li><h4>Total: {this.props.listing.reviews.length}</h4></li>
                 {
                   reviewKeys.map(key => {
                     return <ReviewIndexItem key={this.props.listing.reviews[key].id} review={this.props.listing.reviews[key]}  />;

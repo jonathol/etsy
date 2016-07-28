@@ -40287,6 +40287,16 @@
 	            stars
 	          )
 	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            'h4',
+	            null,
+	            'Total: ',
+	            this.props.listing.reviews.length
+	          )
+	        ),
 	        reviewKeys.map(function (key) {
 	          return React.createElement(ReviewIndexItem, { key: _this.props.listing.reviews[key].id, review: _this.props.listing.reviews[key] });
 	        })
