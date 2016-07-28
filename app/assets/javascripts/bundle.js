@@ -35872,7 +35872,6 @@
 			};
 		},
 		componentDidMount: function componentDidMount() {
-			// ErrorStore.clearErrors();
 			this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
 			this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
 		},
@@ -35881,7 +35880,9 @@
 			this.sessionListener.remove();
 		},
 		redirectIfLoggedIn: function redirectIfLoggedIn() {
-			if (SessionStore.isUserLoggedIn()) {
+			if (this.props.buy) {
+				this.props.closeModal();
+			} else {
 				this.props.closeModal();
 				this.context.router.push("/cart");
 			}
@@ -36070,8 +36071,12 @@
 		},
 		redirectIfLoggedIn: function redirectIfLoggedIn() {
 			if (SessionStore.isUserLoggedIn()) {
-				this.props.closeModal();
-				this.context.router.push("/");
+				if (this.props.buy) {
+					this.props.closeModal();
+				} else {
+					this.props.closeModal();
+					this.context.router.push("/cart");
+				}
 			}
 		},
 		handleSubmit: function handleSubmit(e) {
@@ -39996,7 +40001,8 @@
 	      quantity: 1,
 	      modalIsOpen: false,
 	      isSignIn: false,
-	      checkOut: false
+	      checkOut: false,
+	      buy: false
 	    };
 	  },
 	
@@ -40028,14 +40034,16 @@
 	    };
 	    PurchaseActions.createPurchase(data);
 	    this.setState({ modalIsOpen: false });
-	    hashHistory.push("/cart");
+	    if (this.state.buy) {
+	      this.props.switchComponent();
+	    }
 	  },
 	
 	  formType: function formType() {
 	    if (this.state.isSignIn) {
-	      return React.createElement(LoginForm, { closeModal: this.closeWithPurchase });
+	      return React.createElement(LoginForm, { buy: this.state.buy, closeModal: this.closeWithPurchase });
 	    }
-	    return React.createElement(SignupForm, { closeModal: this.closeWithPurchase });
+	    return React.createElement(SignupForm, { buy: this.state.buy, closeModal: this.closeWithPurchase });
 	  },
 	  classTypeRegister: function classTypeRegister() {
 	    if (this.state.isSignIn) {
@@ -40066,6 +40074,7 @@
 	  },
 	  handleAdd: function handleAdd(e) {
 	    e.preventDefault;
+	    this.setState({ buy: false });
 	    var data = {
 	      cart_id: SessionStore.currentUser().id,
 	      listing_id: this.props.listing.id,
@@ -40080,6 +40089,7 @@
 	  },
 	  _handleSubmit: function _handleSubmit(e) {
 	    e.preventDefault();
+	    this.setState({ buy: true });
 	    if (SessionStore.isUserLoggedIn() === true) {
 	      this.props.switchComponent();
 	    } else {

@@ -33,12 +33,16 @@ const SignupForm = React.createClass({
 		this.cartListener.remove();
   },
 
-  redirectIfLoggedIn() {
-    if (SessionStore.isUserLoggedIn()) {
-			this.props.closeModal();
-      this.context.router.push("/");
-    }
-  },
+	redirectIfLoggedIn() {
+		if (SessionStore.isUserLoggedIn()) {
+			if(this.props.buy) {
+				this.props.closeModal();
+			} else {
+				this.props.closeModal();
+				this.context.router.push("/cart");
+			}
+		}
+	},
 
 	handleSubmit(e) {
 		e.preventDefault();
@@ -51,7 +55,7 @@ const SignupForm = React.createClass({
 		};
 
     SessionActions.signUp(formData, CartActions.createCart);
-		
+
 
 	},
 

@@ -26,7 +26,8 @@ const ListingForm = React.createClass ({
 			quantity: 1,
       modalIsOpen: false,
       isSignIn: false,
-      checkOut: false
+      checkOut: false,
+      buy: false
     };
   },
 
@@ -55,16 +56,18 @@ const ListingForm = React.createClass ({
       listing_id: this.props.listing.id,
       quantity: this.state.quantity
     };
-    PurchaseActions.createPurchase(data);    
+    PurchaseActions.createPurchase(data);
     this.setState({modalIsOpen: false});
-    hashHistory.push("/cart");
+    if(this.state.buy){
+      this.props.switchComponent();
+    }    
   },
 
   formType () {
     if (this.state.isSignIn) {
-      return <LoginForm closeModal={this.closeWithPurchase}/>;
+      return <LoginForm buy={this.state.buy} closeModal={this.closeWithPurchase}/>;
     }
-    return <SignupForm closeModal={this.closeWithPurchase}/>;
+    return <SignupForm buy={this.state.buy} closeModal={this.closeWithPurchase}/>;
   },
 
   classTypeRegister () {
@@ -96,6 +99,7 @@ const ListingForm = React.createClass ({
   },
   handleAdd(e){
     e.preventDefault;
+    this.setState({buy: false});
     let data = {
       cart_id: SessionStore.currentUser().id,
       listing_id: this.props.listing.id,
@@ -110,6 +114,7 @@ const ListingForm = React.createClass ({
   },
   _handleSubmit(e){
     e.preventDefault();
+    this.setState({buy: true});
     if (SessionStore.isUserLoggedIn() === true) {
       this.props.switchComponent();
     } else {

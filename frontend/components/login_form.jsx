@@ -19,7 +19,6 @@ const LoginForm = React.createClass({
   },
 
   componentDidMount() {
-		// ErrorStore.clearErrors();
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
   },
@@ -30,10 +29,12 @@ const LoginForm = React.createClass({
   },
 
   redirectIfLoggedIn() {
-    if (SessionStore.isUserLoggedIn()) {
+		if(this.props.buy) {
 			this.props.closeModal();
-      this.context.router.push("/cart");
-    }
+		} else {
+			this.props.closeModal();
+			this.context.router.push("/cart");
+		}
   },
 
 	handleSubmit(e) {
