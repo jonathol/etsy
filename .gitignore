@@ -18,5 +18,7 @@
 
 /bundle.js.map/
 
+/docs
+
 # Ignore application configuration
 /config/application.yml
