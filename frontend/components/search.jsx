@@ -1,4 +1,4 @@
-ant const React = require('react');
+const React = require('react');
 const Autosuggest = require('react-autosuggest');
 const ListingStore = require('../stores/listing_store');
 const ListingActions = require('../actions/listing_actions');
