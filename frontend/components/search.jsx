@@ -1,4 +1,4 @@
-const React = require('react');
+ant const React = require('react');
 const Autosuggest = require('react-autosuggest');
 const ListingStore = require('../stores/listing_store');
 const ListingActions = require('../actions/listing_actions');
@@ -49,7 +49,6 @@ class Search extends React.Component {
   }
 
   onSuggestionsUpdateRequested({ value }) {
-  debugger;
     this.setState({
       suggestions: this.getSuggestions(value)
     });
@@ -79,7 +78,7 @@ class Search extends React.Component {
   onSuggestionSelected(event, { suggestion, suggestionValue, sectionIndex, method }) {
     if(method === "click" || method === "enter") {
       hashHistory.push(`/listing/${suggestion.id}`);
-    }  
+    }
   }
 
   renderSuggestion(suggestion) {
