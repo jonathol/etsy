@@ -334,7 +334,12 @@
     border-radius: 10px;
     align-items: center;
     margin: 20px 4%;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+  }
+
+  .filler-div {
+    width: 222px;
+    margin: 20px 4%;
   }
 
   .listing-img {
