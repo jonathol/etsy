@@ -62,15 +62,9 @@ class Search extends React.Component {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    ans = inputLength === 0 ? [] : this.state.listings.filter(listing =>
-      listing.name.toLowerCase().indexOf(inputValue) > -1);
-
-    if (ans.length < 1) {
-      return "blank";
-    }  else {
-      return ans;
-    }
-
+    return inputLength === 0 ? [] : this.state.listings.filter(listing =>
+      listing.name.toLowerCase().indexOf(inputValue) > -1
+    );
   }
 
   getSuggestionValue(suggestion) {
@@ -88,22 +82,12 @@ class Search extends React.Component {
   }
 
   renderSuggestion(suggestion) {
-    if (suggestion = "blank") {
-      return (
-        <div  className="suggestion">
-          <img className="suggestion-img" src="" />
-          <div className="suggestion-name" >None</div>
-        </div>
-      );
-    } else {
-      return (
-        <div  className="suggestion">
-          <img className="suggestion-img" src={suggestion.img_url} />
-          <div className="suggestion-name" >{suggestion.name}</div>
-        </div>
-      );
-    }
-
+    return (
+      <div  className="suggestion">
+        <img className="suggestion-img" src={suggestion.img_url} />
+        <div className="suggestion-name" >{suggestion.name}</div>
+      </div>
+    );
   }
 
   render() {
