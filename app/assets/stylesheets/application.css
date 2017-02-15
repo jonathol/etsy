@@ -334,8 +334,7 @@
     border-radius: 10px;
     align-items: center;
     margin: 20px 4%;
-    box-sizing: border-box;
-    width: 25%;
+    box-sizing: border-box;    
   }
 
   .listing-img {

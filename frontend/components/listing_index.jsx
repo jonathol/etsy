@@ -34,6 +34,10 @@ const ListingIndex = React.createClass({
                 />;
             })
           }
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     );
