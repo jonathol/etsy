@@ -78,6 +78,7 @@ const ListingShow = React.createClass ({
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
+          shouldCloseOnOverlayClick={false}
           style={customStyles} >
           <ul ref="subtitle" className="modalTab">
 
