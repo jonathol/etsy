@@ -5,7 +5,7 @@ const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
 const CartActions = require('../actions/cart_actions');
 const CartStore = require('../stores/cart_store');
-const Modal = require('react-modal');
+
 
 const SignupForm = React.createClass({
 

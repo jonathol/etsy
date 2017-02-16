@@ -4,6 +4,7 @@ const CartActions = require('../actions/cart_actions');
 const PurchaseIndex = require('./purchase_index');
 const Link = require('react-router').Link;
 const ReviewForm = require('../components/review_form');
+const Modal = require('react-modal');
 
 const CartIndex = React.createClass({
   getInitialState(){
@@ -101,6 +102,7 @@ const CartIndex = React.createClass({
       </div>;
     }
   },
+  
   render(){
     return (
       this.currentComponent()
