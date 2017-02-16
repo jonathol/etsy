@@ -169,11 +169,110 @@ Listing.create!(
   price: 10.00
 )
 
-90.times do
+Listing.create!(
+  name: "Coquille Saint-Jacques",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206233/jo2z0idrkrfy_prclf7.jpg",
+  user_id: 2,
+  ingredients: "Scallop",
+  description: "Classic Gratinéed Scallops",
+  price: 10.00
+)
+
+Listing.create!(
+  name: "Nutella Mousse",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206004/OG4x2WG_h8mh42.jpg",
+  user_id: 2,
+  ingredients: "whipping cream, nutella",
+  description: "2 ingredient nutella mousse",
+  price: 5.00
+)
+
+Listing.create!(
+  name: "Chocolate & Raspberry Cake",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206029/NJPkAEu_tpyxbo.jpg",
+  user_id: 2,
+  ingredients: "flour, egg, sugar, milk, chocolate, raspberry",
+  description: "Beautiful chocolate and raspberry cake for Valentine's day",
+  price: 15.00
+)
+
+Listing.create!(
+  name: "Chickpea Avocado Sandwich",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206035/vgvtOU4_aub8os.jpg",
+  user_id: 2,
+  ingredients: "avocado, chickpea, cranberries, lemon",
+  description: "Epic vegetarian sandwich",
+  price: 8.00
+)
+
+Listing.create!(
+  name: "Chicken and Rice",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206231/6Qe0ARXuMDUTzRodL6lk78oxgAHl_1vwWgE_GoXOfhI_yvrb1n.jpg",
+  user_id: 2,
+  ingredients: "chicken, bell peppers, rice",
+  description: "Chicken and rice bowl",
+  price: 10.00
+)
+
+Listing.create!(
+  name: "Valentine's Day Eggs Benedict",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206232/Ewe2WH3nYenZ6DJlBIqhc_ggX4xUbhMZWkYOCVpGVb0_m29q7d.jpg",
+  user_id: 2,
+  ingredients: "eggs, bacon, bread",
+  description: "Valentine's day eggs benedict",
+  price: 13.00
+)
+
+Listing.create!(
+  name: "Thai Duck Curry",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206270/Capture_ki2zqp.png",
+  user_id: 2,
+  ingredients: "duck, basil",
+  description: "Thai duck curry",
+  price: 15.00
+)
+
+Listing.create!(
+  name: "Zucchini Bread",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206158/gPjNqHi_lgzyd0.jpg",
+  user_id: 2,
+  ingredients: "flour, cinnamon, nutmeg, zucchini, sugar",
+  description: "Zucchini Bread",
+  price: 8.00
+)
+
+Listing.create!(
+  name: "Bacon Wrapped Chicken Lollipops",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206165/1FqDQfO_wghlrp.jpg",
+  user_id: 2,
+  ingredients: "bacon, chicken",
+  description: "Bacon wrapped chicken lollipops with a spice rub and glaze and smoked over cherry wood.",
+  price: 14.00
+)
+
+Listing.create!(
+  name: "Parmesan Meatloaf with Baked Potatoes",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206181/qHipVpA_t0ibn4.jpg",
+  user_id: 2,
+  ingredients: "parmesan, pork, potatoes, eggs",
+  description: "Parmesan meatloaf with baked potatoes",
+  price: 15.00
+)
+
+Listing.create!(
+  name: "English Breakfast",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206185/AIpbWhB_tsb9yb.jpg",
+  user_id: 2,
+  ingredients: "beans, bangers, bacon, toast, eggs, vegs",
+  description: "The full english fry-up.",
+  price: 23.00
+)
+
+200.times do
   val = rand(1..30)
   Review.create!(
     user_id: 1,
-    listing_id: rand(1..9),
+    listing_id: rand(1..20),
     comment: review[val][1],
     score: review[val][0]
   )
