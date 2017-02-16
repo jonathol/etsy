@@ -60,7 +60,12 @@ const CartIndex = React.createClass({
 
   currentComponent(){
     if (this.state.checkOut) {
-      return <Modal
+      return <div className="cart-container">
+        <h2 className="cart-container-title">Your Cart</h2>
+        <PurchaseIndex switchComponent={this.switchComponent} purchases={this.state.cart.purchases} />
+        <Link className="cart-back" to="/" >Back to Listings</Link>
+      </div>      
+      <Modal
         isOpen={this.state.modalIsOpen}
         onAfterOpen={this.afterOpenModal}
         onRequestClose={this.closeModal}
