@@ -30,8 +30,8 @@ const CartIndex = React.createClass({
     }
   },
 
-  handleSubmit(e) {
-		e.preventDefault();
+  handleSubmit() {
+		
 
 
 	},
@@ -102,7 +102,7 @@ const CartIndex = React.createClass({
       </div>;
     }
   },
-  
+
   render(){
     return (
       this.currentComponent()
