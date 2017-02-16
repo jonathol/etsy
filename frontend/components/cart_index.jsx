@@ -6,10 +6,31 @@ const Link = require('react-router').Link;
 const ReviewForm = require('../components/review_form');
 const Modal = require('react-modal');
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    padding               : 0,
+    border                : 0,
+    height                : 480
+  }
+};
+
 const CartIndex = React.createClass({
   getInitialState(){
     CartActions.fetchCart();
-    return {cart: CartStore.current(), checkOut: false, listing: 0};
+    return {cart: CartStore.current(), checkOut: false, listing: 0, modalIsOpen: false};
+  },
+  afterOpenModal: function() {
+    // references are now sync'd and can be accessed.
+    this.refs.subtitle.style.color = '#f00';
+  },
+  closeModal: function() {
+    this.setState({modalIsOpen: false});
   },
   componentDidMount(){
     this.cartListener = CartStore.addListener(this._cartChanged);
@@ -31,7 +52,7 @@ const CartIndex = React.createClass({
   },
 
   handleSubmit() {
-		
+
 
 
 	},
