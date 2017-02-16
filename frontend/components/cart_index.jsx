@@ -29,9 +29,70 @@ const CartIndex = React.createClass({
     }
   },
 
+  handleSubmit(e) {
+		e.preventDefault();		    
+
+
+	},
+
   currentComponent(){
     if (this.state.checkOut) {
-      return <ReviewForm listing={this.state.listing}/>;
+      return <Modal
+        isOpen={this.state.modalIsOpen}
+        onAfterOpen={this.afterOpenModal}
+        onRequestClose={this.closeModal}
+        style={customStyles} >
+        <form onSubmit={this.handleSubmit} className="form-box">
+          <h3>PRESSING "BUY" DOES NOTHING</h3>
+  				<div className="login-form">
+  					<label className="login-label"> Name:
+  						<br/>
+  						<input type="text"
+  							className="login-input" />
+  					</label>
+
+  					<br />
+  					<label className="login-label"> Address:
+  						<br/>
+  						<input type="text"
+  							className="login-input" />
+  					</label>
+
+  					<br/>
+  					<label className="login-label"> City:
+  						<br/>
+  						<input type="text"
+  							className="login-input" />
+  					</label>
+
+            <br/>
+  					<label className="login-label"> State:
+  						<br/>
+  						<input type="text"
+  							className="login-input" />
+  					</label>
+
+            <br/>
+  					<label className="login-label"> Zip Code:
+  						<br/>
+  						<input type="text"
+  							className="login-input" />
+  					</label>
+
+            <br/>
+  					<label className="login-label"> Card Number:
+  						<br/>
+  						<input type="text"
+  							className="login-input" />
+  					</label>
+
+  	        <br />
+  					<input className="login-submit" type="submit" value="Buy"/>
+  				</div>
+  			</form>
+
+      </Modal>;
+      //return <ReviewForm listing={this.state.listing}/>;
     } else {
       return <div className="cart-container">
         <h2 className="cart-container-title">Your Cart</h2>
