@@ -25,7 +25,7 @@ const customStyles = {
 const CartIndex = React.createClass({
   getInitialState(){
     CartActions.fetchCart();
-    return {cart: CartStore.current(), checkOut: false, listing: 0, modalIsOpen: false};
+    return {cart: CartStore.current(), checkOut: false, listing: 0, modalIsOpen: false, bought: false};
   },
   afterOpenModal: function() {
     this.refs.subtitle.style.color = '#f00';
@@ -54,7 +54,7 @@ const CartIndex = React.createClass({
 
   handleSubmit() {
     this.closeModal();
-
+    this.setState({bought: true});
 
 	},
 
@@ -118,7 +118,7 @@ const CartIndex = React.createClass({
         </form>
 
       </Modal>;
-      //<ReviewForm listing={this.state.listing}/>;
+      //
     } else {
       return <div className="cart-container">
         <h2 className="cart-container-title">Your Cart</h2>
@@ -129,8 +129,14 @@ const CartIndex = React.createClass({
   },
 
   render(){
+    var currView;
+    if (this.state.bought){
+      currView = <ReviewForm listing={this.state.listing}/>;
+    } else {
+      currView = this.currentComponent();
+    }
     return (
-      this.currentComponent()
+      currView
     );
   }
 });
