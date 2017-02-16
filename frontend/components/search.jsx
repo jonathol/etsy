@@ -103,7 +103,7 @@ class Search extends React.Component {
       value,
       onChange: this.onChange
     };
-    const toDisplay = suggestions == [] ? this.renderNoMatch : this.renderSuggestion;
+    const toDisplay = suggestions.length<1 ? this.renderNoMatch : this.renderSuggestion;
     return (
       <Autosuggest suggestions={suggestions}
                    onSuggestionsUpdateRequested={this.onSuggestionsUpdateRequested}
