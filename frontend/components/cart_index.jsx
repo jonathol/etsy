@@ -17,8 +17,8 @@ const customStyles = {
     padding               : 0,
     border                : 0,
     height                : 600,
-    overflow-x            : hidden,
-    overflow-y            : visible
+    overflow-x            : 'hidden',
+    overflow-y            : 'visible'
   }
 };
 
