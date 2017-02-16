@@ -62,9 +62,12 @@ class Search extends React.Component {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : this.state.listings.filter(listing =>
+    var ans = inputLength === 0 ? [] : this.state.listings.filter(listing =>
       listing.name.toLowerCase().indexOf(inputValue) > -1
     );
+
+    ans.concat("no_match");
+    return ans;
   }
 
   getSuggestionValue(suggestion) {
@@ -103,7 +106,7 @@ class Search extends React.Component {
       value,
       onChange: this.onChange
     };
-    const toDisplay = suggestions.length<1 ? this.renderNoMatch : this.renderSuggestion;
+    const toDisplay = (suggestions.length === 1 && suggestions[0] =="no_match") ? this.renderNoMatch : this.renderSuggestion;
     return (
       <Autosuggest suggestions={suggestions}
                    onSuggestionsUpdateRequested={this.onSuggestionsUpdateRequested}
