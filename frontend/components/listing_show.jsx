@@ -149,7 +149,7 @@ const ListingShow = React.createClass ({
       currView = this.currentComponent();
     }
     return(
-      currView;
+      currView
     );
   }
 });
