@@ -64,65 +64,66 @@ const CartIndex = React.createClass({
         <h2 className="cart-container-title">Your Cart</h2>
         <PurchaseIndex switchComponent={this.switchComponent} purchases={this.state.cart.purchases} />
         <Link className="cart-back" to="/" >Back to Listings</Link>
-      </div>      
-      <Modal
-        isOpen={this.state.modalIsOpen}
-        onAfterOpen={this.afterOpenModal}
-        onRequestClose={this.closeModal}
-        style={customStyles} >
-        <ul ref="subtitle" className="modalTab">
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles} >
+          <ul ref="subtitle" className="modalTab">
 
-        </ul>
-        <form onSubmit={this.handleSubmit} className="form-box">
-          <h3>PRESSING "BUY" DOES NOTHING</h3>
-          <div className="login-form">
-            <label className="login-label"> Name:
+          </ul>
+          <form onSubmit={this.handleSubmit} className="form-box">
+            <h3>PRESSING "BUY" DOES NOTHING</h3>
+            <div className="login-form">
+              <label className="login-label"> Name:
+                <br/>
+                <input type="text"
+                  className="login-input" />
+              </label>
+
+              <br />
+              <label className="login-label"> Address:
+                <br/>
+                <input type="text"
+                  className="login-input" />
+              </label>
+
               <br/>
-              <input type="text"
-                className="login-input" />
-            </label>
+              <label className="login-label"> City:
+                <br/>
+                <input type="text"
+                  className="login-input" />
+              </label>
 
-            <br />
-            <label className="login-label"> Address:
               <br/>
-              <input type="text"
-                className="login-input" />
-            </label>
+              <label className="login-label"> State:
+                <br/>
+                <input type="text"
+                  className="login-input" />
+              </label>
 
-            <br/>
-            <label className="login-label"> City:
               <br/>
-              <input type="text"
-                className="login-input" />
-            </label>
+              <label className="login-label"> Zip Code:
+                <br/>
+                <input type="text"
+                  className="login-input" />
+              </label>
 
-            <br/>
-            <label className="login-label"> State:
               <br/>
-              <input type="text"
-                className="login-input" />
-            </label>
+              <label className="login-label"> Card Number:
+                <br/>
+                <input type="text"
+                  className="login-input" />
+              </label>
 
-            <br/>
-            <label className="login-label"> Zip Code:
-              <br/>
-              <input type="text"
-                className="login-input" />
-            </label>
+              <br />
+              <input className="login-submit" type="submit" value="Buy"/>
+            </div>
+          </form>
 
-            <br/>
-            <label className="login-label"> Card Number:
-              <br/>
-              <input type="text"
-                className="login-input" />
-            </label>
+        </Modal>
+      </div>;
 
-            <br />
-            <input className="login-submit" type="submit" value="Buy"/>
-          </div>
-        </form>
-
-      </Modal>;
       //
     } else {
       return <div className="cart-container">
