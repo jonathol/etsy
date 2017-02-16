@@ -85,11 +85,13 @@ class Search extends React.Component {
   }
 
   renderSuggestion(suggestion) {
-
-    return (<div  className="suggestion">
-    <img className="suggestion-img" src={suggestion.img_url} />
-    <div className="suggestion-name" >{suggestion.name}</div>
-    </div>);
+    if (suggestion !== "no_match") {
+      return (<div  className="suggestion">
+      <img className="suggestion-img" src={suggestion.img_url} />
+      <div className="suggestion-name" >{suggestion.name}</div>
+      </div>);
+    }
+    return;
   }
 
   renderNoMatch() {
