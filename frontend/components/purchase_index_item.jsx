@@ -19,7 +19,7 @@ const PurchaseIndexItem = React.createClass ({
   handleDelete (){
     PurchaseActions.deletePurchase(this.state.purchase.id);
   },
-  handleBuy(){   
+  handleBuy(){
     this.props.switchComponent(this.state.purchase.listing_id);
     PurchaseActions.deletePurchase(this.state.purchase.id);
   },
