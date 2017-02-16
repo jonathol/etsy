@@ -30,13 +30,15 @@ const CartIndex = React.createClass({
   },
 
   handleSubmit(e) {
-		e.preventDefault();		    
+		e.preventDefault();
 
 
 	},
 
   currentComponent(){
     if (this.state.checkOut) {
+      return <ReviewForm listing={this.state.listing}/>;
+    } else {
       return <Modal
         isOpen={this.state.modalIsOpen}
         onAfterOpen={this.afterOpenModal}
@@ -92,13 +94,12 @@ const CartIndex = React.createClass({
   			</form>
 
       </Modal>;
-      //return <ReviewForm listing={this.state.listing}/>;
-    } else {
-      return <div className="cart-container">
+      /*return <div className="cart-container">
         <h2 className="cart-container-title">Your Cart</h2>
         <PurchaseIndex switchComponent={this.switchComponent} purchases={this.state.cart.purchases} />
         <Link className="cart-back" to="/" >Back to Listings</Link>
       </div>;
+      */
     }
   },
   render(){
