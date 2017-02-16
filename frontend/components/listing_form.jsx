@@ -60,7 +60,7 @@ const ListingForm = React.createClass ({
     this.setState({modalIsOpen: false});
     if(this.state.buy){
       this.props.switchComponent();
-    }    
+    }
   },
 
   formType () {
