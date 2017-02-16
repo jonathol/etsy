@@ -132,7 +132,7 @@ const ListingShow = React.createClass ({
           </form>
 
         </Modal>
-      </div>;      
+      </div>;
     } else {
       return <div className="single-listing-show">
         <ListingDetail listing={this.state.listing} switchComponent={this.switchComponent}/>
@@ -149,7 +149,7 @@ const ListingShow = React.createClass ({
       currView = this.currentComponent();
     }
     return(
-      this.currentComponent()
+      currView;
     );
   }
 });
