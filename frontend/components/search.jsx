@@ -66,7 +66,7 @@ class Search extends React.Component {
       listing.name.toLowerCase().indexOf(inputValue) > -1
     );
 
-    ans.concat("no_match");
+    ans = ans.concat("no_match");
     return ans;
   }
 
