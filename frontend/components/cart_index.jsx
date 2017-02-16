@@ -28,7 +28,6 @@ const CartIndex = React.createClass({
     return {cart: CartStore.current(), checkOut: false, listing: 0, modalIsOpen: false};
   },
   afterOpenModal: function() {
-    // references are now sync'd and can be accessed.
     this.refs.subtitle.style.color = '#f00';
   },
   closeModal: function() {
@@ -54,7 +53,7 @@ const CartIndex = React.createClass({
   },
 
   handleSubmit() {
-
+    this.closeModal();
 
 
 	},
