@@ -17,7 +17,8 @@ const customStyles = {
     padding               : 0,
     border                : 0,
     height                : 600,
-    overflow              : 'hidden'
+    overflow              : 'hidden',
+    border                : '1px solid #ccc'
   }
 };
 
@@ -66,7 +67,7 @@ const CartIndex = React.createClass({
         onRequestClose={this.closeModal}
         style={customStyles} >
         <ul ref="subtitle" className="modalTab">
-          
+
         </ul>
         <form onSubmit={this.handleSubmit} className="form-box">
           <h3>PRESSING "BUY" DOES NOTHING</h3>
