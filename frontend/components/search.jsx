@@ -82,19 +82,18 @@ class Search extends React.Component {
   }
 
   renderSuggestion(suggestion) {
-    var display;
-    if (suggestion == undefined) {
-      return (display = <div  className="suggestion">
-      <img className="suggestion-img" src={"http://www.clker.com/cliparts/6/S/W/2/g/t/transparent-red-no-circle.svg"} />
-      <div className="suggestion-name" >{"No Match Found"}</div>
-      </div>);
-    } else {
-      return (display = <div  className="suggestion">
-      <img className="suggestion-img" src={suggestion.img_url} />
-      <div className="suggestion-name" >{suggestion.name}</div>
-      </div>);
 
-    }
+    return (display = <div  className="suggestion">
+    <img className="suggestion-img" src={suggestion.img_url} />
+    <div className="suggestion-name" >{suggestion.name}</div>
+    </div>);
+  }
+
+  renderNoMatch() {
+    return (display = <div  className="suggestion">
+    <img className="suggestion-img" src={"http://www.clker.com/cliparts/6/S/W/2/g/t/transparent-red-no-circle.svg"} />
+    <div className="suggestion-name" >{"No Match Found"}</div>
+    </div>);
   }
 
   render() {
@@ -104,11 +103,12 @@ class Search extends React.Component {
       value,
       onChange: this.onChange
     };
+    const toDisplay = this.state.suggestions == [] ? this.renderNoMatch.bind(this) : this.renderSuggestion.bind(this);
     return (
       <Autosuggest suggestions={suggestions}
                    onSuggestionsUpdateRequested={this.onSuggestionsUpdateRequested}
                    getSuggestionValue={this.getSuggestionValue}
-                   renderSuggestion={this.renderSuggestion.bind(this)}
+                   renderSuggestion={toDisplay}
                    inputProps={inputProps}
                    onSuggestionSelected={this.onSuggestionSelected}/>
     );
