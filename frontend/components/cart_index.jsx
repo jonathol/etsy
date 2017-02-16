@@ -47,7 +47,7 @@ const CartIndex = React.createClass({
     if (this.state.checkOut) {
       this.setState({checkOut: false});
     } else {
-      this.setState({checkOut: true, listing: number});
+      this.setState({checkOut: true, listing: number, modalIsOpen: true});
     }
   },
 
