@@ -819,6 +819,10 @@
   height: 50px;
 }
 
+#react-autowhatever-1:last-child {
+  display: none;
+}
+
 
 /*Review Form*/
 .review-form-container{

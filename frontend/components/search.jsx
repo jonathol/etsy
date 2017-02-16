@@ -91,7 +91,7 @@ class Search extends React.Component {
       <div className="suggestion-name" >{suggestion.name}</div>
       </div>);
     }
-    return;
+    return(<div className="no-match"></div>);
   }
 
   renderNoMatch() {
