@@ -17,8 +17,7 @@ const customStyles = {
     padding               : 0,
     border                : 0,
     height                : 600,
-    overflow-x            : 'hidden',
-    overflow-y            : 'visible'
+    overflow              : 'hidden'
   }
 };
 
@@ -67,11 +66,7 @@ const CartIndex = React.createClass({
         onRequestClose={this.closeModal}
         style={customStyles} >
         <ul ref="subtitle" className="modalTab">
-          <li className="modalTabList">
-            <button className={this.classTypeRegister()} type="button" >
-              Buy
-            </button>
-          </li>
+          
         </ul>
         <form onSubmit={this.handleSubmit} className="form-box">
           <h3>PRESSING "BUY" DOES NOTHING</h3>
