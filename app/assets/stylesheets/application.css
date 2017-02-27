@@ -336,7 +336,7 @@
 
   .filler-div {
     width: 222px;
-    height: 0;    
+    height: 0;
   }
 
   .listing-img {
@@ -950,4 +950,15 @@ fieldset {
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label {
   color: #FFED85;
+}
+
+
+/** Footer **/
+
+.footer-container {
+  margin: 20px 0;
+}
+
+.fa {
+  margin: 0 10px;
 }
