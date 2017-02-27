@@ -186,8 +186,8 @@
 
 
   .tab {
-     color: #DF744A;
-     background: #FEDCD2;
+     color: black;
+     background: #ccc;
      padding: 10px;
      border-top: 1px solid #ccc;
      border-left: 1px solid #ccc;
@@ -201,7 +201,7 @@
   }
 
   .tab-selected {
-     color: #DF744A;
+     color: black;
      background: white;
      font-family: 'Josefin Sans', sans-serif;
   }
