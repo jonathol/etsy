@@ -180,8 +180,8 @@ const App = React.createClass({
           </header>
         </div>
         {this.props.children}
-        <footer>
-          <a href="https://github.com/jonathol/etsy" target="_blank">Github</a>
+        <footer className="footer-container">
+          <a href="https://github.com/jonathol/etsy" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
         </footer>
       </div>
     );
