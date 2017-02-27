@@ -20,7 +20,7 @@
 
 /docs
 
-font-awesome-4.7.0
+
 
 # Ignore application configuration
 /config/application.yml
