@@ -516,19 +516,19 @@
   }
 
   .details-tab {
-    background-color: #ccc;
+    background-color: white;
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
     padding: 10px;
   }
 
   .selected {
-    background-color: white;
+    background-color: #ccc;
   }
 
   .details-tab:hover {
     cursor: pointer;
-    background-color: white;
+    background-color: #ccc;
     color: black;
   }
 
@@ -562,7 +562,7 @@
   }
 
   .review-index-item {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid black;
     margin-bottom: 10px;
   }
 
