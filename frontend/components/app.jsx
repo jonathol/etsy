@@ -182,6 +182,8 @@ const App = React.createClass({
         {this.props.children}
         <footer className="footer-container">
           <a href="https://github.com/jonathol/etsy" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/jonathon-lin-52005a71/" target="_blank"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="http://www.jonathonlin.com/" target="_blank"><i className="fa fa-globe" aria-hidden="true"></i></a>
         </footer>
       </div>
     );
