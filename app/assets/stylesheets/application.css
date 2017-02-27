@@ -130,13 +130,13 @@
   }
 
   .signin {
-   border: 1px solid #DF744A;
+   border: 1px solid white;
    border-radius: 10px;
    padding: 7.5px;
   }
 
   .signin:hover {
-   background: #FEDCD2;
+   background: #ccc;
   }
 
   h3 {
@@ -172,7 +172,7 @@
   /*Modal*/
 
   .modalTab {
-     background: #BFD8D2;
+     background: black;
      display: flex;
      padding-left: 40px;
      padding-right: 10px;
