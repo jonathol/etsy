@@ -76,12 +76,12 @@ const App = React.createClass({
     			<ul className="login-signup">
             <li>
               <Link to="/" activeClassName="current" >
-                <img className="nav-image1" src="https://res.cloudinary.com/jonathol/image/upload/e_colorize,co_rgb:DF744A/v1467312108/Home01-128_pklsw6.png"/>
+                <img className="nav-image1" src="https://res.cloudinary.com/jonathol/image/upload/e_colorize,co_rgb:ffffff/v1467312108/Home01-128_pklsw6.png"/>
               </Link>
             </li>
             <li>
               <Link to="/cart" activeClassName="current" >
-                <img className="nav-image-cart" src="https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32,e_colorize,co_rgb:DF744A/v1467751801/28468-200_aqate1.png"/>
+                <img className="nav-image-cart" src="https://res.cloudinary.com/jonathol/image/upload/c_scale,w_32,e_colorize,co_rgb:ffffff/v1467751801/28468-200_aqate1.png"/>
               </Link>
             </li>
             <li>

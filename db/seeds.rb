@@ -42,7 +42,7 @@ User.create!(
   lastname: "",
   username: "Guest",
   password: "123456",
-  img_url: "https://res.cloudinary.com/jonathol/image/upload/e_colorize,co_rgb:DF744A/v1467319541/account_friend_human_man_member_person_profile_user_users-128_qzjgxd.png"
+  img_url: "https://res.cloudinary.com/jonathol/image/upload/e_colorize,co_rgb:ffffff/v1467319541/account_friend_human_man_member_person_profile_user_users-128_qzjgxd.png"
 )
 
 User.create!(
