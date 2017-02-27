@@ -133,6 +133,8 @@
    border: 1px solid white;
    border-radius: 10px;
    padding: 7.5px;
+   color: black;
+   background: white;
   }
 
   .signin:hover {
@@ -262,7 +264,7 @@
      border-radius: 10px;
      width: 200px;
      color: black;
-     background: rgba(254,220,210,1);
+     background: white;
      text-align: center;
      font-family: 'Josefin Sans', sans-serif;
      margin-bottom: 10px;
@@ -514,7 +516,9 @@
   }
 
   .details-tab {
-    background-color: white;
+    background-color: #ccc;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
     padding: 10px;
   }
 
@@ -524,8 +528,8 @@
 
   .details-tab:hover {
     cursor: pointer;
-    background-color: black;
-    color: #ccc;
+    background-color: white;
+    color: black;
   }
 
   .left {
@@ -539,12 +543,13 @@
 
   .right {
     border-top-right-radius: 5px;
+    border-right: 1px solid #ccc;
   }
 
   .details-body {
     margin: 10px;
     margin-top: 0;
-    background: white;
+    background: #ccc;
     border-bottom-left-radius:  10px;
     border-bottom-right-radius:  10px;
     border-top-right-radius:  10px;
