@@ -378,7 +378,7 @@
   }
 
   .back:hover {
-    background-color: rgba(254,220,210,0.6);
+    background-color: #ccc;
   }
 
   /*Listing Detail*/
@@ -412,7 +412,7 @@
     margin: 10px;
     border: 5px solid black;
     border-radius: 10px;
-    background-color: ghostwhite;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -519,13 +519,13 @@
   }
 
   .selected {
-    background-color: ghostwhite;
+    background-color: white;
   }
 
   .details-tab:hover {
     cursor: pointer;
     background-color: black;
-    color: #FEDCD2;
+    color: #ccc;
   }
 
   .left {
@@ -544,7 +544,7 @@
   .details-body {
     margin: 10px;
     margin-top: 0;
-    background: ghostwhite;
+    background: white;
     border-bottom-left-radius:  10px;
     border-bottom-right-radius:  10px;
     border-top-right-radius:  10px;
@@ -583,7 +583,7 @@
   }
 
   .review-star {
-    color: #FFD700;
+    color: yellow;
   }
 
   .review-score {
@@ -623,7 +623,7 @@
 
   .cart-item-container {
     width: 500px;
-    background-color: #BFD8D2;
+    background-color: white;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0px 1px 5px #888888;
@@ -636,7 +636,7 @@
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 10px;
-    background-color: rgba(254,220,210,1);
+    background-color: white;
     box-shadow: 0px 1px 5px #888888;
 
     text-align: center;
@@ -668,7 +668,7 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    background-color: ghostwhite;
+    background-color: white;
     border-radius: 5px;
     margin-left: 10px;
     margin-right: 10px;
@@ -719,13 +719,13 @@
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0px 1px 5px #888888;
-    background-color: rgba(254,220,210,1);
+    background-color: white;
     text-align: center;
 
   }
 
   .cart-listing-detail-button:hover {
-    background-color: rgba(254,220,210,0.7);
+    background-color: #ccc;
   }
 
   .cart-pay-title {
@@ -756,7 +756,7 @@
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: ghostwhite;
+  background-color: white;
   color: black;
   box-shadow: 0px 1px 5px #888888;
   margin: 0 20px;
@@ -781,7 +781,7 @@
   list-style-type: none;
   border: 1px solid #ccc;
   border-top: 0;
-  background-color: ghostwhite;
+  background-color: white;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -798,7 +798,7 @@
 }
 
 .react-autosuggest__suggestion--focused {
-  background-color: #FEDCD2;
+  background-color: #ccc;
 }
 
 .suggestion {
@@ -841,7 +841,7 @@
 .review-form-box{
   display: flex;
   flex-direction: column;
-  background-color: #BFD8D2;
+  background-color: #white;
   border-radius: 10px;
   box-shadow: 0px 1px 5px #888888;
 }
@@ -851,7 +851,7 @@
   flex-direction: column;
   justify-content: space-around;
   margin: 10px;
-  background-color: ghostwhite;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -895,12 +895,12 @@
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 0px 1px 5px #888888;
-  background-color: rgba(254,220,210,1);
+  background-color: white;
   text-align: center;
 }
 
 .review-button:hover {
-  background-color: rgba(254,220,210,0.7);
+  background-color: #ccc;
 }
 
 /*Stars*/
@@ -942,14 +942,14 @@ fieldset {
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
 .rating:not(:checked) > label:hover ~ label {
-  color: #FFD700;
+  color: yellow;
 } /* hover previous stars in list */
 
 .rating > input:checked + label:hover, /* hover current star when changing rating */
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label {
-  color: #FFED85;
+  color: yellow;
 }
 
 
