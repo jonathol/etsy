@@ -90,14 +90,15 @@ class Search extends React.Component {
       <img className="suggestion-img" src={suggestion.img_url} />
       <div className="suggestion-name" >{suggestion.name}</div>
       </div>);
+    } else {
+      return(<div className="no-match"></div>);
     }
-    return(<div className="no-match"></div>);
   }
 
   renderNoMatch() {
     return (<div  className="suggestion">
-    <img className="suggestion-img" src={"http://www.clker.com/cliparts/6/S/W/2/g/t/transparent-red-no-circle.svg"} />
-    <div className="suggestion-name" >{"No Match Found"}</div>
+    <img className="suggestion-img" src="http://www.clker.com/cliparts/6/S/W/2/g/t/transparent-red-no-circle.svg" />
+    <div className="suggestion-name" >No match found</div>
     </div>);
   }
 
@@ -108,7 +109,7 @@ class Search extends React.Component {
       value,
       onChange: this.onChange
     };
-    const toDisplay = (suggestions.length === 1 && suggestions[0] =="no_match") ? this.renderNoMatch : this.renderSuggestion;
+    const toDisplay = ((suggestions.length === 1 && suggestions[0] =="no_match") ? this.renderNoMatch : this.renderSuggestion);
     return (
       <Autosuggest suggestions={suggestions}
                    onSuggestionsUpdateRequested={this.onSuggestionsUpdateRequested}
