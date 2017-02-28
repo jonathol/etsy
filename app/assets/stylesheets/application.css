@@ -820,7 +820,10 @@
   height: 50px;
 }
 
-
+.react-autosuggest__suggestion:last-child {
+  pointer-events: none;
+  cursor: default;
+}
 
 /*Review Form*/
 .review-form-container{
