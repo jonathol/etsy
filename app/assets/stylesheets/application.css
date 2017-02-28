@@ -820,9 +820,6 @@
   height: 50px;
 }
 
-.react-autosuggest__suggestion:last-child {
-  display: none;
-}
 
 
 /*Review Form*/
