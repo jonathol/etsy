@@ -207,7 +207,7 @@ Listing.create!(
 
 Listing.create!(
   name: "Chicken and Rice",
-  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1487206231/6Qe0ARXuMDUTzRodL6lk78oxgAHl_1vwWgE_GoXOfhI_yvrb1n.jpg",
+  img_url: "http://res.cloudinary.com/jonathol/image/upload/c_scale,w_400/v1488409280/54f6719326e82_-_turmeric-chicken-rice-recipe-fw0714-bmz3q9-s2_t76mzt.jpg",
   user_id: 2,
   ingredients: "chicken, bell peppers, rice",
   description: "Chicken and rice bowl",
