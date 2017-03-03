@@ -158,7 +158,8 @@ const ListingForm = React.createClass ({
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          style={customStyles} >
+          style={customStyles}
+          contentLabel="Listing Form Modal" >
 
           <ul ref="subtitle" className="modalTab">
             <li className="modalTabList">

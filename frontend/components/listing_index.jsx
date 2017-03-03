@@ -24,6 +24,7 @@ const ListingIndex = React.createClass({
 
     return(
       <div>
+        <img className="listing-top-image" src="http://res.cloudinary.com/jonathol/image/upload/v1488503604/804882-food-wallpaper_chy9jt.jpg"/>
         <h2 className="listing-title">Homemade meals delivered right to your door!</h2>
         <div className="listing-index-container">
           {

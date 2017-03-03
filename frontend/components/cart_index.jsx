@@ -69,7 +69,8 @@ const CartIndex = React.createClass({
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           shouldCloseOnOverlayClick={false}
-          style={customStyles} >
+          style={customStyles}
+          contentLabel="Cart Index Modal" >
           <ul ref="subtitle" className="modalTab">
 
           </ul>
