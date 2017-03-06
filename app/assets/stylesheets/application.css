@@ -312,7 +312,10 @@
   }
 
   /*Listing*/
-  
+  .listing-top-image {
+    margin-top: 100px;
+  }
+
   .listing-title {
     text-align: center;
     font-size: 30px;
@@ -614,7 +617,7 @@
   /*Cart*/
   .cart-container {
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 130px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -962,7 +965,7 @@ fieldset {
 }
 
 
-/** Footer **/
+/* Footer */
 
 .footer-container {
   margin-top: 20px;
@@ -975,4 +978,9 @@ fieldset {
 .fa {
   margin: 0 20px;
   color: white;
+}
+
+/* Profile Container */
+.profile-container{
+  margin-top: 130px;
 }

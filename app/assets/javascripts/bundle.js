@@ -28833,6 +28833,15 @@
 	                { className: 'dropdown-content' },
 	                React.createElement(
 	                  'li',
+	                  null,
+	                  React.createElement(
+	                    Link,
+	                    { to: '/people' },
+	                    'Profile'
+	                  )
+	                ),
+	                React.createElement(
+	                  'li',
 	                  { onClick: this._handleLogOut },
 	                  React.createElement('input', {
 	                    type: 'submit', value: 'Logout'
@@ -40198,15 +40207,16 @@
 	    } else {
 	      name = current.username;
 	    }
-	    this.setState({ current: name });
+	    this.setState({ current: current });
+	    debugger;
 	  },
 	  render: function render() {
 	
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'profile-container' },
 	      'Information About ',
-	      this.state.current
+	      this.state.current.name
 	    );
 	  }
 	});
