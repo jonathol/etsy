@@ -17,13 +17,13 @@ const People = React.createClass ({
     } else {
       name = current.username;
     }
-    this.setState({current: current});
+    this.setState({current: name});
     debugger
   },
   render (){
 
     return(
-      <div className="profile-container">Information About {this.state.current.name}</div>
+      <div className="profile-container">Information About {this.state.current}</div>
     );
   }
 });
