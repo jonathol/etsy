@@ -18,7 +18,7 @@ const People = React.createClass ({
       name = current.username;
     }
     this.setState({current: name});
-    debugger
+    
   },
   render (){
 
