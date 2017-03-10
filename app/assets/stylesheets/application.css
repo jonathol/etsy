@@ -70,6 +70,13 @@
 
   body {
     font-family: 'Josefin Sans', sans-serif;
+
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   /*Header*/
@@ -969,10 +976,13 @@ fieldset {
 
 .footer-container {
   margin-top: 20px;
-  padding: 20px 0;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
   background: black;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .fa {

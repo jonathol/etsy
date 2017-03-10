@@ -153,7 +153,7 @@ const App = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="app-container">
         <div className="header-container">
           <header>
             <Link to="/" className="header-link"><h1>Foodsy</h1></Link>

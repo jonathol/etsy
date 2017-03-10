@@ -28901,7 +28901,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'app-container' },
 	      React.createElement(
 	        'div',
 	        { className: 'header-container' },
@@ -40207,8 +40207,7 @@
 	    } else {
 	      name = current.username;
 	    }
-	    this.setState({ current: current });
-	    debugger;
+	    this.setState({ current: name });
 	  },
 	  render: function render() {
 	
@@ -40216,7 +40215,7 @@
 	      'div',
 	      { className: 'profile-container' },
 	      'Information About ',
-	      this.state.current.name
+	      this.state.current
 	    );
 	  }
 	});
