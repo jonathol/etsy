@@ -57,12 +57,12 @@
 	var hashHistory = ReactRouter.hashHistory;
 	
 	var App = __webpack_require__(255);
-	var People = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/people\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var People = __webpack_require__(335);
 	
 	var SessionStore = __webpack_require__(256);
 	var SessionActions = __webpack_require__(279);
 	
-	var ListingIndex = __webpack_require__(336);
+	var ListingIndex = __webpack_require__(337);
 	var ListingShow = __webpack_require__(338);
 	
 	var CartIndex = __webpack_require__(351);
@@ -28901,7 +28901,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'app-container' },
+	      { className: 'app-containerdemai' },
 	      React.createElement(
 	        'div',
 	        { className: 'header-container' },
@@ -40183,7 +40183,65 @@
 	module.exports = ListingApiUtil;
 
 /***/ },
-/* 335 */,
+/* 335 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var SessionStore = __webpack_require__(256);
+	var SessionActions = __webpack_require__(279);
+	var ListingIndexItem = __webpack_require__(336);
+	
+	var People = React.createClass({
+	  displayName: 'People',
+	  getInitialState: function getInitialState() {
+	    return {
+	      name: "",
+	      listings: []
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var current = SessionStore.currentUser();
+	    var name = void 0;
+	    if (current.firstname) {
+	      name = current.firstname + " " + current.lastname;
+	    } else if (typeof current === 'undefined') {
+	      name = "";
+	    } else {
+	      name = current.username;
+	    }
+	    this.setState({
+	      name: name,
+	      listings: current.listings
+	    });
+	    debugger;
+	  },
+	  render: function render() {
+	    var listings = this.state.listings;
+	    var listingKeys = Object.keys(listings);
+	
+	    return React.createElement(
+	      'div',
+	      { className: 'profile-container' },
+	      React.createElement(
+	        'h2',
+	        null,
+	        this.state.name
+	      ),
+	      reverseKeys.map(function (key) {
+	        return React.createElement(ListingIndexItem, {
+	          key: listings[key].id,
+	          listing: listings[key]
+	        });
+	      })
+	    );
+	  }
+	});
+	
+	module.exports = People;
+
+/***/ },
 /* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -40192,7 +40250,39 @@
 	var React = __webpack_require__(1);
 	var ListingStore = __webpack_require__(331);
 	var ListingActions = __webpack_require__(333);
-	var ListingIndexItem = __webpack_require__(337);
+	var hashHistory = __webpack_require__(192).hashHistory;
+	
+	var ListingIndexItem = React.createClass({
+	  displayName: 'ListingIndexItem',
+	  _handleClick: function _handleClick() {
+	    hashHistory.push('/listing/' + this.props.listing.id);
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'listing-index-item-container', onClick: this._handleClick },
+	      React.createElement('img', { className: 'listing-img', src: this.props.listing.img_url }),
+	      React.createElement(
+	        'div',
+	        { className: 'listing-name' },
+	        this.props.listing.name
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = ListingIndexItem;
+
+/***/ },
+/* 337 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ListingStore = __webpack_require__(331);
+	var ListingActions = __webpack_require__(333);
+	var ListingIndexItem = __webpack_require__(336);
 	
 	var ListingIndex = React.createClass({
 	  displayName: 'ListingIndex',
@@ -40226,7 +40316,7 @@
 	      React.createElement(
 	        'div',
 	        { className: 'listing-index-container' },
-	        reverseKeys.map(function (key) {
+	        listingKeys.map(function (key) {
 	          return React.createElement(ListingIndexItem, {
 	            key: listings[key].id,
 	            listing: listings[key]
@@ -40268,38 +40358,6 @@
 	});
 	
 	module.exports = ListingIndex;
-
-/***/ },
-/* 337 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var ListingStore = __webpack_require__(331);
-	var ListingActions = __webpack_require__(333);
-	var hashHistory = __webpack_require__(192).hashHistory;
-	
-	var ListingIndexItem = React.createClass({
-	  displayName: 'ListingIndexItem',
-	  _handleClick: function _handleClick() {
-	    hashHistory.push('/listing/' + this.props.listing.id);
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'listing-index-item-container', onClick: this._handleClick },
-	      React.createElement('img', { className: 'listing-img', src: this.props.listing.img_url }),
-	      React.createElement(
-	        'div',
-	        { className: 'listing-name' },
-	        this.props.listing.name
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = ListingIndexItem;
 
 /***/ },
 /* 338 */
