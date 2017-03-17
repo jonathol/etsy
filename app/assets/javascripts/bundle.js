@@ -40225,8 +40225,8 @@
 	      'div',
 	      { className: 'profile-container' },
 	      React.createElement(
-	        'h1',
-	        null,
+	        'h2',
+	        { className: 'listing-title' },
 	        this.state.name,
 	        '\'s Listing'
 	      ),
