@@ -28,7 +28,7 @@ const ListingIndex = React.createClass({
         <h2 className="listing-title">Homemade meals delivered right to your door!</h2>
         <div className="listing-index-container">
           {
-            listingKeys.map( key => {
+            reverseKeys.map( key => {
               return <ListingIndexItem
                 key={listings[key].id}
                 listing={listings[key]}

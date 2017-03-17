@@ -40229,7 +40229,7 @@
 	        null,
 	        this.state.name
 	      ),
-	      reverseKeys.map(function (key) {
+	      listingKeys.map(function (key) {
 	        return React.createElement(ListingIndexItem, {
 	          key: listings[key].id,
 	          listing: listings[key]
@@ -40316,7 +40316,7 @@
 	      React.createElement(
 	        'div',
 	        { className: 'listing-index-container' },
-	        listingKeys.map(function (key) {
+	        reverseKeys.map(function (key) {
 	          return React.createElement(ListingIndexItem, {
 	            key: listings[key].id,
 	            listing: listings[key]

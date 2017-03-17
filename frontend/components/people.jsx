@@ -35,7 +35,7 @@ const People = React.createClass ({
       <div className="profile-container">
         <h2>{this.state.name}</h2>
         {
-          reverseKeys.map( key => {
+          listingKeys.map( key => {
             return <ListingIndexItem
               key={listings[key].id}
               listing={listings[key]}
