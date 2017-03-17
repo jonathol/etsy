@@ -57,7 +57,7 @@
 	var hashHistory = ReactRouter.hashHistory;
 	
 	var App = __webpack_require__(255);
-	var People = __webpack_require__(335);
+	var People = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/people\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var SessionStore = __webpack_require__(256);
 	var SessionActions = __webpack_require__(279);
@@ -40183,46 +40183,7 @@
 	module.exports = ListingApiUtil;
 
 /***/ },
-/* 335 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var SessionStore = __webpack_require__(256);
-	var SessionActions = __webpack_require__(279);
-	
-	var People = React.createClass({
-	  displayName: 'People',
-	  getInitialState: function getInitialState() {
-	    return { current: "" };
-	  },
-	  componentDidMount: function componentDidMount() {
-	    var current = SessionStore.currentUser();
-	    var name = void 0;
-	    if (current.firstname) {
-	      name = current.firstname + " " + current.lastname;
-	    } else if (typeof current === 'undefined') {
-	      name = "";
-	    } else {
-	      name = current.username;
-	    }
-	    this.setState({ current: name });
-	  },
-	  render: function render() {
-	
-	    return React.createElement(
-	      'div',
-	      { className: 'profile-container' },
-	      'Information About ',
-	      this.state.current
-	    );
-	  }
-	});
-	
-	module.exports = People;
-
-/***/ },
+/* 335 */,
 /* 336 */
 /***/ function(module, exports, __webpack_require__) {
 

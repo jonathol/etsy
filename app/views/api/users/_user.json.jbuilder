@@ -5,6 +5,8 @@ json.extract!(
 
 json.listings do
   json.array!(user.listings) do |listing|
-    json.listing listing
+    json.name listing.name
+    json.img_url listing.img_url
+
   end
 end
