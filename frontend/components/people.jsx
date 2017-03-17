@@ -33,16 +33,18 @@ const People = React.createClass ({
     return(
 
       <div className="profile-container">
-        <h2>{this.state.name}</h2>
-        {
-          listingKeys.map( key => {
-            return <ListingIndexItem
-              key={listings[key].id}
-              listing={listings[key]}
-              />;
-          })
+        <h1>{this.state.name}&#39;s Listing</h1>
+        <div className="listing-index-container">
+          {
+            listingKeys.map( key => {
+              return <ListingIndexItem
+                key={listings[key].id}
+                listing={listings[key]}
+                />;
+            })
 
-        }
+          }
+        </div>
       </div>
     );
 

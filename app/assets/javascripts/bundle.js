@@ -40225,16 +40225,21 @@
 	      'div',
 	      { className: 'profile-container' },
 	      React.createElement(
-	        'h2',
+	        'h1',
 	        null,
-	        this.state.name
+	        this.state.name,
+	        '\'s Listing'
 	      ),
-	      listingKeys.map(function (key) {
-	        return React.createElement(ListingIndexItem, {
-	          key: listings[key].id,
-	          listing: listings[key]
-	        });
-	      })
+	      React.createElement(
+	        'div',
+	        { className: 'listing-index-container' },
+	        listingKeys.map(function (key) {
+	          return React.createElement(ListingIndexItem, {
+	            key: listings[key].id,
+	            listing: listings[key]
+	          });
+	        })
+	      )
 	    );
 	  }
 	});
