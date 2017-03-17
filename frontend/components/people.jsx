@@ -44,6 +44,12 @@ const People = React.createClass ({
             })
 
           }
+          <div className="filler-div">&nbsp;</div>
+          <div className="filler-div">&nbsp;</div>
+          <div className="filler-div">&nbsp;</div>
+          <div className="filler-div">&nbsp;</div>
+          <div className="filler-div">&nbsp;</div>
+          <div className="filler-div">&nbsp;</div>
         </div>
       </div>
     );
