@@ -88,15 +88,11 @@ const App = React.createClass({
               <div className="dropdown">
                 <img className="nav-image4" src={SessionStore.currentUser().img_url} />
                 <ul className="dropdown-content">
-                  <li>
-                    <Link to="/people">
-                      Profile
-                    </Link>
+                  <li onClick={ this._handleClick }>
+                    Profile
                   </li>
                   <li onClick={ this._handleLogOut }>
-                    <input
-                      type="submit" value="Logout"
-                    />
+                    Logout
                   </li>
                 </ul>
               </div>

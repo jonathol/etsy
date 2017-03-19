@@ -28833,19 +28833,13 @@
 	                { className: 'dropdown-content' },
 	                React.createElement(
 	                  'li',
-	                  null,
-	                  React.createElement(
-	                    Link,
-	                    { to: '/people' },
-	                    'Profile'
-	                  )
+	                  { onClick: this._handleClick },
+	                  'Profile'
 	                ),
 	                React.createElement(
 	                  'li',
 	                  { onClick: this._handleLogOut },
-	                  React.createElement('input', {
-	                    type: 'submit', value: 'Logout'
-	                  })
+	                  'Logout'
 	                )
 	              )
 	            )
@@ -40228,7 +40222,7 @@
 	        'h2',
 	        { className: 'listing-title' },
 	        this.state.name,
-	        '\'s Listing'
+	        '\'s Products'
 	      ),
 	      React.createElement(
 	        'div',

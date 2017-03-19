@@ -33,7 +33,7 @@ const People = React.createClass ({
     return(
 
       <div className="profile-container">
-        <h2 className="listing-title">{this.state.name}&#39;s Listing</h2>
+        <h2 className="listing-title">{this.state.name}&#39;s Products</h2>
         <div className="listing-index-container">
           {
             listingKeys.map( key => {
