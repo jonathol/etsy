@@ -40209,11 +40209,26 @@
 	      name: name,
 	      listings: current.listings
 	    });
-	    debugger;
 	  },
 	  render: function render() {
 	    var listings = this.state.listings;
 	    var listingKeys = Object.keys(listings);
+	    var view;
+	
+	    if (listings.length > 0) {
+	      view = listingKeys.map(function (key) {
+	        return React.createElement(ListingIndexItem, {
+	          key: listings[key].id,
+	          listing: listings[key]
+	        });
+	      });
+	    } else {
+	      view = React.createElement(
+	        'div',
+	        null,
+	        'No Listings'
+	      );
+	    }
 	
 	    return React.createElement(
 	      'div',
@@ -40222,17 +40237,12 @@
 	        'h2',
 	        { className: 'listing-title' },
 	        this.state.name,
-	        '\'s Products'
+	        '\'s Listings'
 	      ),
 	      React.createElement(
 	        'div',
 	        { className: 'listing-index-container' },
-	        listingKeys.map(function (key) {
-	          return React.createElement(ListingIndexItem, {
-	            key: listings[key].id,
-	            listing: listings[key]
-	          });
-	        }),
+	        view,
 	        React.createElement(
 	          'div',
 	          { className: 'filler-div' },

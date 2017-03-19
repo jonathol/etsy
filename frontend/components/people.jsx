@@ -24,25 +24,35 @@ const People = React.createClass ({
       name: name,
       listings : current.listings
     });
-    debugger
+    
   },
   render (){
     const listings = this.state.listings;
     const listingKeys = Object.keys(listings);
+    var view;
+
+
+    if (listings.length > 0) {
+      view =
+        listingKeys.map( key => {
+          return <ListingIndexItem
+            key={listings[key].id}
+            listing={listings[key]}
+            />;
+        })
+      ;
+    } else {
+      view =  <div>No Listings</div>;
+    }
+
 
     return(
 
       <div className="profile-container">
-        <h2 className="listing-title">{this.state.name}&#39;s Products</h2>
+        <h2 className="listing-title">{this.state.name}&#39;s Listings</h2>
         <div className="listing-index-container">
           {
-            listingKeys.map( key => {
-              return <ListingIndexItem
-                key={listings[key].id}
-                listing={listings[key]}
-                />;
-            })
-
+            view
           }
           <div className="filler-div">&nbsp;</div>
           <div className="filler-div">&nbsp;</div>
