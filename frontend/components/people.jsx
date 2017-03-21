@@ -24,7 +24,7 @@ const People = React.createClass ({
       name: name,
       listings : current.listings
     });
-    
+
   },
   render (){
     const listings = this.state.listings;
@@ -42,7 +42,7 @@ const People = React.createClass ({
         })
       ;
     } else {
-      view =  <div>No Listings</div>;
+      view =  <div className="profile-empty-listing">No Listings</div>;
     }
 
 

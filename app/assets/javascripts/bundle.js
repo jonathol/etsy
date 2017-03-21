@@ -40225,7 +40225,7 @@
 	    } else {
 	      view = React.createElement(
 	        'div',
-	        null,
+	        { className: 'profile-empty-listing' },
 	        'No Listings'
 	      );
 	    }

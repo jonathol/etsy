@@ -991,7 +991,12 @@ fieldset {
   color: white;
 }
 
-/* Profile Container */
+/* Profile */
 .profile-container{
   margin-top: 130px;
+}
+
+.profile-empty-listing {
+  width: 100%;
+  text-align: center;
 }
