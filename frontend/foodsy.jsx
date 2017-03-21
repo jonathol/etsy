@@ -9,7 +9,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
 const App = require('./components/app');
-const People = require('./components/people');
+const Profile = require('./components/profile');
 
 const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
@@ -26,8 +26,8 @@ const appRouter = (
     <Route path="/" component={ App }>
       <IndexRoute component={ ListingIndex } />
       <Route path="/listing/:listingId" component={ ListingShow }/>
-      <Route path="/people" component={ People } />
-      <Route path="/cart" component={ CartIndex } />    
+      <Route path="/profile" component={ Profile } />
+      <Route path="/cart" component={ CartIndex } />
     </Route>
   </Router>
 );

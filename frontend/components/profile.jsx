@@ -3,7 +3,7 @@ const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 const ListingIndexItem = require('./listing_index_item');
 
-const People = React.createClass ({
+const Profile = React.createClass ({
   getInitialState (){
     return {
       name: "",
@@ -70,4 +70,4 @@ const People = React.createClass ({
 });
 
 
-module.exports = People;
+module.exports = Profile;

@@ -66,7 +66,7 @@ const App = React.createClass({
     SessionActions.logOut();
   },
   _handleClick() {
-    this.context.router.push("/people");
+    this.context.router.push("/profile");
   },
 
   nav() {

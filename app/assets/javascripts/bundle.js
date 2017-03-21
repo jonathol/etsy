@@ -57,7 +57,7 @@
 	var hashHistory = ReactRouter.hashHistory;
 	
 	var App = __webpack_require__(255);
-	var People = __webpack_require__(335);
+	var Profile = __webpack_require__(335);
 	
 	var SessionStore = __webpack_require__(256);
 	var SessionActions = __webpack_require__(279);
@@ -77,7 +77,7 @@
 	    { path: '/', component: App },
 	    React.createElement(IndexRoute, { component: ListingIndex }),
 	    React.createElement(Route, { path: '/listing/:listingId', component: ListingShow }),
-	    React.createElement(Route, { path: '/people', component: People }),
+	    React.createElement(Route, { path: '/profile', component: Profile }),
 	    React.createElement(Route, { path: '/cart', component: CartIndex })
 	  )
 	);
@@ -28793,7 +28793,7 @@
 	    SessionActions.logOut();
 	  },
 	  _handleClick: function _handleClick() {
-	    this.context.router.push("/people");
+	    this.context.router.push("/profile");
 	  },
 	  nav: function nav() {
 	    if (SessionStore.isUserLoggedIn()) {
@@ -40187,8 +40187,8 @@
 	var SessionActions = __webpack_require__(279);
 	var ListingIndexItem = __webpack_require__(336);
 	
-	var People = React.createClass({
-	  displayName: 'People',
+	var Profile = React.createClass({
+	  displayName: 'Profile',
 	  getInitialState: function getInitialState() {
 	    return {
 	      name: "",
@@ -40278,7 +40278,7 @@
 	  }
 	});
 	
-	module.exports = People;
+	module.exports = Profile;
 
 /***/ },
 /* 336 */
