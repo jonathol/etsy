@@ -11,6 +11,7 @@ const ListingDetail = React.createClass ({
   getInitialState(){
     this.resetTabs();
     return {currentTab: 'detail'};
+
   },
 
   resetTabs(){
@@ -28,7 +29,7 @@ const ListingDetail = React.createClass ({
   },
   handleLeft(){
     leftTab = "details-tab left selected";
-    middleTab = 'details-tab right';    
+    middleTab = 'details-tab right';
     this.setState({currentTab: 'detail'});
     hashHistory.push(`/listing/${this.props.listing.id}`);
   },
@@ -40,6 +41,7 @@ const ListingDetail = React.createClass ({
   },
 
   render(){
+
     return(
       <div className="listing-detail-container">
         <div className="listing-detail-top">
@@ -51,12 +53,15 @@ const ListingDetail = React.createClass ({
             <h3 className="listing-detail-overview-name">
               {this.props.listing.name}
             </h3>
+            <p className="listing-detail-overview-info">
+              by {this.props.listing.user}
+            </p>
             <h4 className="listing-detail-overview-title">
               ${this.props.listing.price}
             </h4>
             <div>
               <h4 className="listing-detail-overview-title">
-                Ingredients
+                Ingredients&#58;
               </h4>
               <p className="listing-detail-overview-info">
                 {this.props.listing.ingredients}

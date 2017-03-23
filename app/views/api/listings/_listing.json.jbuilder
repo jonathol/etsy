@@ -18,3 +18,5 @@ json.reviews do
       :img_url
   end
 end
+
+json.user listing.user.username

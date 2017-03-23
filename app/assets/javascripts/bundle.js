@@ -40635,6 +40635,7 @@
 	    hashHistory.push('/listing/' + this.props.listing.id);
 	  },
 	  render: function render() {
+	
 	    return React.createElement(
 	      'div',
 	      { className: 'listing-detail-container' },
@@ -40654,6 +40655,12 @@
 	            this.props.listing.name
 	          ),
 	          React.createElement(
+	            'p',
+	            { className: 'listing-detail-overview-info' },
+	            'by ',
+	            this.props.listing.user
+	          ),
+	          React.createElement(
 	            'h4',
 	            { className: 'listing-detail-overview-title' },
 	            '$',
@@ -40665,7 +40672,7 @@
 	            React.createElement(
 	              'h4',
 	              { className: 'listing-detail-overview-title' },
-	              'Ingredients'
+	              'Ingredients:'
 	            ),
 	            React.createElement(
 	              'p',
