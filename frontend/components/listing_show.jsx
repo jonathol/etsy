@@ -36,6 +36,7 @@ const ListingShow = React.createClass ({
     this.setState({modalIsOpen: false});
   },
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.listingListener = ListingStore.addListener(this._listingChanged);
     ListingActions.fetchAllListings();
   },

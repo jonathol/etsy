@@ -28785,6 +28785,7 @@
 	
 	  componentDidMount: function componentDidMount() {
 	    this.sessionListener = SessionStore.addListener(this.forceUpdate.bind(this));
+	    window.scrollTo(0, 0);
 	  },
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.sessionListener.remove();
@@ -40332,6 +40333,7 @@
 	    this.setState({ listings: ListingStore.all() });
 	  },
 	  componentDidMount: function componentDidMount() {
+	    window.scrollTo(0, 0);
 	    this.storeListener = ListingStore.addListener(this._handleChange);
 	    ListingActions.fetchAllListings();
 	  },
@@ -40444,6 +40446,7 @@
 	    this.setState({ modalIsOpen: false });
 	  },
 	  componentDidMount: function componentDidMount() {
+	    window.scrollTo(0, 0);
 	    this.listingListener = ListingStore.addListener(this._listingChanged);
 	    ListingActions.fetchAllListings();
 	  },

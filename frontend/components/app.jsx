@@ -56,6 +56,7 @@ const App = React.createClass({
 
   componentDidMount() {
     this.sessionListener= SessionStore.addListener(this.forceUpdate.bind(this));
+    window.scrollTo(0, 0);
   },
 
   componentWillUnmount() {

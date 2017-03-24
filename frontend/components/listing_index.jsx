@@ -11,6 +11,7 @@ const ListingIndex = React.createClass({
     this.setState({listings: ListingStore.all()});
   },
   componentDidMount(){
+    window.scrollTo(0, 0)
     this.storeListener = ListingStore.addListener(this._handleChange);
     ListingActions.fetchAllListings();
   },
