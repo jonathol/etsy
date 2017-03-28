@@ -67,7 +67,10 @@ const App = React.createClass({
     SessionActions.logOut();
   },
   _handleClick() {
-    this.context.router.push("/profile");
+    this.context.router.push({
+      pathname: "/profile",
+      query: { name: SessionStore.currentUser().id}
+    });
   },
 
   nav() {

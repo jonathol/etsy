@@ -28794,7 +28794,10 @@
 	    SessionActions.logOut();
 	  },
 	  _handleClick: function _handleClick() {
-	    this.context.router.push("/profile");
+	    this.context.router.push({
+	      pathname: "/profile",
+	      query: { name: SessionStore.currentUser().id }
+	    });
 	  },
 	  nav: function nav() {
 	    if (SessionStore.isUserLoggedIn()) {
