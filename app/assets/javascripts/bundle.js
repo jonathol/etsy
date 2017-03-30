@@ -28796,7 +28796,7 @@
 	  _handleClick: function _handleClick() {
 	    this.context.router.push({
 	      pathname: "/profile",
-	      query: { name: SessionStore.currentUser().id }
+	      query: { id: SessionStore.currentUser().id }
 	    });
 	  },
 	  nav: function nav() {
