@@ -28899,7 +28899,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'app-containerdemai' },
+	      { className: 'app-container' },
 	      React.createElement(
 	        'div',
 	        { className: 'header-container' },
@@ -40351,7 +40351,6 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement('img', { className: 'listing-top-image', src: 'http://res.cloudinary.com/jonathol/image/upload/v1488503604/804882-food-wallpaper_chy9jt.jpg' }),
 	      React.createElement(
 	        'h2',
 	        { className: 'listing-title' },
