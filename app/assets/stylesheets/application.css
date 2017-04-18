@@ -328,7 +328,7 @@
     line-height: 200px;
     text-align: center;
 
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 2px black;
     font-size: 50px;
     color: #FFFFFF;
     margin-top: 100px;
@@ -1005,4 +1005,26 @@ fieldset {
 .profile-empty-listing {
   width: 100%;
   text-align: center;
+}
+
+.profile-title {
+  text-align: center;
+
+  font-size: 30px;
+  color: black;
+
+  
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.profile-listing-index-container {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-top: 1px solid black;
+  padding-top: 20px;
+  margin-bottom: 60px;
 }

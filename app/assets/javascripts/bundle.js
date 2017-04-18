@@ -40239,13 +40239,13 @@
 	      { className: 'profile-container' },
 	      React.createElement(
 	        'h2',
-	        { className: 'listing-title' },
+	        { className: 'profile-title' },
 	        this.state.name,
 	        '\'s Listings'
 	      ),
 	      React.createElement(
 	        'div',
-	        { className: 'listing-index-container' },
+	        { className: 'profile-listing-index-container' },
 	        view,
 	        React.createElement(
 	          'div',

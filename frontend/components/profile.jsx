@@ -49,8 +49,8 @@ const Profile = React.createClass ({
     return(
 
       <div className="profile-container">
-        <h2 className="listing-title">{this.state.name}&#39;s Listings</h2>
-        <div className="listing-index-container">
+        <h2 className="profile-title">{this.state.name}&#39;s Listings</h2>
+        <div className="profile-listing-index-container">
           {
             view
           }
