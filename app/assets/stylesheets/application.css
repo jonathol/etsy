@@ -68,10 +68,16 @@
 
   /*Styling*/
 
+  .content,html, body {
+    height: 100%;
+    min-height: 100%;
+  }
+
   body {
     font-family: 'Josefin Sans', sans-serif;
 
   }
+
 
   .app-container {
     display: flex;
@@ -989,7 +995,9 @@ fieldset {
   justify-content: center;
   background: black;
   width: 100%;
+  position: fixed;
   bottom: 0;
+
 }
 
 .fa {
@@ -1000,6 +1008,8 @@ fieldset {
 /* Profile */
 .profile-container{
   margin-top: 130px;
+  height: 100%;
+  min-height: 100%;
 }
 
 .profile-empty-listing {
@@ -1013,7 +1023,7 @@ fieldset {
   font-size: 30px;
   color: black;
 
-  
+
   font-family: 'Josefin Sans', sans-serif;
 
 }
