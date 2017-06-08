@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 On the database side, listings are stored in a table in the database which contains columns for `id`, `user_id`, `name`, `img_url`, `ingredients`, `description`, and `price`.  Upon login, an API call is made to the database which displays the `ListingIndex`.
 
-![image of listing index](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468018162/listingindex_p6vl00.png)
+![image of listing index](http://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1496950114/Screen_Shot_2017-06-08_at_12.22.51_PM_gzengp.png)
 
 The `ListingIndex` populated with `ListingIndexItem`s that display their image and name. Clicking on a `ListingIndexItem` will render the `ListingShow` component which contains more information such as price and ingredients. In addition, there are also options to either buy or add the product to the current user's cart.
 
-![image of listing show](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468018169/listingshow_ulpk7x.png)
+![image of listing show](http://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1496950112/Screen_Shot_2017-06-08_at_12.23.18_PM_ync8gm.png)
 
 ### Cart
 
@@ -71,7 +71,7 @@ By clicking on the shopping cart icon in the nav bar, `CartIndex` is rendered al
 
 The cart can't be accessed unless the user is logged in.
 
-![image of cart index](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468018747/cartindex_h97gee.png)
+![image of cart index](http://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1496950109/Screen_Shot_2017-06-08_at_12.23.58_PM_gjagqs.png)
 
 ### Search
 
@@ -79,25 +79,21 @@ The `Search` component populates its state by adding a listener to the `ListingS
 
 Search bar:
 
-![image of search bar](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468019533/searchbar_frevee.png)
-
-Typing in the search bar:
-
-![image of autocomplete](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468019495/autocomplete_behuoo.png)
+![image of autocomplete](http://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1496950112/Screen_Shot_2017-06-08_at_12.25.03_PM_qcaslp.png)
 
 Clicking on a product in the suggestion list:
 
-![image of redirect](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468019497/redirect_gaxgau.png)
+![image of redirect](http://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1496950109/Screen_Shot_2017-06-08_at_12.25.32_PM_emuvpg.png)
 
 ### Reviews
 
 To create a `Review` component, a `reviews` table with the columns `id`, `score`, `user_id`, `comment`, and `listing_id`. The review form can only be accessed after the user has purchased a product.
 
-![image of review form](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468020200/reviewform_mfs4qz.png)
+![image of review form](http://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1496950107/Screen_Shot_2017-06-08_at_12.27.16_PM_ykm8go.png)
 
 Reviews for a product is displayed in the `LisingShow` component under the `Reviews` tab.
 
-![image of review index](https://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1468020200/reviewtab_xizyrc.png)
+![image of review index](http://res.cloudinary.com/jonathol/image/upload/c_scale,w_800/v1496950112/Screen_Shot_2017-06-08_at_12.27.51_PM_qq8lhc.png)
 
 ## Future Directions for the Project
 
