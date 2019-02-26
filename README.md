@@ -2,7 +2,7 @@
 
 [Foodsy live][heroku]
 
-[heroku]: https://www.foodsy.xyz
+[heroku]: https://www.foodsy.me
 
 Foodsy is a full-stack web application inspired by Etsy that utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
 
